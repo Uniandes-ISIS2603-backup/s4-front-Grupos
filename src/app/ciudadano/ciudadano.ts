@@ -16,7 +16,7 @@ export class Ciudadano {
     /**
      * The pasword of the ciudadano's profile 
      */
-    contraseña: string;
+    contrasenia: string;
 }
 
 
