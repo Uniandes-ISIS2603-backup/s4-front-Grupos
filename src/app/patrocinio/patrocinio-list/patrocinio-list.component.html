@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let patrocinio of patrocinios">
+                    <td><span>{{patrocinio.name}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
