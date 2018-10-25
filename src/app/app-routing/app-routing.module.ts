@@ -5,7 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
-
+import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 
 const routes: Routes = [
     {
@@ -34,8 +34,16 @@ const routes: Routes = [
                 component: CategoriaListComponent
             }
         ]
+    },
+     {
+        path: 'patrocinios',
+        children: [
+            {
+                path: 'list',
+                component: PatrocinioListComponent
+            }
+        ]
     }
-    
 ];
 
 @NgModule({

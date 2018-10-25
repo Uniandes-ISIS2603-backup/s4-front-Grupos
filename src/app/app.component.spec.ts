@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {CiudadanoListComponent} from './ciudadano/ciudadano-list/ciudadano-list.component';
+import {PatrocinioListComponent} from './patrocinio/patrocinio-list/ciudadano-list.component';
 
 describe('AppComponent', () => {
     let component: AppComponent;
@@ -13,7 +14,7 @@ describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [AppRoutingModule, HttpClientModule],
-            declarations: [AppComponent, CiudadanoListComponent],
+            declarations: [AppComponent, CiudadanoListComponent, PatrocinioListComponent],
             providers: [{provide: APP_BASE_HREF, useValue: ''}]
         })
             .compileComponents();
@@ -38,5 +39,6 @@ describe('AppComponent', () => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('#ciudadanosTag').textContent).toContain('Ciudadanos');
+         expect(compiled.querySelector('#patrociniosTag').textContent).toContain('Patrocinios');
     }));
 });
