@@ -7,6 +7,7 @@ import {ComentarioListComponent} from '../comentario/comentario-list/comentario-
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
 import {NoticiaListComponent} from '../noticia/noticia-list/noticia-list.component';
+import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.component';
 
 
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
@@ -70,6 +71,14 @@ const routes: Routes = [
          path: 'home',
          component: CiudadanoListComponent
     },
+    {
+        path: 'distritos',
+        children:[
+           { path:'list',
+        component: DistritoListComponent
+           }
+        ]
+   },
     {
          path: '**',    
          redirectTo: 'home',    
