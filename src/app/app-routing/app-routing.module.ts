@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
+import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,16 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: CategoriaListComponent
+            }
+        ]
+    }
+    ,
+      {
+        path: 'administradores',
+        children: [
+            {
+                path: 'list',
+                component: AdministradorListComponent
             }
         ]
     }

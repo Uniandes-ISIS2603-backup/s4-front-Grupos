@@ -38,10 +38,4 @@ describe('AdministradorComponent', () => {
         expect(component.administradores.length).toEqual(administradores.length);
     });
 
-    it('an administrador should be an administrador (first and last)', () => {
-        component.administradores = administradores;
-        expect(component.administradores[0].name).toEqual(administradores[0].name);
-        expect(component.administradores[administradores.length - 1].name).toEqual(administradores[administradores.length - 1].name);
-    });
-
 });

@@ -10,6 +10,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {CiudadanoModule} from './ciudadano/ciudadano.module';
 import {GrupodeinteresModule} from './grupodeinteres/grupodeinteres.module';
 import {CategoriaModule} from './categoria/categoria.module';
+import {AdministradorModule} from './administrador/administrador.module';
 
 
 
@@ -24,7 +25,8 @@ import {CategoriaModule} from './categoria/categoria.module';
         CiudadanoModule,
         FormsModule,
         GrupodeinteresModule,
-        CategoriaModule
+        CategoriaModule,
+        AdministradorModule
     ],
 
     bootstrap: [AppComponent]
