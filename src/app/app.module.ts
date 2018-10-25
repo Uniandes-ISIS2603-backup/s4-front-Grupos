@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 
 
+import {NoticiaModule} from './noticia/noticia.module';
 import {CiudadanoModule} from './ciudadano/ciudadano.module';
 import {GrupodeinteresModule} from './grupodeinteres/grupodeinteres.module';
 import {CategoriaModule} from './categoria/categoria.module';
@@ -24,7 +25,8 @@ import {CategoriaModule} from './categoria/categoria.module';
         CiudadanoModule,
         FormsModule,
         GrupodeinteresModule,
-        CategoriaModule
+        CategoriaModule, 
+        NoticiaModule
     ],
 
     bootstrap: [AppComponent]
