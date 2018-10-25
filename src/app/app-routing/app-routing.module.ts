@@ -9,6 +9,7 @@ import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list
 import {NoticiaListComponent} from '../noticia/noticia-list/noticia-list.component';
 
 
+import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 
 const routes: Routes = [
     {
@@ -43,6 +44,15 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: CategoriaListComponent
+            }
+        ]
+    },
+     {
+        path: 'patrocinios',
+        children: [
+            {
+                path: 'list',
+                component: PatrocinioListComponent
             }
         ]
     }

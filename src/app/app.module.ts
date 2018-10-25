@@ -14,6 +14,8 @@ import {GrupodeinteresModule} from './grupodeinteres/grupodeinteres.module';
 import {CategoriaModule} from './categoria/categoria.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {PatrocinioModule} from'./patrocinio/patrocinio.module';
+
 
 
 
@@ -30,10 +32,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsModule,
         GrupodeinteresModule,
         CategoriaModule,
+        PatrocinioModule,
+        NoticiaModule
         ToastrModule.forRoot(),
         BrowserAnimationsModule, 
-        NoticiaModule
-
     ],
 
     bootstrap: [AppComponent]

@@ -1,0 +1,18 @@
+[
+    {
+    "di": 1,
+    "name" : "patrocinador 1"   ,
+     "value" : 100
+    }
+    ,
+    { "id" : 2,
+    "name" : "patrocinador 2",
+      "value" : 500
+    }
+    ,
+    { 
+        "id" : 3 ,
+        "name" : "patrocinador 3 ",
+        "value" :1000
+    }
+]
