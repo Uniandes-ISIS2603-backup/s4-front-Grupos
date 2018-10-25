@@ -3,9 +3,10 @@ import { Observable } from 'rxjs';
 
 import { Ciudadano } from './ciudadano';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
-const API_URL = "../../assets/";
-const ciudadanos = '/ciudadanos.json';
+const API_URL = environment.apiURL;
+const ciudadanos = '/ciudadanos';
 
 /**
  * The service provider for everything related to ciudadanos

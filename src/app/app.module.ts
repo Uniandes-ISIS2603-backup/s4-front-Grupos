@@ -10,6 +10,8 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {CiudadanoModule} from './ciudadano/ciudadano.module';
 import {GrupodeinteresModule} from './grupodeinteres/grupodeinteres.module';
 import {CategoriaModule} from './categoria/categoria.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -24,7 +26,9 @@ import {CategoriaModule} from './categoria/categoria.module';
         CiudadanoModule,
         FormsModule,
         GrupodeinteresModule,
-        CategoriaModule
+        CategoriaModule,
+        ToastrModule.forRoot(),
+        BrowserAnimationsModule
     ],
 
     bootstrap: [AppComponent]
