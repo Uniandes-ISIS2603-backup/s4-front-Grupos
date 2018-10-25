@@ -9,9 +9,13 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 
 import {NoticiaModule} from './noticia/noticia.module';
 import {CiudadanoModule} from './ciudadano/ciudadano.module';
+import {ComentarioModule} from './comentario/comentario.module';
 import {GrupodeinteresModule} from './grupodeinteres/grupodeinteres.module';
 import {CategoriaModule} from './categoria/categoria.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PatrocinioModule} from'./patrocinio/patrocinio.module';
+
 
 
 
@@ -24,12 +28,14 @@ import {PatrocinioModule} from'./patrocinio/patrocinio.module';
         AppRoutingModule,
         HttpClientModule,
         CiudadanoModule,
+        ComentarioModule,
         FormsModule,
         GrupodeinteresModule,
         CategoriaModule,
-        PatrocinioModule
-        CategoriaModule, 
+        PatrocinioModule,
         NoticiaModule
+        ToastrModule.forRoot(),
+        BrowserAnimationsModule, 
     ],
 
     bootstrap: [AppComponent]

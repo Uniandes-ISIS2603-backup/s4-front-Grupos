@@ -5,7 +5,9 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {CiudadanoListComponent} from './ciudadano/ciudadano-list/ciudadano-list.component';
+import {ComentarioListComponent} from './comentario/comentario-list/comentario-list.component';
 import {PatrocinioListComponent} from './patrocinio/patrocinio-list/ciudadano-list.component';
+
 
 describe('AppComponent', () => {
     let component: AppComponent;
@@ -14,7 +16,7 @@ describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [AppRoutingModule, HttpClientModule],
-            declarations: [AppComponent, CiudadanoListComponent, PatrocinioListComponent],
+            declarations: [AppComponent, CiudadanoListComponent, ComentarioListComponent, PatrocinioListComponent],
             providers: [{provide: APP_BASE_HREF, useValue: ''}]
         })
             .compileComponents();
@@ -40,5 +42,11 @@ describe('AppComponent', () => {
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('#ciudadanosTag').textContent).toContain('Ciudadanos');
          expect(compiled.querySelector('#patrociniosTag').textContent).toContain('Patrocinios');
+    }));
+    
+        it('should render titles in the navbar', async(() => {
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('#comentariosTag').textContent).toContain('Comentarios');
     }));
 });
