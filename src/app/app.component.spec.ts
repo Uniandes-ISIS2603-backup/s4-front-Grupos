@@ -40,5 +40,6 @@ describe('AppComponent', () => {
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('#ciudadanosTag').textContent).toContain('Ciudadanos');
         expect(compiled.querySelector('#administradoresTag').textContent).toContain('Administradores');
+        expect(compiled.querySelector('#eventosTag').textContent).toContain('Eventos');
     }));
 });
