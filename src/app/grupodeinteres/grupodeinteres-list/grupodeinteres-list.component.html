@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let grupodeinteres of gruposdeinteres">
+                    <td><span>{{grupodeinteres.name}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

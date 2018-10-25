@@ -1,0 +1,29 @@
+<div class= "container-fluid">
+    <div class="col">
+        
+        <table class = "table table-striped">
+            
+            <thead>
+                
+                <tr>
+                    
+                    <th> Nombre categoria </th>  
+                    
+                </tr>
+                
+            </thead>      
+            
+            <tbody>  
+                
+                <tr *ngFor = "let categoria of categorias">
+                    
+                    <td><span>{{categoria.name}}</span></td>                    
+                    
+                </tr>
+            
+        </tbody>
+        
+    </table>
+    
+    </div>
+</div>
