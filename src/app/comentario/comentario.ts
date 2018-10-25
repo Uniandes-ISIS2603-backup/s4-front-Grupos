@@ -16,7 +16,7 @@ export class Comentario {
     /**
      * The text of the comentario 
      */
-    texto: string;
+    text: string;
 }
 
 
