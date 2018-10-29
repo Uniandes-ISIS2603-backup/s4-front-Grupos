@@ -31,7 +31,7 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component: CategoriaListComponent
+                component: CategoriaListComponent   
             }
         ]
     }
