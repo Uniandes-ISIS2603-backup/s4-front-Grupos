@@ -3,9 +3,14 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
+import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
+import {NoticiaListComponent} from '../noticia/noticia-list/noticia-list.component';
+import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.component';
 
+
+import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 
 const routes: Routes = [
     {
@@ -14,6 +19,14 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: CiudadanoListComponent
+            }
+        ]
+    },    {
+        path: 'comentarios',
+        children: [
+            {
+                path: 'list',
+                component: ComentarioListComponent
             }
         ]
     },
@@ -34,6 +47,41 @@ const routes: Routes = [
                 component: CategoriaListComponent   
             }
         ]
+    },
+     {
+        path: 'patrocinios',
+        children: [
+            {
+                path: 'list',
+                component: PatrocinioListComponent
+            }
+        ]
+    }
+    ,
+      {
+        path: 'noticias',
+        children: [
+            {
+                path: 'list',
+                component: NoticiaListComponent
+            }
+        ]
+    },
+    {
+         path: 'home',
+         component: CiudadanoListComponent
+    },
+    {
+        path: 'distritos',
+        children:[
+           { path:'list',
+        component: DistritoListComponent
+           }
+        ]
+   },
+    {
+         path: '**',    
+         redirectTo: 'home',    
     }
     
 ];

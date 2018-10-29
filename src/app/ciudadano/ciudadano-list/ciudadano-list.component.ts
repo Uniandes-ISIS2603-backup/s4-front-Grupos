@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+
 import { CiudadanoService } from '../ciudadano.service';
 import { Ciudadano } from '../ciudadano';
  
