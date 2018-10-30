@@ -33,7 +33,7 @@ export class PatrocinioListComponent implements OnInit {
      * This method will be called when the component is created
      */
     ngOnInit() {
-        this.getPatrocinios;
+        this.getPatrocinios();
     }
 
 }
