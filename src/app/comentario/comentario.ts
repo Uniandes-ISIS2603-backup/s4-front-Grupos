@@ -11,12 +11,12 @@ export class Comentario {
     /**
      * The comentario citizens's name
      */ 
-    name: string;
+    nombre: string;
 
     /**
      * The text of the comentario 
      */
-    text: string;
+    texto: string;
 }
 
 
