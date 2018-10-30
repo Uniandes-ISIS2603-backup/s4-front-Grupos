@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Patrocinio } from './patrocinio';
 import { HttpClient } from '@angular/common/http';
 
-const API_URL = "http://localhost:8080/s4_Grupos-api/api";
+const API_URL = "../../assets/";
 const patrocinios = '/patrocinios.json';
 
 /**

@@ -8,9 +8,7 @@ import {ComentarioListComponent} from '../comentario/comentario-list/comentario-
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
 import {NoticiaListComponent} from '../noticia/noticia-list/noticia-list.component';
-import {EventoListComponent} from '../evento/evento-list/evento-list.component';
 import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.component';
-
 
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 
@@ -77,20 +75,6 @@ const routes: Routes = [
                 component: AdministradorListComponent
             }
         ]
-    }
-    ,
-      {
-        path: 'eventos',
-        children: [
-            {
-                path: 'list',
-                component: EventoListComponent
-            }
-        ]
-      },
-    {
-         path: 'home',
-         component: CiudadanoListComponent
     },
     {
         path: 'distritos',
