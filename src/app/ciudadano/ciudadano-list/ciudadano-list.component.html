@@ -8,7 +8,9 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let ciudadano of ciudadanos">
-                    <td><span>{{ciudadano.nombre}}</span></td>
+                    <td style="cursor: pointer;"> 
+                        <dd  routerLink="/ciudadanos/{{ciudadano.id}}" >{{ciudadano.nombre}}</dd>
+                    </td>                
                 </tr>
             </tbody>
         </table>

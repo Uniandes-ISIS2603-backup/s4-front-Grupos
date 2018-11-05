@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
+import { CiudadanoDetailComponent } from '../ciudadano/ciudadano-detail/ciudadano-detail.component';
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
@@ -18,6 +19,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: CiudadanoListComponent
+            },
+            {
+                path: ':id',
+                component: CiudadanoDetailComponent
             }
         ]
     },    {
