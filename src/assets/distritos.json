@@ -1,0 +1,15 @@
+[
+    {
+    "id": 1,
+    "name" : "distrito 1" 
+    }
+    ,
+    { "id" : 2,
+    "name" : "distrito 2"
+    }
+    ,
+    { 
+        "id" : 3 ,
+        "name" : "distrito 3 "
+    }
+]

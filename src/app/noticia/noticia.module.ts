@@ -10,6 +10,5 @@ import { NoticiaService } from './noticia.service';
   declarations: [NoticiaListComponent], 
   providers: [NoticiaService],
   exports:[NoticiaListComponent],
-  
 })
 export class NoticiaModule { }

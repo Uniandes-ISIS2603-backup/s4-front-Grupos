@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {CiudadanoListComponent} from './ciudadano/ciudadano-list/ciudadano-list.component';
+import {AdministradorListComponent} from './administrador/administrador-list/administrador-list.component';
 import {ComentarioListComponent} from './comentario/comentario-list/comentario-list.component';
 import {PatrocinioListComponent} from './patrocinio/patrocinio-list/ciudadano-list.component';
 
@@ -16,7 +17,8 @@ describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [AppRoutingModule, HttpClientModule],
-            declarations: [AppComponent, CiudadanoListComponent, ComentarioListComponent, PatrocinioListComponent],
+            declarations: [AppComponent, CiudadanoListComponent, ComentarioListComponent, PatrocinioListComponent, AdministradorListComponent, EventoListComponent],
+
             providers: [{provide: APP_BASE_HREF, useValue: ''}]
         })
             .compileComponents();
@@ -41,7 +43,9 @@ describe('AppComponent', () => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('#ciudadanosTag').textContent).toContain('Ciudadanos');
-         expect(compiled.querySelector('#patrociniosTag').textContent).toContain('Patrocinios');
+        expect(compiled.querySelector('#patrociniosTag').textContent).toContain('Patrocinios');
+        expect(compiled.querySelector('#administradoresTag').textContent).toContain('Administradores');
+        expect(compiled.querySelector('#eventosTag').textContent).toContain('Eventos');
     }));
     
         it('should render titles in the navbar', async(() => {

@@ -8,6 +8,7 @@ import {GrupodeinteresDetail} from './grupodeinteres-detail';
 
 
 const API_URL = environment.apiURL;
+
 const gruposdeinteres = '/gruposdeinteres';
 
 /**

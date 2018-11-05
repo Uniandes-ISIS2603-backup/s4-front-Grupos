@@ -4,8 +4,10 @@ import { Observable } from 'rxjs';
 import { Patrocinio } from './patrocinio';
 import { HttpClient } from '@angular/common/http';
 
+
 const API_URL = "http://localhost:8080/s4_Grupos-api/api";
 const patrocinios = '/patrocinios';
+
 
 /**
  * The service provider for everything related to patrocicnios

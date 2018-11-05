@@ -5,7 +5,6 @@ import {Categoria} from './categoria';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
-
 const API_URL = environment.apiURL;
 const categorias = '/categorias';
 

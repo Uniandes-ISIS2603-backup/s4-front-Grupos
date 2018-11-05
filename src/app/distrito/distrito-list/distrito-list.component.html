@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="col">
+        <table class="table table-striped">
+            <thead >
+                <tr>
+                    <th>Nombre del distrito</th>    
+                    <th>Id del distrito</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let distrito of distritos">
+                    <td>{{distrito.name}}</td>
+                    <td>{{distrito.id}}</td>
+                  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+    

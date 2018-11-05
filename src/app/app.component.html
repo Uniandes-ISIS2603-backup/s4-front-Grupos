@@ -1,10 +1,10 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
-<br>
 <div style="text-align: center"> <h1> Welcome to {{title}}! </h1> </div>
 
 
 <ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a id="administradoresTag" class="nav-link" routerLink="/administradores/list">Administradores</a>
+    </li>
     <li class="nav-item">
         <a id="ciudadanosTag" class="nav-link" routerLink="/ciudadanos/list">Ciudadanos</a>
     </li>
@@ -23,8 +23,15 @@
     <li class="nav-item">
         <a id="noticiaTag" class="nav-link" routerLink="/noticias/list" >Noticias</a>
     </li>
+    <li class="nav-item">
+        <a id="eventosTag" class="nav-link" routerLink="/eventos/list" >Eventos</a>
+      </li>
+    <li class="nav-item">
+        <a id="distritoTag" class="nav-link" routerLink="/distritos/list" >Distritos</a>
+    </li>
 </ul>
 
 <router-outlet></router-outlet>
 
 
+ 
