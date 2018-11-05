@@ -3,9 +3,12 @@ import { Observable } from 'rxjs';
 
 import {Grupodeinteres} from './grupodeinteres';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import {GrupodeinteresDetail} from './grupodeinteres-detail';
 
-const API_URL = "../../assets/";
-const gruposdeinteres = '/gruposdeinteres.json';
+
+const API_URL = environment.apiURL;
+const gruposdeinteres = '/gruposdeinteres';
 
 /**
  * The service provider for everything related to ciudadanos
@@ -25,6 +28,11 @@ export class GrupodeinteresService {
      */
     getGrupos(): Observable<Grupodeinteres[]> {
         return this.http.get<Grupodeinteres[]>(API_URL + gruposdeinteres);
+    }
+    
+    getGrupoDetail(grupoId): Observable<GrupodeinteresDetail> {
+        
+        return this.http.get<GrupodeinteresDetail>(API_URL + gruposdeinteres + '/' + grupoId);
     }
 }
 

@@ -11,7 +11,7 @@ export class Categoria {
     /**
      * The grupodeinteres name
      */ 
-    name: string;
+    nombre: string;
 
     /**
      * The descripcion of the grupodeinteres.

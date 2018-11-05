@@ -10,6 +10,7 @@ import {NoticiaListComponent} from '../noticia/noticia-list/noticia-list.compone
 
 
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
+import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
 
 const routes: Routes = [
     {
@@ -35,6 +36,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: GrupodeinteresListComponent
+            },
+            {
+                path: ':id',
+                component: GrupodeinteresDetailComponent
             }
         ]
     },

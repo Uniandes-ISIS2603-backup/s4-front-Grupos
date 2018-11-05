@@ -11,7 +11,7 @@ export class Patrocinio {
     /**
      * The ciudadano's name
      */ 
-    name: string;
+    nombre: string;
 
     /**
      * value of patrocinio
