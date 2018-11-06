@@ -21,7 +21,7 @@ import {PatrocinioModule} from './patrocinio/patrocinio.module';
 
 
 
-
+import { RouterModule, Routes } from '@angular/router';
 @NgModule({
     declarations: [
         AppComponent
@@ -40,7 +40,7 @@ import {PatrocinioModule} from './patrocinio/patrocinio.module';
         DistritoModule,
         AdministradorModule,
         ToastrModule.forRoot(),
-        BrowserAnimationsModule
+        BrowserAnimationsModule, RouterModule
     ],
 
     bootstrap: [AppComponent],

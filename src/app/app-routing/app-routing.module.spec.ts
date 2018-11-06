@@ -1,15 +1,14 @@
-import {CiudadanoModule} from './ciudadano.module';
+import {AppRoutingModule} from './app-routing.module';
 
-describe('CiudadanoModule', () => {
-    let ciudadanoModule: CiudadanoModule;
+describe('AppRoutingModule', () => {
+    let appRoutingModule: AppRoutingModule;
 
     beforeEach(() => {
-        ciudadanoModule = new CiudadanoModule();
+        appRoutingModule = new AppRoutingModule();
     });
 
     it('should create an instance', () => {
-        expect(ciudadanoModule).toBeTruthy();
+        expect(appRoutingModule).toBeTruthy();
     });
 });
-
 

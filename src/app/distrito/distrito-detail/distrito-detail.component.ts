@@ -38,7 +38,9 @@ export class DistritoDetailComponent implements OnInit {
     * The method which obtains the distrito whose details we want to show
     */
     getDistritoDetail(): void {
-        this.distritoService.getDistritoDetail(this.distrito_id).subscribe(distritoDetail => { this.distritoDetail = distritoDetail     });
+        this.distritoService.getDistritoDetail(this.distrito_id).subscribe(distritoDetail => { 
+            console.log(distritoDetail);
+            this.distritoDetail = distritoDetail });
     }
 
    
