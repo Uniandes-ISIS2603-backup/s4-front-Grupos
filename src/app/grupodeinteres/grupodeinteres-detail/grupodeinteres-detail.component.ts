@@ -29,6 +29,7 @@ export class GrupodeinteresDetailComponent implements OnInit {
   ngOnInit() {
       
       this.grupoId = +this.route.snapshot.paramMap.get('id');
+      this.getGrupoDetail();
   }
 
 }
