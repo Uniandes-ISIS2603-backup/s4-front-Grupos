@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 import { Ciudadano } from './ciudadano';
-import { HttpClient } from '@angular/common/http';
+import { CiudadanoDetail } from './ciudadano-detail';
 import { environment } from '../../environments/environment';
 
-const API_URL = environment.apiURL;
+const API_URL = 'http://localhost:8080/s4_Grupos-api/api';
 const ciudadanos = '/ciudadanos';
 
 /**
@@ -19,6 +20,7 @@ export class CiudadanoService {
      * @param http The HttpClient - This is necessary in order to perform requests
      */
     constructor(private http: HttpClient) {}
+    
 
     /**
      * Returns the Observable object containing the list of ciudadanos retrieved from the API
@@ -27,7 +29,13 @@ export class CiudadanoService {
     getCiudadanos(): Observable<Ciudadano[]> {
         return this.http.get<Ciudadano[]>(API_URL + ciudadanos);
     }
+    
+    /**
+    * Returns the Observable object with the details of an ciudadano retrieved from the API
+    * @returns The ciudadano details
+    */
+    getCiudadanoDetail(ciudadanoId): Observable<CiudadanoDetail> {
+        return this.http.get<CiudadanoDetail>(API_URL + ciudadanos + '/' + ciudadanoId);
+    }
 }
-
-
 

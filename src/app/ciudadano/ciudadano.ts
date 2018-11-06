@@ -8,15 +8,15 @@ export class Ciudadano {
     */
     id: number;
 
-    /**
+    /** 
      * The ciudadano's name
      */ 
-    name: string;
+    nombre: string;
 
     /**
      * The pasword of the ciudadano's profile 
      */
-    contrasenia: string;
+    contrasena: string;
 }
 
 

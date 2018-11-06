@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 import {FormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
@@ -44,6 +45,13 @@ import {PatrocinioModule} from './patrocinio/patrocinio.module';
         BrowserAnimationsModule
     ],
 
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: HttpErrorInterceptor,
+        multi: true
+    }
+    ]
 })
 export class AppModule {}

@@ -3,12 +3,14 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nombre</th>    
+                    <th>Ciudadanos</th>    
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let ciudadano of ciudadanos">
-                    <td><span>{{ciudadano.name}}</span></td>
+                    <td style="cursor: pointer;"> 
+                        <dd  routerLink="/ciudadanos/{{ciudadano.id}}" >{{ciudadano.nombre}}</dd>
+                    </td>                
                 </tr>
             </tbody>
         </table>

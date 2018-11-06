@@ -6,7 +6,9 @@ import {FormsModule} from '@angular/forms';
 
 import { CiudadanoService } from './ciudadano.service';
 import { CiudadanoListComponent } from './ciudadano-list/ciudadano-list.component';
+import { CiudadanoDetailComponent } from './ciudadano-detail/ciudadano-detail.component';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
+//import { GrupoDeInteresModule } from '../grupodeinteres/grupodeinteres.module';
 
 @NgModule({
     imports: [
@@ -15,8 +17,9 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         HttpClientModule,
         CommonModule,
         FormsModule
+//        GrupoDeInteresModule
     ],
-    declarations: [CiudadanoListComponent],
+    declarations: [CiudadanoListComponent, CiudadanoDetailComponent],
     providers: [CiudadanoService],
     exports: [CiudadanoListComponent]
 })
