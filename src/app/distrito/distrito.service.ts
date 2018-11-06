@@ -23,4 +23,13 @@ export class DistritoService {
     getDistritoDetail(distritoId): Observable<DistritoDetail> {
         return this.http.get<DistritoDetail>(API_URL + distritos + '/' + distritoId);
     }
+     /**
+    * Creates a new distrito
+    * @param distrito The new distrito
+    * @returns The distrito with its new id if it was created, false if it wasn't
+    */
+   createDistrito(distrito): Observable<DistritoDetail> {
+    return this.http.post<DistritoDetail>(API_URL + distritos, distrito);
+}
+
 }
