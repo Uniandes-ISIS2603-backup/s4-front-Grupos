@@ -9,12 +9,12 @@ export interface Noticia {
     id: number;
 
     /**
-    * The noticia's name
+    * The noticia's description
     */
     descripcion: string;
     
     /**
-    * The noticia's name
+    * The noticia's image
     */
    imagen: string;
   

@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import {Categoria} from './categoria';
 import { HttpClient } from '@angular/common/http';
 
-const API_URL = "../../assets/";
-const categorias = '/categorias.json';
+const API_URL = "http://localhost:8080/s4_Grupos-api/api";
+const categorias = '/categorias';
 
 /**
  * The service provider for everything related to ciudadanos
