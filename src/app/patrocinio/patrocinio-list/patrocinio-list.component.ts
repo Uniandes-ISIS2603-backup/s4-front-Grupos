@@ -3,7 +3,7 @@ import { PatrocinioService } from '../patrocinio.service';
 import { Patrocinio } from '../patrocinio';
  
 @Component({
-    selector: 'app-patrocinio',
+    selector: 'app-patrocinio.list',
     templateUrl: './patrocinio-list.component.html',
     styleUrls: ['./patrocinio-list.component.css']
 })

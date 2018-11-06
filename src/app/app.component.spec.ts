@@ -7,7 +7,6 @@ import {AppComponent} from './app.component';
 import {CiudadanoListComponent} from './ciudadano/ciudadano-list/ciudadano-list.component';
 import {AdministradorListComponent} from './administrador/administrador-list/administrador-list.component';
 import {ComentarioListComponent} from './comentario/comentario-list/comentario-list.component';
-import {PatrocinioListComponent} from './patrocinio/patrocinio-list/ciudadano-list.component';
 
 
 describe('AppComponent', () => {
@@ -17,7 +16,7 @@ describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [AppRoutingModule, HttpClientModule],
-            declarations: [AppComponent, CiudadanoListComponent, ComentarioListComponent, PatrocinioListComponent, AdministradorListComponent, EventoListComponent],
+            declarations: [AppComponent, CiudadanoListComponent, ComentarioListComponent,  AdministradorListComponent],
 
             providers: [{provide: APP_BASE_HREF, useValue: ''}]
         })

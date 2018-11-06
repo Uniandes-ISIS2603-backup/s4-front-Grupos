@@ -1,0 +1,9 @@
+
+    <div class="col-md-3">
+        <p *ngIf="grupodeinteresDetail.noticias.length > 0">
+            <button type="button" class="btn" [ngClass]="{ 'btn-primary':noticiaListComponent.isCollapsed,'btn-outline-primary':!noticiaListComponent.isCollapsed}"
+                (click)="toggleNoticias()">
+                Reviews of the book
+            </button>
+        </p>
+    </div>
