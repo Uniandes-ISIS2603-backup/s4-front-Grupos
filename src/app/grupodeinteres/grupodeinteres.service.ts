@@ -3,8 +3,12 @@ import { Observable } from 'rxjs';
 
 import {Grupodeinteres} from './grupodeinteres';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import {GrupodeinteresDetail} from './grupodeinteres-detail';
 
-const API_URL = "http://localhost:8080/s4_Grupos-api/api";
+
+const API_URL = environment.apiURL;
+
 const gruposdeinteres = '/gruposdeinteres';
 
 /**
@@ -25,6 +29,11 @@ export class GrupodeinteresService {
      */
     getGrupos(): Observable<Grupodeinteres[]> {
         return this.http.get<Grupodeinteres[]>(API_URL + gruposdeinteres);
+    }
+    
+    getGrupoDetail(grupoId): Observable<GrupodeinteresDetail> {
+        
+        return this.http.get<GrupodeinteresDetail>(API_URL + gruposdeinteres + '/' + grupoId);
     }
 }
 
