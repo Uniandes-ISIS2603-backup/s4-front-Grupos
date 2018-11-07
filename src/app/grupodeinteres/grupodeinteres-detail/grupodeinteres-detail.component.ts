@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {GrupodeinteresService} from '../grupodeinteres.service';
 import {ActivatedRoute} from '@angular/router';
 import {GrupodeinteresDetail} from '../grupodeinteres-detail';
@@ -23,7 +23,7 @@ export class GrupodeinteresDetailComponent implements OnInit {
   
   getGrupoDetail(): void {
       
-      this.grupoService.getGrupoDetail(this.grupoId).subscribe(grupoDetail => {this.grupoDetail = grupoDetail})
+      this.grupoService.getGrupoDetail(this.grupoId).subscribe(grupoDetail => {console.log(grupoDetail); this.grupoDetail = grupoDetail;})
   }
 
   ngOnInit() {
