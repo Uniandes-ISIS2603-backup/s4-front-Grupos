@@ -12,6 +12,7 @@ import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.com
 import {DistritoDetailComponent} from '../distrito/distrito-detail/distrito-detail.component';
 import {DistritoCreateComponent} from '../distrito/distrito-create/distrito-create.component';
 import {CiudadanoDetailComponent} from '../ciudadano/ciudadano-detail/ciudadano-detail.component';
+import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
 
@@ -84,6 +85,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: AdministradorListComponent
+            },
+            {
+                path: ':id',
+                component: AdministradorDetailComponent
             }
         ]
     }
