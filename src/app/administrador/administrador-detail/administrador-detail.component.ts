@@ -15,7 +15,7 @@ export class AdministradorDetailComponent implements OnInit {
 
     /**
     * Constructor for the component
-    * @param route The route which helps to retrieves the id of the grupo to be shown
+    * @param route The route which helps to retrieves the id of the book to be shown
     * @param administradorService The administrador's services provider
     * @param toastrService The toastr to show messages to the user
     */
@@ -37,10 +37,9 @@ export class AdministradorDetailComponent implements OnInit {
     * The method which obtains the administrador whose details we want to show
     */
     getAdministradorDetail(): void {
-        this.administradorService.getAdministradorDetail(this.administrador_id)
-            .subscribe(administradorDetail => {
-                this.administradorDetail = administradorDetail
-            });
+        this.administradorService.getAdministradorDetail(this.administrador_id).subscribe(administradorDetail => { 
+            console.log(administradorDetail);
+            this.administradorDetail = administradorDetail });
     }
 
    
@@ -50,7 +49,7 @@ export class AdministradorDetailComponent implements OnInit {
     */
     ngOnInit() {
         this.administrador_id = +this.route.snapshot.paramMap.get('id');
-        this.administradorDetail = new AdministradorDetail();
+        
         this.getAdministradorDetail();
     }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
+import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
@@ -89,6 +90,11 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: AdministradorDetailComponent
+            },
+            {
+                path: 'add',
+                component: AdministradorCreateComponent,
+                runGuardsAndResolvers: 'always'
             }
         ]
     }

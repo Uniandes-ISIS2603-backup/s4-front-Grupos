@@ -4,9 +4,7 @@ import { Administrador } from './administrador';
 import { AdministradorDetail} from './administrador-detail';
 import { Observable } from 'rxjs';
 
-import { environment } from '../../environments/environment';
-
-const API_URL = environment.apiURL;
+const API_URL = 'http://localhost:8080/s4_Grupos-api/api';
 const administradores = '/administradores';
 /**
 * The service provider for everything related to administradores
@@ -23,7 +21,6 @@ export class AdministradorService {
      * Returns the Observable object containing the list of administradores retrieved from the API
      * @returns The list of administradores in real time
      */
-
     getAdministradores(): Observable<Administrador[]> {
         return this.http.get<Administrador[]>(API_URL + administradores);
     }

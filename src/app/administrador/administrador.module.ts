@@ -7,7 +7,7 @@ import {FormsModule} from '@angular/forms';
 import { AdministradorService } from './administrador.service';
 import { AdministradorListComponent } from './administrador-list/administrador-list.component';
 import { AdministradorDetailComponent } from './administrador-detail/administrador-detail.component';
-//import { AdministradorCreateComponent } from './administrador-create/administrador-create.component';
+import { AdministradorCreateComponent } from './administrador-create/administrador-create.component';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
 //import { GrupoDeInteresModule } from '../grupodeinteres/grupodeinteres.module';
 
@@ -19,10 +19,10 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         HttpClientModule,
         CommonModule,
         FormsModule
-//        GrupoDeInteresModule
+//      GrupoDeInteresModule
   ],
-  declarations: [AdministradorListComponent, AdministradorDetailComponent],
-  exports: [AdministradorListComponent],
+  declarations: [AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent],
+  exports: [AdministradorListComponent, AdministradorCreateComponent],
   providers:[AdministradorService]
 })
 export class AdministradorModule { }

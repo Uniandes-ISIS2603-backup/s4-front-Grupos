@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdministradorListComponent } from './administrador-list.component';
 
-describe('DitritoListComponent', () => {
+describe('AdministradorListComponent', () => {
   let component: AdministradorListComponent;
   let fixture: ComponentFixture<AdministradorListComponent>;
 
