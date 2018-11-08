@@ -5,12 +5,12 @@ import {Grupodeinteres} from './grupodeinteres';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import {GrupodeinteresDetail} from './grupodeinteres-detail';
-
+import {Noticia} from './noticia';
 
 const API_URL = environment.apiURL;
 
 const gruposdeinteres = '/gruposdeinteres';
-
+const noticias = '/noticias';
 /**
  * The service provider for everything related to ciudadanos
  */
@@ -35,6 +35,14 @@ export class GrupodeinteresService {
         
         return this.http.get<GrupodeinteresDetail>(API_URL + gruposdeinteres + '/' + grupoId);
     }
+      /**
+    * Creates a noticia
+    * @param noticia The noticia
+    * @returns True if the noticia was posted, false otherwise
+    */
+   createNoticia(grupoId, noticia): Observable<Noticia> {
+    return this.http.post<Noticia>(API_URL + gruposdeinteres + '/' + grupoId + noticias, noticia);
+}
 }
 
 

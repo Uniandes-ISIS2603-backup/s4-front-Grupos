@@ -1,4 +1,4 @@
-<div *ngIf="grupoDetail.noticias" class="panel-body" >
+<div *ngIf="grupoDetail" class="panel-body" >
     <div class="border margin">
         <p class="h3 p-3">{{grupoDetail.nombre}}</p> 
         <div class="row">
@@ -6,6 +6,13 @@
                 <dl>     
                     <dt>id</dt>
                     <dd>{{grupoDetail.id}}</dd>
+                    <div class="col-md-3">
+                            <p *ngIf="grupoDetail.noticias.length > 0">
+                                <button type="button" class="btn" [ngClass]="{ 'btn-primary': noticiaListComponent.isCollapsed,'btn-outline-primary':!noticiaListComponent.isCollapsed}" (click)="toggleNoticias()">
+                                    Noticias of the grupo
+                                </button>
+                            </p>
+                        </div>
                 </dl>
             </div>
         </div>

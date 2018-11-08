@@ -1,0 +1,10 @@
+
+<div id="collapseReview" [ngbCollapse]="isCollapsed">
+    <table class="table table-striped">
+        <tbody>
+            <tr *ngFor="let noticia of bookReviews">
+                <td><span id="book-noticiaed"><b>{{noticia.name}}</b></span><span>: </span><span id="noticia-description">{{noticia.description}}</span><br><span id="book-noticiaed"><i>{{noticia.source}}</i></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
