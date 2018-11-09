@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AdministradorService } from '../administrador.service';
 
 import { AdministradorDetail } from '../administrador-detail';
+import { Administrador } from '../administrador';
 
 
 @Component({

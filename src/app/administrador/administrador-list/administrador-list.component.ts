@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdministradorService } from '../administrador.service';
+import { ActivatedRoute } from '@angular/router';
 import { Administrador } from '../administrador';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-administrador-list',
   templateUrl: './administrador-list.component.html',

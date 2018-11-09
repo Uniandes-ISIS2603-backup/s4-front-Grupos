@@ -9,7 +9,6 @@ import { AdministradorListComponent } from './administrador-list/administrador-l
 import { AdministradorDetailComponent } from './administrador-detail/administrador-detail.component';
 import { AdministradorCreateComponent } from './administrador-create/administrador-create.component';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
-//import { GrupoDeInteresModule } from '../grupodeinteres/grupodeinteres.module';
 
 @NgModule({
   imports: [
@@ -19,7 +18,6 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         HttpClientModule,
         CommonModule,
         FormsModule
-//      GrupoDeInteresModule
   ],
   declarations: [AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent],
   exports: [AdministradorListComponent, AdministradorCreateComponent],
