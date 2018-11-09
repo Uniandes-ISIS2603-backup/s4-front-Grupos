@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { Patrocinio } from './patrocinio';
+import { PatrocinioDetail} from './patrocinio-detail';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -43,7 +43,7 @@ export class PatrocinioService {
     * @returns The patrocinio with its new id if it was created, false if it wasn't
     */
    createPatrocinio(patrocinio): Observable<PatrocinioDetail> {
-    return this.http.post<PatrocinioDetail>(API_URL + patrocinios, patrocinio);
+    return this.http.post<PatrocinioDetail>(API_URL +  patrocinios, patrocinio);
     }
 }
 
