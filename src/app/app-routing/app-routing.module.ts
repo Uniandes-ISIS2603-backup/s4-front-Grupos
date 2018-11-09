@@ -88,13 +88,13 @@ const routes: Routes = [
                 component: AdministradorListComponent
             },
             {
-                path: ':id',
-                component: AdministradorDetailComponent
-            },
-            {
                 path: 'add',
                 component: AdministradorCreateComponent,
                 runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id',
+                component: AdministradorDetailComponent
             }
         ]
     }
