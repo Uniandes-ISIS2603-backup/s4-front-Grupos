@@ -18,6 +18,7 @@ import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-
 import {PatrocinioDetailComponent} from '../patrocinio/patrocinio-detail/patrocinio-detail.component';
 import  {PatrocinioCreateComponent} from '../patrocinio/patrocinio-create/patrocinio-create.component';
 import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
+import {GrupodeinteresCreateComponent} from '../grupodeinteres/grupodeinteres-create/grupodeinteres-create.component';
 
 const routes: Routes = [
     {
@@ -47,6 +48,11 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: GrupodeinteresListComponent
+            }, 
+            {
+                path: 'add',
+                component: GrupodeinteresCreateComponent,
+                runGuardsAndResolvers: 'always'
             },
             {
                 path: ':id',
