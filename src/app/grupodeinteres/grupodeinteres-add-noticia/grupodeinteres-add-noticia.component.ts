@@ -32,7 +32,6 @@ export class GrupodeinteresAddNoticiaComponent implements OnInit, OnChanges {
     */
     noticia: Noticia;
     
-    public isCollapsed = true;
 
     /**
     * The Event Emitter which sends the signal when a noticia has just been posted

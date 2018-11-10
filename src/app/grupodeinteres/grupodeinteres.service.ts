@@ -35,6 +35,9 @@ export class GrupodeinteresService {
         
         return this.http.get<GrupodeinteresDetail>(API_URL + gruposdeinteres + '/' + grupoId);
     }
+    getNoticias(grupoId): Observable<Noticia[]> {
+        return this.http.get<Noticia[]>(API_URL + gruposdeinteres + '/' + grupoId + noticias);
+    }
       /**
     * Creates a noticia
     * @param noticia The noticia

@@ -5,7 +5,7 @@ import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import {GrupodeinteresService} from '../grupodeinteres.service';
 import {Grupodeinteres} from '../grupodeinteres';
 import {GrupodeinteresDetail} from '../grupodeinteres-detail';
-import {GrupoNoticiaComponent} from '../grupodeinteres-noticias/grupodeinteres-noticia.component';
+import {GrupodeinteresNoticiaComponent} from '../grupodeinteres-noticias/grupodeinteres-noticia.component';
 import {GrupodeinteresAddNoticiaComponent} from '../grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 
 @Component({
@@ -60,26 +60,14 @@ export class GrupodeinteresDetailComponent implements OnInit, OnDestroy {
     /**
      * The child GrupodeinteresNoticiaListComponent
      */
-    @ViewChild(GrupoNoticiaComponent) noticiaListComponent: GrupoNoticiaComponent;
+    @ViewChild(GrupodeinteresNoticiaComponent) noticiaListComponent: GrupodeinteresNoticiaComponent;
 
     /**
      * The child GrupodeinteresNoticiaListComponent
      */
     @ViewChild(GrupodeinteresAddNoticiaComponent) noticiaAddComponent: GrupodeinteresAddNoticiaComponent;
 
-    toggleNoticias(): void {
-        if (this.noticiaAddComponent.isCollapsed == false) {
-            this.noticiaAddComponent.isCollapsed = true;
-        }
-        this.noticiaListComponent.isCollapsed = !this.noticiaListComponent.isCollapsed;
-    }
-
-    toggleCreateNoticia(): void {
-        if (this.noticiaListComponent.isCollapsed == false) {
-            this.noticiaListComponent.isCollapsed = true;
-        }
-        this.noticiaAddComponent.isCollapsed = !this.noticiaAddComponent.isCollapsed;
-    }
+   
 
 
     /**
@@ -106,15 +94,6 @@ export class GrupodeinteresDetailComponent implements OnInit, OnDestroy {
             });
     }
 
-    /**
-     * The function called when a noticia is posted, so that the child component can refresh the list
-     */
-    updateNoticias(): void {
-        this.getGrupodeinteresDetail();
-        this.noticiaListComponent.updateNoticias(this.grupodeinteresDetail.noticias);
-        this.noticiaListComponent.isCollapsed = false;
-        this.noticiaAddComponent.isCollapsed = true;
-    }
 
     /**
     * The method which initilizes the component
