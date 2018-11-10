@@ -8,7 +8,6 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 
 
-import {NoticiaModule} from './noticia/noticia.module';
 import {CiudadanoModule} from './ciudadano/ciudadano.module';
 import {ComentarioModule} from './comentario/comentario.module';
 import {GrupodeinteresModule} from './grupodeinteres/grupodeinteres.module';
@@ -36,7 +35,6 @@ import { RouterModule, Routes } from '@angular/router';
         GrupodeinteresModule,
         CategoriaModule,
         PatrocinioModule,
-        NoticiaModule,
         DistritoModule,
         AdministradorModule,
         ToastrModule.forRoot(),
