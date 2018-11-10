@@ -1,7 +1,15 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import { Component, OnInit, Input, } from '@angular/core';
+import { Evento } from '../evento';
 
-
+@Component({
+    selector: 'app-grupodeinteres-eventos',
+    templateUrl: './grupodeinteres-evento.component.html',
+})
+export class GrupoDeInteresEventoComponent implements OnInit {
+    @Input() grupodeinteresEventos : Evento [];
+    public isCollapsed = true;
+    
+    ngOnInit(){
+        
+    }
+}
