@@ -13,6 +13,8 @@ import {DistritoDetailComponent} from '../distrito/distrito-detail/distrito-deta
 import {DistritoCreateComponent} from '../distrito/distrito-create/distrito-create.component';
 import {CiudadanoDetailComponent} from '../ciudadano/ciudadano-detail/ciudadano-detail.component';
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
+import {PatrocinioDetailComponent} from '../patrocinio/patrocinio-detail/patrocinio-detail.component';
+import  {PatrocinioCreateComponent} from '../patrocinio/patrocinio-create/patrocinio-create.component';
 import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
 
 const routes: Routes = [
@@ -66,6 +68,16 @@ const routes: Routes = [
                 path: 'list',
                 component: PatrocinioListComponent
             }
+             ,
+              {
+                path: ':id',
+                component: PatrocinioDetailComponent
+            }
+            ,
+            {
+                path: 'add',
+                component: PatrocinioCreateComponent  
+            }       
         ]
     }
     ,
