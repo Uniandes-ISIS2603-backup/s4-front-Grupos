@@ -1,14 +1,16 @@
 <div class="container-fluid">
     <div class="col">
+         <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/patrocinios/add">Crear un nuevo patrocinio</button>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nombre</th>    
+                    <th>NOMBRE DEL PATROCINADOR</th>    
+                    <th>POSIBLE FOTO</th>                   
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let patrocinio of patrocinios">
-                    <td><span>{{patrocinio.nombre}}</span></td>
+                    <td routerLink="/patrocinios/{{patrocinio.id}}">{{patrocinio.nombre}}</td>                            
                 </tr>
             </tbody>
         </table>
