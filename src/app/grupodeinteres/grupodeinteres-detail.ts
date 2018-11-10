@@ -1,5 +1,5 @@
 import {Grupodeinteres} from "./grupodeinteres";
-import {Noticia} from "../noticia/noticia"
+import {Noticia} from "./noticia"
 import {Evento} from "./evento"
 
 /* 

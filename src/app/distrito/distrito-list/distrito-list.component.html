@@ -10,7 +10,7 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let distrito of distritos">
-                    <td routerLink="/distritos/{{distrito.id}}">{{distrito.name}}</td>
+                    <td style="cursor: pointer;" routerLink="/distritos/{{distrito.id}}">{{distrito.name}}</td>
                     <td>{{distrito.id}}</td>
                   
                 </tr>
