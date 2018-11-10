@@ -71,15 +71,14 @@ const routes: Routes = [
                 component: PatrocinioListComponent
             }
              ,
-              {
-                path: ':id',
-                component: PatrocinioDetailComponent
-            }
-            ,
             {
                 path: 'add',
                 component: PatrocinioCreateComponent  
-            }       
+            } ,
+              {
+                path: ':id',
+                component: PatrocinioDetailComponent
+            }      
         ]
     }
     ,
