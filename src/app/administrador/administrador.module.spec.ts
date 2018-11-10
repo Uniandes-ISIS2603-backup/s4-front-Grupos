@@ -1,13 +1,13 @@
-import {AdministradorModule} from './administrador.module';
+import { AdministradorModule } from './administrador.module';
 
 describe('AdministradorModule', () => {
-    let administradorModule: AdministradorModule;
+  let administradorModule: AdministradorModule;
 
-    beforeEach(() => {
-        administradorModule = new AdministradorModule();
-    });
+  beforeEach(() => {
+    administradorModule = new AdministradorModule();
+  });
 
-    it('should create an instance', () => {
-        expect(administradorModule).toBeTruthy();
-    });
+  it('should create an instance', () => {
+    expect(administradorModule).toBeTruthy();
+  });
 });

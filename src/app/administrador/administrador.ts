@@ -2,7 +2,7 @@
  * This class represents an administrador of the Grupo de interés. 
  * It contains all the information relevant to the administrador.
  */
-export interface Administrador {
+export class Administrador {
     /**
     * The administrador's id
     */
@@ -11,11 +11,11 @@ export interface Administrador {
     /**
      * The administrador's name
      */
-    name: string;
+    nombre: string;
 
     /**
-     * The constrasenia of the administrador
+     * The constrasena of the administrador
      */
-    contrasenia: string;
+    contrasena: string;
 }
 
