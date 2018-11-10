@@ -1,14 +1,18 @@
 <div class="container-fluid">
     <div class="col">
+            <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/administradores/add">Crear un nuevo administrador</button>
         <table class="table table-striped">
-            <thead>
+            <thead >
                 <tr>
-                    <th>Nombre</th>    
+                    <th>Nombre del administrador</th>    
+                    <th>Id del administrador</th>   
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let administrador of administradores">
-                    <td><span>{{administrador.name}}</span></td>
+                    <td style="cursor: pointer;" routerLink="/administradores/{{administrador.id}}">{{administrador.nombre}}</td>
+                    <td>{{administrador.id}}</td>
+                  
                 </tr>
             </tbody>
         </table>

@@ -35,6 +35,10 @@ export class GrupodeinteresService {
         
         return this.http.get<GrupodeinteresDetail>(API_URL + gruposdeinteres + '/' + grupoId);
     }
+    
+    createGrupo(grupo): Observable<GrupodeinteresDetail> {
+        return this.http.post<GrupodeinteresDetail>(API_URL + gruposdeinteres, grupo);
+}
 }
 
 

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
+import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
@@ -12,10 +13,12 @@ import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.com
 import {DistritoDetailComponent} from '../distrito/distrito-detail/distrito-detail.component';
 import {DistritoCreateComponent} from '../distrito/distrito-create/distrito-create.component';
 import {CiudadanoDetailComponent} from '../ciudadano/ciudadano-detail/ciudadano-detail.component';
+import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 import {PatrocinioDetailComponent} from '../patrocinio/patrocinio-detail/patrocinio-detail.component';
 import  {PatrocinioCreateComponent} from '../patrocinio/patrocinio-create/patrocinio-create.component';
 import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
+import {GrupodeinteresCreateComponent} from '../grupodeinteres/grupodeinteres-create/grupodeinteres-create.component';
 
 const routes: Routes = [
     {
@@ -45,6 +48,11 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: GrupodeinteresListComponent
+            }, 
+            {
+                path: 'add',
+                component: GrupodeinteresCreateComponent,
+                runGuardsAndResolvers: 'always'
             },
             {
                 path: ':id',
@@ -69,15 +77,14 @@ const routes: Routes = [
                 component: PatrocinioListComponent
             }
              ,
-              {
-                path: ':id',
-                component: PatrocinioDetailComponent
-            }
-            ,
             {
                 path: 'add',
                 component: PatrocinioCreateComponent  
-            }       
+            } ,
+              {
+                path: ':id',
+                component: PatrocinioDetailComponent
+            }      
         ]
     }
     ,
@@ -96,6 +103,15 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: AdministradorListComponent
+            },
+            {
+                path: 'add',
+                component: AdministradorCreateComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id',
+                component: AdministradorDetailComponent
             }
         ]
     }
