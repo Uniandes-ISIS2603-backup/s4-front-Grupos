@@ -11,6 +11,7 @@ import { GrupodeinteresNoticiaComponent } from './grupodeinteres-noticias/grupod
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GrupodeinteresAddNoticiaComponent } from './grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
+import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodeinteres-create.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -20,8 +21,8 @@ import { GrupodeinteresAddNoticiaComponent } from './grupodeinteres-add-noticia/
     FormsModule,
     NgbModule
   ],
-    declarations: [GrupodeinteresListComponent, GrupodeinteresDetailComponent, GrupodeinteresNoticiaComponent, GrupodeinteresAddNoticiaComponent],
+    declarations: [GrupodeinteresListComponent, GrupodeinteresCreateComponent, GrupodeinteresDetailComponent, GrupodeinteresNoticiaComponent, GrupodeinteresAddNoticiaComponent, GrupodeinteresService],
     providers: [GrupodeinteresService],
-    exports: [GrupodeinteresListComponent, GrupodeinteresDetailComponent]
+    exports: [GrupodeinteresListComponent, GrupodeinteresDetailComponent, GrupodeinteresCreateComponent]
 })
 export class GrupodeinteresModule { }

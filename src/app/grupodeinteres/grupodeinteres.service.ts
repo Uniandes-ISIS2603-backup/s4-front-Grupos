@@ -45,7 +45,11 @@ export class GrupodeinteresService {
     */
    createNoticia(grupoId, noticia): Observable<Noticia> {
     return this.http.post<Noticia>(API_URL + gruposdeinteres + '/' + grupoId + noticias, noticia);
+    
+    
+}
+createGrupo(grupo): Observable<GrupodeinteresDetail> {
+    return this.http.post<GrupodeinteresDetail>(API_URL + gruposdeinteres, grupo);
 }
 }
-
 
