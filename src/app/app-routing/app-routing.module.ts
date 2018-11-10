@@ -19,6 +19,7 @@ import {PatrocinioDetailComponent} from '../patrocinio/patrocinio-detail/patroci
 import  {PatrocinioCreateComponent} from '../patrocinio/patrocinio-create/patrocinio-create.component';
 import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
 import { GrupodeinteresNoticiaComponent } from '../grupodeinteres/grupodeinteres-noticias/grupodeinteres-noticia.component';
+import { GrupodeinteresAddNoticiaComponent } from '../grupodeinteres/grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 
 const routes: Routes = [
     {
@@ -59,6 +60,12 @@ const routes: Routes = [
                              
                 component: GrupodeinteresNoticiaComponent
             },
+            {
+                path: ':id/noticias/add',
+                             
+                component: GrupodeinteresAddNoticiaComponent,
+                runGuardsAndResolvers: 'always'
+            }
         ]
     },
     {

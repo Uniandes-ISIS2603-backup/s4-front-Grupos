@@ -19,6 +19,10 @@ export class Noticia {
     * The noticia's image
     */
    imagen: string;
+   /**
+    * The noticia's titular
+    */
+   titular: string;
   
    /**
     * The grupo of the review

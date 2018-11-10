@@ -1,9 +1,13 @@
 
 
-    <table class="table table-striped">
+       <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/gruposdeinteres/{{grupo_id}}/noticias/add">Crear un nuevo noticia</button>
+      
+   <table class="table table-striped">
+        
         <tbody>
+            
             <tr *ngFor="let noticia of noticias">
-                <td><span id="grupo-noticiaed"><b>{{noticia.id}}</b></span><span>: </span><span id="noticia-descripcion">{{noticia.descripcion}}</span><br></td>
+                <td><span id="grupo-noticiatid"><b>{{noticia.id}}</b></span><span>: </span><span id="noticia-titular">{{noticia.titular}}</span><br></td>
             </tr>
         </tbody>
     </table>

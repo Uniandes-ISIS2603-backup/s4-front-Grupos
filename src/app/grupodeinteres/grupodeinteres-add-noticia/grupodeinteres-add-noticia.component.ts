@@ -1,55 +1,62 @@
-import { Component, OnInit, Input, OnChanges, EventEmitter, Output } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { NgForm } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import {DatePipe} from '@angular/common';
+import {ToastrService} from 'ngx-toastr';
 
-import { Noticia } from '../noticia';
-import { GrupodeinteresService } from '../grupodeinteres.service';
-import { Grupodeinteres } from '../../grupodeinteres/grupodeinteres';
+import {GrupodeinteresService} from '../grupodeinteres.service';
+import {Noticia} from '../noticia';
+
 @Component({
     selector: 'app-grupodeinteres-add-noticia',
     templateUrl: './grupodeinteres-add-noticia.component.html',
-    styleUrls: ['./grupodeinteres-add-noticia.component.css']
+    providers: [DatePipe]
 })
-export class GrupodeinteresAddNoticiaComponent implements OnInit, OnChanges {
+export class GrupodeinteresAddNoticiaComponent implements OnInit {
 
     /**
-    * The constructor of the component
-    * @param grupodeinteresService The grupodeinteres service which communicates with the API
+    * Constructor for the component
+    * @param grupodeinteresService The grupo' services provider
     * @param toastrService The toastr to show messages to the user
+    * @param router The router
     */
     constructor(
+        private dp: DatePipe,
         private grupodeinteresService: GrupodeinteresService,
-        private toastrService: ToastrService
-    ) { }
+        private toastrService: ToastrService,
+        private route: ActivatedRoute,
+        private router: Router
+    ) {}
 
     /**
-    * The grupodeinteres's id
-    */
-    @Input() grupodeinteres: Grupodeinteres;
-
-    /**
-    * The noticia to post
+    * The new noticia
     */
     noticia: Noticia;
     
+    /**
+    * The group id
+    */
+    grupo_id:Number;
+
+  
+   
 
     /**
-    * The Event Emitter which sends the signal when a noticia has just been posted
-    * so that the list of noticias refreshes
+    * Cancels the creation of the new noticia
+    * Redirects to the noticia' list page
     */
-    @Output() updateNoticias = new EventEmitter();
+    cancelCreation(): void {
+        this.toastrService.warning('The noticia wasn\'t created', 'Grupodeinteres creation');
+        this.router.navigate(['/gruposdeinteres/'+this.grupo_id+'/list']);
+    }
 
     /**
-    * This function posts a noticia
-    * @param noticiaForm The form of the noticia
+    * Creates a new noticia
     */
-    postNoticia(noticiaForm: NgForm): Noticia {
-        this.noticia.grupodeinteres = this.grupodeinteres;
-        this.grupodeinteresService.createNoticia(this.grupodeinteres.id,this.noticia)
-            .subscribe(() => {
-                noticiaForm.resetForm();
-                this.updateNoticias.emit();
-                this.toastrService.success("The noticia was successfully created", 'Noticia added');
+    createNoticia(): Noticia {
+       
+        this.grupodeinteresService.createNoticia(this.grupo_id,this.noticia)  .subscribe(noticia => {   this.noticia.id = noticia.id;  
+            this.router.navigate(['/gruposdeinteres/'+ this.grupo_id+ '/noticias']);
             }, err => {
                 this.toastrService.error(err, 'Error');
             });
@@ -57,18 +64,14 @@ export class GrupodeinteresAddNoticiaComponent implements OnInit, OnChanges {
     }
 
     /**
-    * The function which initializes the component.
+    * This function will initialize the component
     */
     ngOnInit() {
+        console.log(123);
+        
+        this.grupo_id = +this.route.snapshot.paramMap.get('id');
         this.noticia = new Noticia();
-    }
-
-    /**
-    * The function which notices that the input which defines the grupodeinteres_id has changed.
-    * If the grupodeinteres has changed, we update the noticias to show
-    */
-    ngOnChanges() {
-        this.ngOnInit();
+        
     }
 
 }

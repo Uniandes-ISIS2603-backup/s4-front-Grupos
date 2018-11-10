@@ -1,42 +1,37 @@
-
-    <div class="container-fluid">
-        <h3>Add a review</h3>
-        <form name="post" (ngSubmit)="reviewForm.form.valid && postReview(reviewForm)" #reviewForm="ngForm" novalidate>
-              <div class="row">
-                <div class="col">
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <h2 class="text-center">Add a new noticia</h2>
+                <br>
+                <form name="noticia" (ngSubmit)="f.form.valid && createNoticia()" #f="ngForm" novalidate>
                     <div class="form-group">
-                        <label for="reviewTitle"><b>Title</b></label>
-                        <input type="text" name="reviewTitle" class="form-control" id="reviewTitle" [(ngModel)]="review.name"
-                               #reviewTitle="ngModel" [ngClass]="{ 'is-invalid': reviewForm.submitted && reviewTitle.invalid }" required>
-                               <div class="invalid-feedback">
-                            <div>The review's title is missing</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="reviewSource"><b>Source</b></label>
-                        <input type="text" name="reviewSource" class="form-control" id="reviewSource" [(ngModel)]="review.source"
-                               #reviewSource="ngModel" [ngClass]="{ 'is-invalid': reviewForm.submitted && reviewTitle.invalid }" required>
-                               <div class="invalid-feedback">
-                            <div>The review's source is missing</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="reviewDescription"><b>Description</b></label>
-                        <textarea name="reviewDescription" class="form-control" id="reviewDescription" [(ngModel)]="review.description"
-                                  #reviewDescription="ngModel" [ngClass]="{ 'is-invalid': reviewForm.submitted && reviewDescription.invalid }"
-                                  required></textarea>
+                        <label for="noticiaName"><b>Titular</b></label>
+                        <input type="text" name="noticiaName" class="form-control" id="noticiaName" [(ngModel)]="noticia.titular"
+                            #noticiaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && noticiaName.invalid }" required>
                         <div class="invalid-feedback">
-                            <div>The review's description is missing</div>
+                            <div>The noticia's name is missing</div>
                         </div>
                     </div>
-                </div>
+                    <div class="form-group">
+                            <label for="noticiaName"><b>Descripcion</b></label>
+                            <input type="text" name="noticiaDes" class="form-control" id="noticiaDes" [(ngModel)]="noticia.descripcion"
+                                #noticiaDes="ngModel" [ngClass]="{ 'is-invalid': f.submitted && noticiaDes.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div>The noticia's descripcion is missing</div>
+                            </div>
+                        </div>
+                  
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <div class="divider"></div>
+                        <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                    </div>
+                </form>
+                <br>
             </div>
-            <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Post review</button>
-            </div>
-        </form>
+        </div>
     </div>
+    <br>
+    <br>
