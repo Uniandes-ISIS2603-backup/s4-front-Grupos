@@ -21,7 +21,7 @@ import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodein
     FormsModule,
     NgbModule
   ],
-    declarations: [GrupodeinteresListComponent, GrupodeinteresCreateComponent, GrupodeinteresDetailComponent, GrupodeinteresNoticiaComponent, GrupodeinteresAddNoticiaComponent, GrupodeinteresService],
+    declarations: [GrupodeinteresListComponent, GrupodeinteresCreateComponent, GrupodeinteresDetailComponent, GrupodeinteresNoticiaComponent, GrupodeinteresAddNoticiaComponent],
     providers: [GrupodeinteresService],
     exports: [GrupodeinteresListComponent, GrupodeinteresDetailComponent, GrupodeinteresCreateComponent]
 })
