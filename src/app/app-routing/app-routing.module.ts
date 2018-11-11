@@ -21,6 +21,8 @@ import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-de
 import { GrupodeinteresNoticiaComponent } from '../grupodeinteres/grupodeinteres-noticias/grupodeinteres-noticia.component';
 import { GrupodeinteresAddNoticiaComponent } from '../grupodeinteres/grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 import {GrupodeinteresCreateComponent} from '../grupodeinteres/grupodeinteres-create/grupodeinteres-create.component';
+import { GrupodeinteresEventoComponent } from '../grupodeinteres/grupodeinteres-eventos/grupodeinteres-evento.component';
+import { GrupodeinteresAddEventoComponent } from '../grupodeinteres/grupodeinteres-add-evento/grupodeinteres-add-evento.component';
 
 const routes: Routes = [
     {
@@ -70,6 +72,17 @@ const routes: Routes = [
                 path: ':id/noticias/add',
                              
                 component: GrupodeinteresAddNoticiaComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id/eventos',
+                             
+                component: GrupodeinteresEventoComponent
+            },
+            {
+                path: ':id/eventos/add',
+                             
+                component: GrupodeinteresAddEventoComponent,
                 runGuardsAndResolvers: 'always'
             }
         ]
