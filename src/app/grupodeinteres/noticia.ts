@@ -1,8 +1,10 @@
+import { Grupodeinteres } from "./grupodeinteres";
+
 /**
 * This class represents a noticia of the group of interes. 
 * It contains all the information relevant to the news.
 */
-export interface Noticia {
+export class Noticia {
     /**
     * The noticia's id
     */
@@ -17,6 +19,14 @@ export interface Noticia {
     * The noticia's image
     */
    imagen: string;
+   /**
+    * The noticia's titular
+    */
+   titular: string;
   
+   /**
+    * The grupo of the review
+    */
+   grupodeinteres: Grupodeinteres;
 
 }

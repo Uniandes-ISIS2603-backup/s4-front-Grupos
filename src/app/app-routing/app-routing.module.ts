@@ -8,7 +8,7 @@ import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
-import {NoticiaListComponent} from '../noticia/noticia-list/noticia-list.component';
+
 import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.component';
 import {DistritoDetailComponent} from '../distrito/distrito-detail/distrito-detail.component';
 import {DistritoCreateComponent} from '../distrito/distrito-create/distrito-create.component';
@@ -18,6 +18,8 @@ import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-
 import {PatrocinioDetailComponent} from '../patrocinio/patrocinio-detail/patrocinio-detail.component';
 import  {PatrocinioCreateComponent} from '../patrocinio/patrocinio-create/patrocinio-create.component';
 import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
+import { GrupodeinteresNoticiaComponent } from '../grupodeinteres/grupodeinteres-noticias/grupodeinteres-noticia.component';
+import { GrupodeinteresAddNoticiaComponent } from '../grupodeinteres/grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 import {GrupodeinteresCreateComponent} from '../grupodeinteres/grupodeinteres-create/grupodeinteres-create.component';
 
 const routes: Routes = [
@@ -56,7 +58,19 @@ const routes: Routes = [
             },
             {
                 path: ':id',
+                             
                 component: GrupodeinteresDetailComponent
+            },
+            {
+                path: ':id/noticias',
+                             
+                component: GrupodeinteresNoticiaComponent
+            },
+            {
+                path: ':id/noticias/add',
+                             
+                component: GrupodeinteresAddNoticiaComponent,
+                runGuardsAndResolvers: 'always'
             }
         ]
     },
@@ -88,15 +102,7 @@ const routes: Routes = [
         ]
     }
     ,
-    {
-        path: 'noticias',
-        children: [
-            {
-                path: 'list',
-                component: NoticiaListComponent
-            }
-        ]
-    },
+   
     {
         path: 'administradores',
         children: [
