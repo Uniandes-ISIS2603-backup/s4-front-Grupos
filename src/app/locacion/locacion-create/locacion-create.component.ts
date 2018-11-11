@@ -51,12 +51,12 @@ export class LocacionCreateComponent implements OnInit {
     */
     createLocacion(): Locacion {
        
-        this.LocacionService.createLocacion(this.Locacion , 1)   .subscribe(Locacion => {   this.Locacion.id = Locacion.id;  
-            this.router.navigate(['/Locaciones/' + Locacion.id]);
+        this.locacionService.createLocacion(this.locacion , 1)   .subscribe(locacion => {   this.locacion.id = locacion.id;  
+            this.router.navigate(['/Locaciones/' + locacion.id]);
             }, err => {
                 this.toastrService.error(err, 'Error');
             });
-        return this.Locacion;
+        return this.locacion;
     }
    
     /**
@@ -65,7 +65,7 @@ export class LocacionCreateComponent implements OnInit {
     */
     ngOnInit() {
         console.log(123);
-        this.Locacion= new Locacion();
+        this.locacion= new Locacion();
     }
 }
 

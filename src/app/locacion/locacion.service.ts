@@ -42,8 +42,8 @@ export class LocacionService {
     * @param locacion The new locacion
     * @returns The locacion with its new id if it was created, false if it wasn't
     */
-   createLocacion(locacion , Long idDistrito): Observable<LocacionDetail> {
-    return this.http.post<LocacionDetail>(API_URL +  locaciones +"/"+idDistrito , locacion);
+   createLocacion(locacion , idDistrito): Observable<LocacionDetail> {
+    return this.http.post<LocacionDetail>(API_URL +  locaciones +"/"+idDistrito , locacion); 
     }
 }
 
