@@ -1,17 +1,17 @@
 <div class="container-fluid">
     <div class="col">
-         <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/locaciones/add">Crear un nuevo locacion</button>
+         <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/locaciones/add">Crear una nueva locacion</button>
         <table class="table table-striped">
             <thead>
                 <tr>
                     
-                    <th>NOMBRE DEL PATROCINADOR</th>    
+                    <th>NOMBRE DE LA LOCACION</th>    
                     <th>POSIBLE FOTO</th>                   
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let locacion of locacions">
-                    <td routerLink="/locaciones/{{locacion.id}}">{{locacion.nombre}}</td>                            
+                <tr *ngFor = "let locacion of locaciones">
+                    <td routerLink="/locaciones/{{locacion.id}}">{{locacion.locacion}}</td>                            
                 </tr>
             </tbody>
         </table>

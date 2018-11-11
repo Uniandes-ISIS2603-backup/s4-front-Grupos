@@ -109,14 +109,16 @@ const routes: Routes = [
         path: 'locaciones',
         children: [
             {
+                path: 'add',
+                component: LocacionCreateComponent  
+             }
+            
+             ,
+              {
                 path: 'list',
                 component: LocacionListComponent
             }
              ,
-            {
-                path: 'add',
-                component: LocacionCreateComponent  
-            } ,
               {
                 path: ':id',
                 component: LocacionDetailComponent

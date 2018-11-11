@@ -3,17 +3,17 @@ import {Router} from '@angular/router';
 import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 
-import { LocacionService } from '../Locacion.service';
+import { LocacionService } from '../locacion.service';
 type DateString = {month: number, day: number, year: number};
 
-import { LocacionDetail } from '../Locacion-detail';
-import { Locacion } from '../Locacion';
+import { LocacionDetail } from '../locacion-detail';
+import { Locacion } from '../locacion';
 
 
 @Component({
-    selector: 'app-Locacion-create',
-    templateUrl: './Locacion-create.component.html',
-    styleUrls: ['./Locacion-create.component.css'],
+    selector: 'app-locacion-create',
+    templateUrl: './locacion-create.component.html',
+    styleUrls: ['./locacion-create.component.css'],
     providers: [DatePipe]
 })
 export class LocacionCreateComponent implements OnInit {
@@ -26,7 +26,7 @@ export class LocacionCreateComponent implements OnInit {
     */
     constructor( 
         private dp: DatePipe,
-        private LocacionService: LocacionService,
+        private locacionService: LocacionService,
         private toastrService: ToastrService,
         private router: Router
     ) {}
@@ -34,15 +34,15 @@ export class LocacionCreateComponent implements OnInit {
     /**
     * The Locacion
     */
-    Locacion: Locacion;
+    locacion: Locacion;
     
    /**
     * Cancels the creation of the new Locacion
     * Redirects to the Locaciones' list page
     */
     cancelLocacionCreation(): void {
-        this.toastrService.warning('La creacion del Locacion ha sido cancelada','Crear Locacion');
-        this.router.navigate(['/Locaciones/list']);
+        this.toastrService.warning('La creacion de la locacion ha sido cancelada','Crear Locacion');
+        this.router.navigate(['/locaciones/list']);
     }
 
     /**
@@ -51,7 +51,7 @@ export class LocacionCreateComponent implements OnInit {
     */
     createLocacion(): Locacion {
        
-        this.LocacionService.createLocacion(this.Locacion)   .subscribe(Locacion => {   this.Locacion.id = Locacion.id;  
+        this.LocacionService.createLocacion(this.Locacion , 1)   .subscribe(Locacion => {   this.Locacion.id = Locacion.id;  
             this.router.navigate(['/Locaciones/' + Locacion.id]);
             }, err => {
                 this.toastrService.error(err, 'Error');
