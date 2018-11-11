@@ -5,7 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
+import {CiudadanoCreateComponent} from '../ciudadano/ciudadano-create/ciudadano-create.component';
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
+import {ComentarioCreateComponent} from '../comentario/comentario-create/comentario-create.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
 
@@ -31,6 +33,10 @@ const routes: Routes = [
                 component: CiudadanoListComponent
             },
             {
+                path: 'add',
+                component: CiudadanoCreateComponent                
+            },
+            {
                 path: ':id',
                 component: CiudadanoDetailComponent
             }
@@ -41,6 +47,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: ComentarioListComponent
+            },
+            {
+                path: 'add',
+                component: ComentarioCreateComponent                
             }
         ]
     },

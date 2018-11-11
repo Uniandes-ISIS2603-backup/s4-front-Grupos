@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h2 class="text-center">Crear un nuevo ciudadano</h2>
+            <br>
+            <form name="ciudadano" (ngSubmit)="f.form.valid && createCiudadano()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="ciudadanoName"><b>Nombre</b></label>
+                    <input type="text" name="ciudadanoName" class="form-control" id="ciudadanoName" [(ngModel)]="ciudadano.nombre"
+                        #ciudadanoName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ciudadanoName.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>Falta el nombre del ciudadano</div>
+                    </div>
+                    <label for="ciudadanoContrasena"><b>Contraseña</b></label>
+                    <input type="text" name="ciudadanoContrasena" class="form-control" id="ciudadanoContrasena" [(ngModel)]="ciudadano.contrasena"
+                        #ciudadanoContrasena="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ciudadanoContrasena.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>Falta la contraseña del ciudadano</div>
+                    </div>
+                </div>
+              
+                <br>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>
