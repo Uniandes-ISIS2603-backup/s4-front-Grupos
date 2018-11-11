@@ -1,16 +1,13 @@
 
-<p>
-    <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-        Eventos del grupo de interés
-    </button>
-</p>
-<div id="collapseExample" [ngbCollapse]="isCollapsed">
-<table class="table table-striped">
-    <tbody>
-        <tr *ngFor="let evento of grupodeinteresEvento">
-            <td><span id="grupo-evento"><b>{{evento.grupodeinteres.nombre}}</b></span><span>: </span><span id="evento-nombre">{{evento.nombre}}</span></td>
-        </tr>
-    </tbody>
-</table>
-</div>
+
+       <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/gruposdeinteres/{{grupo_id}}/eventos/add">Crear un nuevo evento</button>
+      
+   <table class="table table-striped">
+        
+        <tbody>
+            
+            <tr *ngFor="let evento of eventos">
+                <td><span id="grupo-eventotid"><b>{{evento.id}}</b></span><span>: </span><span id="evento-nombre">{{evento.nombre}}</span><br></td>
+            </tr>
+        </tbody>
+    </table>

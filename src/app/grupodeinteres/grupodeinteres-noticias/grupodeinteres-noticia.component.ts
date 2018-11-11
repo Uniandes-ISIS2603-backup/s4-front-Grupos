@@ -28,7 +28,7 @@ export class GrupodeinteresNoticiaComponent implements OnInit {
 }
     
     ngOnInit(){
-        console.log("moticias");
+        console.log("noticias");
         
         this.grupo_id = +this.route.snapshot.paramMap.get('id');
         this.getNoticias();
