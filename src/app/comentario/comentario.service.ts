@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Comentario } from './comentario';
+import { ComentarioDetail } from './comentario-detail';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
@@ -26,6 +27,14 @@ export class ComentarioService {
      */
     getComentarios(): Observable<Comentario[]> {
         return this.http.get<Comentario[]>(API_URL + comentarios);
+    }
+    
+    getComentarioDetail(comentarioId): Observable<ComentarioDetail> {
+        return this.http.get<ComentarioDetail>(API_URL + comentarios + '/' + comentarioId);
+    }
+    
+    createComentario(comentario): Observable<Comentario> {
+    return this.http.post<Comentario>(API_URL + comentarios, comentario);
     }
 }
 
