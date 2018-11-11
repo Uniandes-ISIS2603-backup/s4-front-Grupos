@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h2 class="text-center">crear una nueva locacion locacion</h2>
+            <br>
+            <form name="locacion" (ngSubmit)="f.form.valid && createLocacion()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="locacionName"><b>Nombre</b></label>
+                    <input type="text" name="locacionName" class="form-control" id="distritoName" [(ngModel)]="locacion.locacion"
+                        #locacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && locacionName.invalid }" required>
+                        <label for="locacionName"><b>Dirrecion</b></label>
+                    <input type="text" name="locacionName" class="form-control" id="distritoDir" [(ngModel)]="locacion.direcion"
+                        #locacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && locacionName.invalid }" required>
+                          <label for="locacionName"><b>Tipo</b></label>
+                     <input type="text" name="locacionName" class="form-control" id="distritoDir" [(ngModel)]="locacion.tipo"
+                        #locacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && locacionName.invalid }" required>   
+                          <label for="locacionName"><b>Latitud</b></label>
+                     <input type="number" name="locacionName" class="form-control" id="distritoDir" [(ngModel)]="locacion.latitud"
+                        #locacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && locacionName.invalid }" required>   
+                           <label for="locacionName"><b>Longitud</b></label>
+                     <input type="number" name="locacionName" class="form-control" id="distritoDir" [(ngModel)]="locacion.longitud"
+                        #locacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && locacionName.invalid }" required>   
+                        
+                        
+                    <div class="invalid-feedback">
+                        <div>The locacions's name is missing</div>
+                    </div>
+                </div>
+              
+                <br>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>

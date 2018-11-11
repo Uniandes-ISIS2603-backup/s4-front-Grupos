@@ -2,12 +2,15 @@
     <div class="row">
         <div class="col-12">
             <br>
-            <h2 class="text-center">Add a new patrocinio</h2>
+            <h2 class="text-center">Crear un nuevo patrocinio</h2>
             <br>
             <form name="patrocinio" (ngSubmit)="f.form.valid && createPatrocinio()" #f="ngForm" novalidate>
                 <div class="form-group">
                     <label for="patrocinioName"><b>Nombre</b></label>
-                    <input type="text" name="patrocinioName" class="form-control" id="distritoName" [(ngModel)]="patrocinio.name"
+                    <input type="text" name="patrocinioName" class="form-control" id="patrocinioName" [(ngModel)]="patrocinio.nombre"
+                        #patrocinioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && patrocinioName.invalid }" required>
+                    <label for="patrocinioValue"><b>Valor</b></label>
+                     <input type="number" name="patrocinioValue" class="form-control" id="patrocinioValue" [(ngModel)]="patrocinio.valor"
                         #patrocinioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && patrocinioName.invalid }" required>
                     <div class="invalid-feedback">
                         <div>The patrocinios's name is missing</div>
