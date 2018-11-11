@@ -8,10 +8,11 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let comentario of comentarios">
-                    <td><span>{{comentario.texto}}</span></td>
+                    <td style="cursor: pointer;"> 
+                    <dd routerLink="/comentarios/{{comentario.id}}" >{{comentario.texto}}</dd>
                 </tr>
             </tbody>
         </table>
     </div>
-    <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/comentarios/add">Crear un nuevo comentario</button>
+    <button type="button" class="btn btn-primary btn-lg" routerLink="/comentarios/add">Crear un nuevo comentario</button>
 </div>

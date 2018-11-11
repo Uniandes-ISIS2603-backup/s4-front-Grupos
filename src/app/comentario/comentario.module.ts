@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 
 import { ComentarioService } from './comentario.service';
 import { ComentarioListComponent } from './comentario-list/comentario-list.component';
+import { ComentarioDetailComponent } from './comentario-detail/comentario-detail.component';
 import { ComentarioCreateComponent } from './comentario-create/comentario-create.component';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
 
@@ -17,7 +18,7 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         CommonModule,
         FormsModule
     ],
-    declarations: [ComentarioListComponent, ComentarioCreateComponent],
+    declarations: [ComentarioListComponent, ComentarioDetailComponent, ComentarioCreateComponent],
     providers: [ComentarioService],
     exports: [ComentarioListComponent, ComentarioCreateComponent]
 })
