@@ -32,7 +32,7 @@ import { RouterModule, Routes } from '@angular/router';
         CiudadanoModule,
         ComentarioModule,
         FormsModule,
-//        GrupodeinteresModule,
+        GrupodeinteresModule,
         LocacionModule,
         CategoriaModule,
         PatrocinioModule,

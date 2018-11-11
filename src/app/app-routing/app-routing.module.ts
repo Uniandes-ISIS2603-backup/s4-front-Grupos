@@ -6,7 +6,7 @@ import {AdministradorListComponent} from '../administrador/administrador-list/ad
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
-//import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
+import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
 
 import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.component';
