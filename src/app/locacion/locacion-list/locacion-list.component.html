@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="col">
+         <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/locaciones/add">Crear un nuevo locacion</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    
+                    <th>NOMBRE DEL PATROCINADOR</th>    
+                    <th>POSIBLE FOTO</th>                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let locacion of locacions">
+                    <td routerLink="/locaciones/{{locacion.id}}">{{locacion.nombre}}</td>                            
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -6,7 +6,7 @@ import {AdministradorListComponent} from '../administrador/administrador-list/ad
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
-import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
+//import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
 
 import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.component';
@@ -17,6 +17,9 @@ import {AdministradorDetailComponent} from '../administrador/administrador-detai
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 import {PatrocinioDetailComponent} from '../patrocinio/patrocinio-detail/patrocinio-detail.component';
 import  {PatrocinioCreateComponent} from '../patrocinio/patrocinio-create/patrocinio-create.component';
+import {LocacionListComponent} from '../locacion/locacion-list/locacion-list.component';
+import {LocacionDetailComponent} from '../locacion/locacion-detail/locacion-detail.component';
+import  {LocacionCreateComponent} from '../locacion/locacion-create/locacion-create.component';
 import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
 import { GrupodeinteresNoticiaComponent } from '../grupodeinteres/grupodeinteres-noticias/grupodeinteres-noticia.component';
 import { GrupodeinteresAddNoticiaComponent } from '../grupodeinteres/grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
@@ -98,6 +101,25 @@ const routes: Routes = [
               {
                 path: ':id',
                 component: PatrocinioDetailComponent
+            }      
+        ]
+    }
+    ,
+     {
+        path: 'locaciones',
+        children: [
+            {
+                path: 'list',
+                component: LocacionListComponent
+            }
+             ,
+            {
+                path: 'add',
+                component: LocacionCreateComponent  
+            } ,
+              {
+                path: ':id',
+                component: LocacionDetailComponent
             }      
         ]
     }
