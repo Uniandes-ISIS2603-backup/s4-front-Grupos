@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { GrupodeinteresDetailComponent } from './grupodeinteres-detail/grupodeinteres-detail.component';
 import { GrupodeinteresNoticiaComponent } from './grupodeinteres-noticias/grupodeinteres-noticia.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { GrupodeinteresAddNoticiaComponent } from './grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodeinteres-create.component';
 @NgModule({

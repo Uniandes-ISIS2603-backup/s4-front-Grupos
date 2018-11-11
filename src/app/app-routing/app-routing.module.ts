@@ -21,6 +21,8 @@ import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-de
 import { GrupodeinteresNoticiaComponent } from '../grupodeinteres/grupodeinteres-noticias/grupodeinteres-noticia.component';
 import { GrupodeinteresAddNoticiaComponent } from '../grupodeinteres/grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 import {GrupodeinteresCreateComponent} from '../grupodeinteres/grupodeinteres-create/grupodeinteres-create.component';
+import {CategoriaDetailComponent} from '../categoria/categoria-detail/categoria-detail.component';
+import {CategoriaCreateComponent} from '../categoria/categoria-create/categoria-create.component';
 
 const routes: Routes = [
     {
@@ -80,7 +82,16 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: CategoriaListComponent
-            }
+            }, 
+            {
+                path: 'add',
+                component: CategoriaCreateComponent,
+                runGuardsAndResolvers: 'always'
+            },
+              {
+                path: ':id',
+                component: CategoriaDetailComponent
+            }    
         ]
     },
     {

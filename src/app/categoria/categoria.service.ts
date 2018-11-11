@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {Categoria} from './categoria';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import {CategoriaDetail} from './categoria-detail';
 
 const API_URL = environment.apiURL;
 const categorias = '/categorias';
@@ -26,5 +27,15 @@ export class CategoriaService {
      */
     getCategorias(): Observable<Categoria[]> {
         return this.http.get<Categoria[]>(API_URL + categorias);
+    }    
+    
+    getCategoriaDetail(categoriaId): Observable<CategoriaDetail> {
+                
+        return this.http.get<CategoriaDetail>(API_URL + categorias + '/' + categoriaId);
     }
+    
+    createCategoria(categoria): Observable<CategoriaDetail> {
+        
+        return this.http.post<CategoriaDetail>(API_URL + categorias, categoria);
+}
 }

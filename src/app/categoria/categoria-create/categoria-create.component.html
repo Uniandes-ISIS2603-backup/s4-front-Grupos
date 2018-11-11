@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h2 class="text-center">Add a new categoria</h2>
+            <br>
+            <form name="categoria" (ngSubmit)="f.form.valid && createCategoria()" #f="ngForm" novalidate>
+                  <div class="form-group">
+                    <label for="categoriaName"><b>Nombre</b></label>
+                    <input type="text" name="categoriaName" class="form-control" id="categoriaName" [(ngModel)]="categoria.nombre"
+                           #categoriaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && categoriaName.invalid }" required>
+                           <div class="invalid-feedback">
+                        <div>The categoria's name is missing</div>
+                    </div>                        
+                    <br>
+                    <label for="categoriaDescripcion"><b>Descripcion</b></label>
+                    <input type="text" name="categoriaDescripcion" class="form-control" id="categoriaDescripcion" [(ngModel)]="categoria.descripcion"
+                        #categoriaDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && categoriaDescripcion.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>The categoria's description is missing</div>
+                    </div>    
+                    
+                </div>
+                    
+                <br>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
