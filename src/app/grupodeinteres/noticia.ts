@@ -9,11 +9,12 @@ export class Noticia {
     * The noticia's id
     */
     id: number;
+    name:string;
 
     /**
     * The noticia's description
     */
-    descripcion: string;
+    description: string;
     
     /**
     * The noticia's image

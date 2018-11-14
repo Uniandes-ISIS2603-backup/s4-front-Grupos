@@ -5,8 +5,9 @@ import { Noticia } from '../noticia';
     selector: 'app-grupodeinteres-noticias',
     templateUrl: './grupodeinteres-noticia.component.html',
 })
-export class GrupoNoticiaComponent implements OnInit {
-    @Input() grupodeinteresNoticias : Noticia[];
+export class GrupodeinteresNoticiaComponent implements OnInit {
+
+    @Input() noticias : Noticia[];
     
     public isCollapsed = false;
     
@@ -14,7 +15,7 @@ export class GrupoNoticiaComponent implements OnInit {
      * The function called when a noticia is posted to update the noticias
      */
     updateNoticias(noticias:Noticia[]): void {
-        this.grupodeinteresNoticias = noticias;
+        this.noticias = noticias;
     }
     
     ngOnInit(){

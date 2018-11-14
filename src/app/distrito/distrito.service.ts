@@ -31,5 +31,14 @@ export class DistritoService {
    createDistrito(distrito): Observable<DistritoDetail> {
     return this.http.post<DistritoDetail>(API_URL + distritos, distrito);
 }
+ /**
+    * Updates an distrito
+    * @param distrito The distrito's information updated
+    * @returns The confirmation that the distrito was updated
+    */
+   updateDistrito(distrito): Observable<DistritoDetail> {
+    return this.http.put<DistritoDetail>(API_URL + distritos + '/' + distrito.id, distrito);
+}
+
 
 }

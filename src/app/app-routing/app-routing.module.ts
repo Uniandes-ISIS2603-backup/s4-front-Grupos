@@ -7,7 +7,6 @@ import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
-import {NoticiaListComponent} from '../noticia/noticia-list/noticia-list.component';
 import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.component';
 import {DistritoDetailComponent} from '../distrito/distrito-detail/distrito-detail.component';
 import {DistritoCreateComponent} from '../distrito/distrito-create/distrito-create.component';
@@ -68,16 +67,7 @@ const routes: Routes = [
             }
         ]
     }
-    ,
-    {
-        path: 'noticias',
-        children: [
-            {
-                path: 'list',
-                component: NoticiaListComponent
-            }
-        ]
-    },
+   ,
     {
         path: 'administradores',
         children: [

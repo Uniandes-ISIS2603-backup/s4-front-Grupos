@@ -4,11 +4,11 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 import {FormsModule} from '@angular/forms';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 
 
-import {NoticiaModule} from './noticia/noticia.module';
 import {CiudadanoModule} from './ciudadano/ciudadano.module';
 import {ComentarioModule} from './comentario/comentario.module';
 import {GrupodeinteresModule} from './grupodeinteres/grupodeinteres.module';
@@ -18,8 +18,6 @@ import {DistritoModule} from './distrito/distrito.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PatrocinioModule} from './patrocinio/patrocinio.module';
-
-
 
 import { RouterModule, Routes } from '@angular/router';
 @NgModule({
@@ -36,11 +34,12 @@ import { RouterModule, Routes } from '@angular/router';
         GrupodeinteresModule,
         CategoriaModule,
         PatrocinioModule,
-        NoticiaModule,
         DistritoModule,
         AdministradorModule,
         ToastrModule.forRoot(),
-        BrowserAnimationsModule, RouterModule
+        BrowserAnimationsModule, 
+        RouterModule,
+        NgbModule
     ],
 
     bootstrap: [AppComponent],

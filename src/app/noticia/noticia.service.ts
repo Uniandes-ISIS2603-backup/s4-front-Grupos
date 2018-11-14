@@ -1,7 +1,6 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Noticia } from './noticia';
 import { Observable } from 'rxjs';
 
 const API_URL = 'http://localhost:8080/s4_Grupos-api/api';
@@ -20,8 +19,5 @@ export class NoticiaService {
     constructor(private http: HttpClient) { }
     
   
-    getNoticias() : Observable<Noticia[]> {
-        return this.http.get<Noticia[]>(API_URL + noticias);
-    }
     
 }
