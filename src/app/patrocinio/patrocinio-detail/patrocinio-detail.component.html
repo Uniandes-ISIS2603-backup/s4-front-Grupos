@@ -1,0 +1,18 @@
+<div *ngIf="patrocinioDetail" class="panel-body" >
+    <div class="border margin">
+        <p class="h3 p-3">{{patrocinioDetail.nombre}}<p> 
+        <div class="row">
+            <div class="col-md-3">
+                <dl>     
+                    <dd>aqui podria ir una  foto</dd>
+                    <dt>Id</dt>
+                    <dd>{{patrocinioDetail.id}}</dd>
+                    <dt>Monto del patrocinio</dt>
+                    <dd>{{patrocinioDetail.valor}}</dd>
+                    <dt>evento patrocinindado</dt>
+                    <dd>{{patrocinioDetail.eventos}}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

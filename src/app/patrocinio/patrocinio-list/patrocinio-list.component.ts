@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PatrocinioService } from '../patrocinio.service';
+import { ToastrService } from 'ngx-toastr';
 import { Patrocinio } from '../patrocinio';
  
 @Component({

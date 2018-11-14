@@ -2,11 +2,11 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 
-import { GrupodeinteresService } from '../grupodeinteres.service';
-import { Grupodeinteres } from '../grupodeinteres';
-import { GrupodeinteresDetail } from '../grupodeinteres-detail';
-import { GrupodeinteresNoticiaComponent } from '../grupodeinteres-noticias/grupodeinteres-noticia.component';
-import { GrupodeinteresAddNoticiaComponent } from '../grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
+import {GrupodeinteresService} from '../grupodeinteres.service';
+import {Grupodeinteres} from '../grupodeinteres';
+import {GrupodeinteresDetail} from '../grupodeinteres-detail';
+import {GrupodeinteresNoticiaComponent} from '../grupodeinteres-noticias/grupodeinteres-noticia.component';
+import {GrupodeinteresAddNoticiaComponent} from '../grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 
 @Component({
   selector: 'app-grupodeinteres-detail',
@@ -37,27 +37,6 @@ export class GrupodeinteresDetailComponent implements OnInit, OnDestroy {
   }
 
   /**
-  * The grupodeinteres's id retrieved from the path
-  */
-  grupodeinteres_id: number;
-
-  /**
-  * The grupodeinteres whose details are shown
-  */
-  grupodeinteresDetail: GrupodeinteresDetail;
-
-  /**
-  * The other grupodeinteress shown in the sidebar
-  */
-  other_grupodeinteress: Grupodeinteres[];
-
-  /**
-  * The suscription which helps to know when a new grupodeinteres
-  * needs to be loaded
-  */
-  navigationSubscription;
-
-  /**
    * The child GrupodeinteresNoticiaListComponent
    */
   @ViewChild(GrupodeinteresNoticiaComponent) noticiaListComponent: GrupodeinteresNoticiaComponent;
@@ -67,73 +46,78 @@ export class GrupodeinteresDetailComponent implements OnInit, OnDestroy {
    */
   @ViewChild(GrupodeinteresAddNoticiaComponent) noticiaAddComponent: GrupodeinteresAddNoticiaComponent;
 
-  toggleNoticias(): void {
-    if (this.noticiaAddComponent.isCollapsed == false) {
-      this.noticiaAddComponent.isCollapsed = true;
+  
+
+    /**
+    * The grupodeinteres's id retrieved from the path
+    */
+    grupodeinteres_id: number;
+
+    /**
+    * The grupodeinteres whose details are shown
+    */
+    grupodeinteresDetail: GrupodeinteresDetail;
+
+    /**
+    * The other grupodeinteress shown in the sidebar
+    */
+    other_grupodeinteress: Grupodeinteres[];
+
+    /**
+    * The suscription which helps to know when a new grupodeinteres
+    * needs to be loaded
+    */
+    navigationSubscription;
+
+   
+
+
+    /**
+    * The method which retrieves the details of the grupodeinteres that
+    * we want to show
+    */
+    getGrupodeinteresDetail(): void {
+        this.grupodeinteresService.getGrupoDetail(this.grupodeinteres_id)
+            .subscribe(grupodeinteresDetail => {
+              console.log(grupodeinteresDetail);
+                this.grupodeinteresDetail = grupodeinteresDetail;
+                console.log(this.grupodeinteresDetail);
+            });
     }
-    this.noticiaListComponent.isCollapsed = !this.noticiaListComponent.isCollapsed;
-  }
 
-  toggleCreateNoticia(): void {
-    if (this.noticiaListComponent.isCollapsed == false) {
-      this.noticiaListComponent.isCollapsed = true;
+    /**
+    * This method retrieves all the grupodeinteress in the Grupodeinteresstore to show them in the list
+    */
+    getOtherGrupodeinteress(): void {
+        this.grupodeinteresService.getGrupos()
+            .subscribe(grupodeinteress => {
+                this.other_grupodeinteress = grupodeinteress;
+                this.other_grupodeinteress = this.other_grupodeinteress.filter(grupodeinteres => grupodeinteres.id !== this.grupodeinteres_id);
+            });
     }
-    this.noticiaAddComponent.isCollapsed = !this.noticiaAddComponent.isCollapsed;
-  }
 
-  /**
-  * The method which retrieves the details of the grupodeinteres that
-  * we want to show
-  */
-  getGrupodeinteresDetail(): void {
-    this.grupodeinteresService.getGrupoDetail(this.grupodeinteres_id)
-      .subscribe(grupodeinteresDetail => {
-        console.log(grupodeinteresDetail);
-        this.grupodeinteresDetail = grupodeinteresDetail;
-      });
-  }
 
-  /**
-  * This method retrieves all the grupodeinteress in the Grupodeinteresstore to show them in the list
-  */
-  getOtherGrupodeinteress(): void {
-    this.grupodeinteresService.getGrupos()
-      .subscribe(grupodeinteress => {
-        this.other_grupodeinteress = grupodeinteress;
-        this.other_grupodeinteress = this.other_grupodeinteress.filter(grupodeinteres => grupodeinteres.id !== this.grupodeinteres_id);
-      });
-  }
+    /**
+    * The method which initilizes the component
+    * We need to initialize the grupodeinteres and its editorial so that
+    * they are never considered undefined
+    */
+    ngOnInit() {
+        this.grupodeinteres_id = +this.route.snapshot.paramMap.get('id');
+        this.grupodeinteresDetail = new GrupodeinteresDetail();
+        this.getGrupodeinteresDetail();
+        this.getOtherGrupodeinteress();
+        console.log(this.grupodeinteresDetail);
+    }
 
-  /**
-   * The function called when a noticia is posted, so that the child component can refresh the list
-   */
-  updateNoticias(): void {
-    this.getGrupodeinteresDetail();
-    this.noticiaListComponent.updateNoticias(this.grupodeinteresDetail.noticias);
-    this.noticiaListComponent.isCollapsed = false;
-    this.noticiaAddComponent.isCollapsed = true;
-  }
-
-  /**
-  * The method which initilizes the component
-  * We need to initialize the grupodeinteres and its editorial so that
-  * they are never considered undefined
-  */
-  ngOnInit() {
-    this.grupodeinteresDetail = new GrupodeinteresDetail();
-    this.grupodeinteres_id = +this.route.snapshot.paramMap.get('id');
-    this.getGrupodeinteresDetail();
-    this.getOtherGrupodeinteress();
-    console.log(this.grupodeinteresDetail);
-  }
-
-  /**
-  * This method helps to refresh the view when we need to load another grupodeinteres into it
-  * when one of the other grupodeinteress in the list is clicked
-  */
-  ngOnDestroy() {
-    if (this.navigationSubscription) {
-      this.navigationSubscription.unsubscribe();
+    /**
+    * This method helps to refresh the view when we need to load another grupodeinteres into it
+    * when one of the other grupodeinteress in the list is clicked
+    */
+    ngOnDestroy() {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
     }
   }
-}
+

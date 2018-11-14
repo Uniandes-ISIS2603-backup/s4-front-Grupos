@@ -9,6 +9,8 @@ import {GrupodeinteresAddNoticiaComponent} from './grupodeinteres-add-noticia/gr
 import { GrupodeinteresNoticiaComponent } from './grupodeinteres-noticias/grupodeinteres-noticia.component';
 import { GrupodeinteresService } from './grupodeinteres.service';
 import { GrupodeinteresListComponent } from './grupodeinteres-list/grupodeinteres-list.component';
+import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodeinteres-create.component';
+
 import { GrupodeinteresDetailComponent } from './grupodeinteres-detail/grupodeinteres-detail.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 @NgModule({
@@ -20,9 +22,9 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
     FormsModule,
     NgbModule
   ],
-  declarations: [GrupodeinteresListComponent,
-    GrupodeinteresDetailComponent, GrupodeinteresNoticiaComponent, GrupodeinteresAddNoticiaComponent],
-  providers: [GrupodeinteresService],
-  exports: [GrupodeinteresListComponent]
+    declarations: [GrupodeinteresListComponent, GrupodeinteresCreateComponent, GrupodeinteresDetailComponent, 
+      GrupodeinteresNoticiaComponent, GrupodeinteresAddNoticiaComponent],
+    providers: [GrupodeinteresService],
+    exports: [GrupodeinteresListComponent, GrupodeinteresDetailComponent, GrupodeinteresCreateComponent]
 })
 export class GrupodeinteresModule { }
