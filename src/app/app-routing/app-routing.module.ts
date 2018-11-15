@@ -6,6 +6,7 @@ import {AdministradorListComponent} from '../administrador/administrador-list/ad
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
 import {CiudadanoCreateComponent} from '../ciudadano/ciudadano-create/ciudadano-create.component';
+import {CiudadanoEditComponent} from '../ciudadano/ciudadano-edit/ciudadano-edit.component';
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
 import {ComentarioDetailComponent} from '../comentario/comentario-detail/comentario-detail.component';
 import {ComentarioCreateComponent} from '../comentario/comentario-create/comentario-create.component';
@@ -46,6 +47,10 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: CiudadanoCreateComponent                
+            },
+            {
+                path: ':id/edit',
+                component: CiudadanoEditComponent                
             },
             {
                 path: ':id',

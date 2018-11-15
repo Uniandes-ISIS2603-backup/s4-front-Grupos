@@ -41,5 +41,9 @@ export class CiudadanoService {
     createCiudadano(ciudadano): Observable<CiudadanoDetail> {
     return this.http.post<CiudadanoDetail>(API_URL + ciudadanos, ciudadano);
     }
+    
+    updateCiudadano(ciudadano): Observable<CiudadanoDetail>{
+        return this.http.put<CiudadanoDetail>(API_URL + ciudadanos + '/' + ciudadano.id, ciudadano);
+    }
 }
 

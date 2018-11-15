@@ -1,19 +1,40 @@
 <div class="container-fluid">
-    <div class="col">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Ciudadanos</th>    
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let ciudadano of ciudadanos">
-                    <td style="cursor: pointer;"> 
-                        <dd  routerLink="/ciudadanos/{{ciudadano.id}}" >{{ciudadano.nombre}}</dd>
-                    </td>                
-                </tr>
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Nombre del ciudadano</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let ciudadano of ciudadanos" >
+                        <td style="cursor: pointer;" (click)="onSelected(ciudadano.id)"> <dd>{{ciudadano.nombre}}</dd></td>
+                        <td>
+                            <i class="fa fa-pencil" 
+                                (click)="showHideEdit(ciudadano.id)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear un ciudadano</button>
+            </div>
+            <br>
+            <br>
+        </div>
+        <div class="col-8">
+            <div *ngIf="showView">
+                <app-ciudadano-detail [ciudadanoDetail]="selectedCiudadano"></app-ciudadano-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-ciudadano-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-ciudadano-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-ciudadano-edit [ciudadano]="selectedCiudadano" (cancel)="showHideEdit(selectedCiudadano.id)" (update)="updateCiudadano()" ></app-ciudadano-edit>
+            </div>
+        </div>   
     </div>
-    <button type="button" class="btn btn-primary btn-lg" routerLink="/ciudadanos/add">Crear un nuevo ciudadano</button>
 </div>
