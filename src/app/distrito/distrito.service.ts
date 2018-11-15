@@ -4,7 +4,7 @@ import { Distrito } from './distrito';
 import { DistritoDetail} from './distrito-detail';
 import { Observable } from 'rxjs';
 
-const API_URL = 'http://localhost:8080/s4_Grupos-api/api';
+const API_URL = 'http://172.24.41.58:8080/s4_Grupos-api/api';
 const distritos = '/distritos';
 /**
 * The service provider for everything related to distritos
@@ -31,5 +31,14 @@ export class DistritoService {
    createDistrito(distrito): Observable<DistritoDetail> {
     return this.http.post<DistritoDetail>(API_URL + distritos, distrito);
 }
+ /**
+    * Updates an distrito
+    * @param distrito The distrito's information updated
+    * @returns The confirmation that the distrito was updated
+    */
+   updateDistrito(distrito): Observable<DistritoDetail> {
+    return this.http.put<DistritoDetail>(API_URL + distritos + '/' + distrito.id, distrito);
+}
+
 
 }

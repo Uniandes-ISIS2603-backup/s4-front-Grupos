@@ -9,6 +9,7 @@ export class Distrito {
     id: number;
 
     name:String;
+    image:String;
     
 
 

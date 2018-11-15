@@ -4,14 +4,13 @@ import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 
 import {DistritoService} from '../distrito.service';
-type DateString = {month: number, day: number, year: number};
 import {Distrito} from '../distrito';
 
 @Component({
     selector: 'app-distrito-create',
     templateUrl: './distrito-create.component.html',
     styleUrls: ['./distrito-create.component.css'],
-    providers: [DatePipe]
+    providers: []
 })
 export class DistritoCreateComponent implements OnInit {
 
@@ -24,7 +23,6 @@ export class DistritoCreateComponent implements OnInit {
     * @param router The router
     */
     constructor(
-        private dp: DatePipe,
         private distritoService: DistritoService,
         private toastrService: ToastrService,
         private router: Router
@@ -53,7 +51,7 @@ export class DistritoCreateComponent implements OnInit {
     createDistrito(): Distrito {
        
         this.distritoService.createDistrito(this.distrito)   .subscribe(distrito => {   this.distrito.id = distrito.id;  
-            this.router.navigate(['/distritos/' + distrito.id]);
+            this.router.navigate(['/distritos/list']);
             }, err => {
                 this.toastrService.error(err, 'Error');
             });
