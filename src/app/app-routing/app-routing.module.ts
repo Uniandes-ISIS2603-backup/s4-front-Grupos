@@ -49,10 +49,6 @@ const routes: Routes = [
                 component: CiudadanoCreateComponent                
             },
             {
-                path: ':id/edit',
-                component: CiudadanoEditComponent                
-            },
-            {
                 path: ':id',
                 component: CiudadanoDetailComponent
             }

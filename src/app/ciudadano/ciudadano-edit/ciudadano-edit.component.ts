@@ -1,5 +1,4 @@
 import {Component, OnInit, OnChanges, Input, Output, EventEmitter} from '@angular/core';
-//import {Router} from '@angular/router';
 import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 
@@ -19,8 +18,6 @@ export class CiudadanoEditComponent implements OnInit, OnChanges {
     /**
     * Constructor for the component
     * @param ciudadanoService The ciudadanoes' services provider
-    * @param authorService The authors' services provider
-    * @param editorialService The editorials' services provider
     * @param toastrService The toastr to show messages to the user
     * @param router The router
     */
@@ -28,7 +25,6 @@ export class CiudadanoEditComponent implements OnInit, OnChanges {
         private dp: DatePipe,
         private ciudadanoService: CiudadanoService,
         private toastrService: ToastrService,
-//        private router: Router
     ) {}
 
 
@@ -50,11 +46,9 @@ export class CiudadanoEditComponent implements OnInit, OnChanges {
     * Edits a new ciudadano
     */
     editCiudadano(): void {
-//        let dateB: Date = new Date(this.author.birthDate.year, this.author.birthDate.month - 1, this.author.birthDate.day);
-//        this.ciudadano.birthDate = this.dp.transform(dateB, 'yyyy-MM-dd');
         this.ciudadanoService.updateCiudadano(this.ciudadano)
             .subscribe(() => {
-                this.toastrService.success("The ciudadano's information was updated", "Ciudadano edition");
+                this.toastrService.success("La información del ciudadano fue actualizada", "Edición del ciudadano");
             });
         this.update.emit();
     }
@@ -63,6 +57,7 @@ export class CiudadanoEditComponent implements OnInit, OnChanges {
     * This function will initialize the component
     */
     ngOnInit() {
+        
     }
     
     ngOnChanges() {
