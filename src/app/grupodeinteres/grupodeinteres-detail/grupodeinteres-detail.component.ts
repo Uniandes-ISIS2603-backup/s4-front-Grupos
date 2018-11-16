@@ -39,18 +39,6 @@ export class GrupodeinteresDetailComponent implements OnInit, OnDestroy {
     });
   }
 
-  /**
-   * The child GrupodeinteresNoticiaListComponent
-   */
-  @ViewChild(GrupodeinteresNoticiaComponent) noticiaListComponent: GrupodeinteresNoticiaComponent;
-
-  /**
-   * The child GrupodeinteresNoticiaListComponent
-   */
-  @ViewChild(GrupodeinteresAddNoticiaComponent) noticiaAddComponent: GrupodeinteresAddNoticiaComponent;
-
-  
-
     /**
     * The grupodeinteres's id retrieved from the path
     */
@@ -72,6 +60,15 @@ export class GrupodeinteresDetailComponent implements OnInit, OnDestroy {
     */
     navigationSubscription;
 
+    /**
+     * The child GrupodeinteresNoticiaListComponent
+     */
+    @ViewChild(GrupodeinteresNoticiaComponent) noticiaListComponent: GrupodeinteresNoticiaComponent;
+
+    /**
+     * The child GrupodeinteresNoticiaListComponent
+     */
+    @ViewChild(GrupodeinteresAddNoticiaComponent) noticiaAddComponent: GrupodeinteresAddNoticiaComponent;
     
     /**
      * The child GrupodeinteresEventoListComponent

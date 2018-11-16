@@ -12,9 +12,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { GrupodeinteresAddNoticiaComponent } from './grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 import { GrupodeinteresAddEventoComponent } from './grupodeinteres-add-evento/grupodeinteres-add-evento.component';
 import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodeinteres-create.component';
-
-import { GrupodeinteresDetailComponent } from './grupodeinteres-detail/grupodeinteres-detail.component';
-import { AppRoutingModule } from '../app-routing/app-routing.module';
 @NgModule({
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { CiudadanoService } from '../ciudadano.service';
@@ -13,6 +13,8 @@ import { Ciudadano } from '../ciudadano';
     styleUrls: ['./ciudadano-detail.component.css']
 })
 export class CiudadanoDetailComponent implements OnInit {
+    
+    @Input() ciudadanoDetail: CiudadanoDetail;
 
     /**
     * Constructor for the component
@@ -24,11 +26,6 @@ export class CiudadanoDetailComponent implements OnInit {
         private route: ActivatedRoute,
         private ciudadanoService: CiudadanoService 
     ) { }
-
-    /**
-    * The ciudadano
-    */
-    ciudadanoDetail: CiudadanoDetail;
 
     /**
     * El id del ciudadano que viene en el path get .../ciudadanos/ciudadano_id
@@ -51,8 +48,11 @@ export class CiudadanoDetailComponent implements OnInit {
     */
     ngOnInit() {
         this.ciudadano_id = +this.route.snapshot.paramMap.get('id');
+        if(this.ciudadano_id)
+        {
         this.ciudadanoDetail = new CiudadanoDetail();
         this.getCiudadanoDetail();
+        }
     }
 }
 
