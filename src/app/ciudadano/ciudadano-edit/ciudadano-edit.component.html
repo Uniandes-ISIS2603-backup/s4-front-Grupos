@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar un ciudadano</h2>
+        <br>
+        <form name="ciudadano" (ngSubmit)="f.form.valid && editCiudadano()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="ciudadanoName"><b>Nombre</b></label>
+                <input type="text" name="ciudadanoName" class="form-control" id="ciudadanoName" [(ngModel)]="ciudadano.nombre"
+                       #ciudadanoName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ciudadanoName.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>El nombre del ciudadano hace falta</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ciudadanoContrasena"><b>Contraseña</b></label>
+                <input type="text" name="ciudadanoContrasena" class="form-control" id="ciudadanoContrasena" [(ngModel)]="ciudadano.contrasena"
+                       #ciudadanoContrasena="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ciudadanoContrasena.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>La contraseña del ciudadano hace falta</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-12">
+            <div class="row form-inline justify-content-center align-self-center">
+                <i  style="padding-right: 1em;"class="fa fa-save " (click)="editCiudadano()"></i>
+
+                <i class="fa fa-ban" (click)="cancelEdition()"></i>
+            </div>
+        </div>
+    </div>
+<br>
+<br>

@@ -1,13 +1,21 @@
-<div *ngIf="distritoDetail" class="panel-body" >
+<div class="panel-body">
     <div class="border margin">
         <p class="h3 p-3">{{distritoDetail.name}}<p> 
         <div class="row">
             <div class="col-md-3">
+                <div class="thumb">
+                    <img class="img-fluid" src='{{distritoDetail.image}}' alt="{{distritoDetail.image}}" />   
+                </div>
+            </div>
+            <div class="col">
                 <dl>     
-                    <dt>id</dt>
-                    <dd>{{distritoDetail.id}}</dd>
+                    <dt>Bio</dt>
+                    <dd>{{distritoDetail.name}}</dd>
                 </dl>
             </div>
+
         </div>
     </div>
+  
 </div>
+

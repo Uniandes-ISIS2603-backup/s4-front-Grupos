@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { DistritoService } from '../distrito.service';
-
 import { DistritoDetail } from '../distrito-detail';
-import { Distrito } from '../distrito';
-
 
 @Component({
     selector: 'app-distrito-detail',
@@ -14,6 +10,10 @@ import { Distrito } from '../distrito';
 })
 export class DistritoDetailComponent implements OnInit {
 
+    /**
+    * The distrito
+    */
+    @Input() distritoDetail: DistritoDetail;
     /**
     * Constructor for the component
     * @param route The route which helps to retrieves the id of the book to be shown
@@ -25,10 +25,8 @@ export class DistritoDetailComponent implements OnInit {
         private distritoService: DistritoService 
     ) { }
 
-    /**
-    * The distrito
-    */
-    distritoDetail: DistritoDetail;
+    
+    
 
     /**
     * El id del distrito que viene en el path get .../distritos/distrito_id
@@ -38,9 +36,10 @@ export class DistritoDetailComponent implements OnInit {
     * The method which obtains the distrito whose details we want to show
     */
     getDistritoDetail(): void {
-        this.distritoService.getDistritoDetail(this.distrito_id).subscribe(distritoDetail => { 
-            console.log(distritoDetail);
-            this.distritoDetail = distritoDetail });
+        this.distritoService.getDistritoDetail(this.distrito_id)
+            .subscribe(distritoDetail => {
+                this.distritoDetail = distritoDetail
+            });
     }
 
    
@@ -50,8 +49,9 @@ export class DistritoDetailComponent implements OnInit {
     */
     ngOnInit() {
         this.distrito_id = +this.route.snapshot.paramMap.get('id');
-        
+        if (this.distrito_id){
+        this.distritoDetail = new DistritoDetail();
         this.getDistritoDetail();
+        }
     }
 }
-

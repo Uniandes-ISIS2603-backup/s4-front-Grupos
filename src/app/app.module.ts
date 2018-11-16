@@ -4,6 +4,7 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 import {FormsModule} from '@angular/forms';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 
@@ -39,7 +40,9 @@ import { RouterModule, Routes } from '@angular/router';
         DistritoModule,
         AdministradorModule,
         ToastrModule.forRoot(),
-        BrowserAnimationsModule, RouterModule
+        BrowserAnimationsModule, 
+        RouterModule,
+        NgbModule
     ],
 
     bootstrap: [AppComponent],

@@ -5,7 +5,7 @@ import { PatrocinioDetail} from './patrocinio-detail';
 import { HttpClient } from '@angular/common/http';
 
 
-const API_URL = "http://localhost:8080/s4_Grupos-api/api";
+const API_URL = "http://172.24.41.58:8080/s4_Grupos-api/api";
 const patrocinios = '/patrocinios';
 
 

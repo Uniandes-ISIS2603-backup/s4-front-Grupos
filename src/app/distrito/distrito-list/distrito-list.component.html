@@ -1,20 +1,43 @@
 <div class="container-fluid">
-    <div class="col">
-            <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/distritos/add">Crear un nuevo distrito</button>
-        <table class="table table-striped">
-            <thead >
-                <tr>
-                    <th>Nombre del distrito</th>    
-                    <th>Id del distrito</th>   
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let distrito of distritos">
-                    <td style="cursor: pointer;" routerLink="/distritos/{{distrito.id}}">{{distrito.name}}</td>
-                    <td>{{distrito.id}}</td>
-                  
-                </tr>
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-5">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">
+                    Create an distrito
+                   
+                </button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Distrito´s Name</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let distrito of distritos" >
+                        <td style="cursor: pointer;" (click)="onSelected(distrito.id)"> <dd>{{distrito.name}}</dd></td>
+                        <td>
+                            <i class="fa fa-pencil" 
+                                (click)="showHideEdit(distrito.id)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-7">
+            <div *ngIf="showView">
+                <app-distrito-detail [distritoDetail]="selectedDistrito"></app-distrito-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-distrito-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-distrito-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-distrito-edit [distrito]="selectedDistrito" (cancel)="showHideEdit(selectedDistrito.id)" (update)="updateDistrito()" ></app-distrito-edit>
+            </div>
+        </div>   
     </div>
 </div>

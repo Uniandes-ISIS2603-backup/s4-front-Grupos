@@ -4,7 +4,7 @@ import { Administrador } from './administrador';
 import { AdministradorDetail} from './administrador-detail';
 import { Observable } from 'rxjs';
 
-const API_URL = 'http://localhost:8080/s4_Grupos-api/api';
+const API_URL = 'http://172.24.41.58:8080/s4_Grupos-api/api';
 const administradores = '/administradores';
 /**
 * The service provider for everything related to administradores
