@@ -6,7 +6,7 @@ import { Ciudadano } from './ciudadano';
 import { CiudadanoDetail } from './ciudadano-detail';
 import { environment } from '../../environments/environment';
 
-const API_URL = 'http://172.24.41.58:8080/s4_Grupos-api/api';
+const API_URL = environment.apiURL;
 const ciudadanos = '/ciudadanos';
 
 /**
@@ -36,6 +36,10 @@ export class CiudadanoService {
     */
     getCiudadanoDetail(ciudadanoId): Observable<CiudadanoDetail> {
         return this.http.get<CiudadanoDetail>(API_URL + ciudadanos + '/' + ciudadanoId);
+    }
+    
+    createCiudadano(ciudadano): Observable<CiudadanoDetail> {
+    return this.http.post<CiudadanoDetail>(API_URL + ciudadanos, ciudadano);
     }
 }
 

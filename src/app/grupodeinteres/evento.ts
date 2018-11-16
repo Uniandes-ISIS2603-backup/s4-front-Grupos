@@ -1,3 +1,5 @@
+import { Grupodeinteres } from "./grupodeinteres";
+
 export class Evento {
     /**
     * The grupo's id
@@ -13,5 +15,10 @@ export class Evento {
     * fecha del evento
     */
     fecha: string;
+    
+    /**
+    * The grupo of the evento
+    */
+   grupodeinteres: Grupodeinteres;
 
 }

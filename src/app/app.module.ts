@@ -18,6 +18,8 @@ import {DistritoModule} from './distrito/distrito.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PatrocinioModule} from './patrocinio/patrocinio.module';
+import {LocacionModule} from './locacion/locacion.module';
+
 
 import { RouterModule, Routes } from '@angular/router';
 @NgModule({
@@ -32,6 +34,7 @@ import { RouterModule, Routes } from '@angular/router';
         ComentarioModule,
         FormsModule,
         GrupodeinteresModule,
+        LocacionModule,
         CategoriaModule,
         PatrocinioModule,
         DistritoModule,

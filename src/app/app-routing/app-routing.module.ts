@@ -5,7 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
+import {CiudadanoCreateComponent} from '../ciudadano/ciudadano-create/ciudadano-create.component';
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
+import {ComentarioDetailComponent} from '../comentario/comentario-detail/comentario-detail.component';
+import {ComentarioCreateComponent} from '../comentario/comentario-create/comentario-create.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
 
@@ -17,10 +20,20 @@ import {AdministradorDetailComponent} from '../administrador/administrador-detai
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 import {PatrocinioDetailComponent} from '../patrocinio/patrocinio-detail/patrocinio-detail.component';
 import  {PatrocinioCreateComponent} from '../patrocinio/patrocinio-create/patrocinio-create.component';
+import {LocacionListComponent} from '../locacion/locacion-list/locacion-list.component';
+import {LocacionDetailComponent} from '../locacion/locacion-detail/locacion-detail.component';
+import  {LocacionCreateComponent} from '../locacion/locacion-create/locacion-create.component';
 import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
 import { GrupodeinteresNoticiaComponent } from '../grupodeinteres/grupodeinteres-noticias/grupodeinteres-noticia.component';
 import { GrupodeinteresAddNoticiaComponent } from '../grupodeinteres/grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 import {GrupodeinteresCreateComponent} from '../grupodeinteres/grupodeinteres-create/grupodeinteres-create.component';
+
+import {CategoriaDetailComponent} from '../categoria/categoria-detail/categoria-detail.component';
+import {CategoriaCreateComponent} from '../categoria/categoria-create/categoria-create.component';
+
+import { GrupodeinteresEventoComponent } from '../grupodeinteres/grupodeinteres-eventos/grupodeinteres-evento.component';
+import { GrupodeinteresAddEventoComponent } from '../grupodeinteres/grupodeinteres-add-evento/grupodeinteres-add-evento.component';
+
 
 const routes: Routes = [
     {
@@ -29,6 +42,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: CiudadanoListComponent
+            },
+            {
+                path: 'add',
+                component: CiudadanoCreateComponent                
             },
             {
                 path: ':id',
@@ -41,6 +58,14 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: ComentarioListComponent
+            },
+            {
+                path: 'add',
+                component: ComentarioCreateComponent                
+            },
+            {
+                path: ':id',
+                component: ComentarioDetailComponent
             }
         ]
     },
@@ -71,6 +96,17 @@ const routes: Routes = [
                              
                 component: GrupodeinteresAddNoticiaComponent,
                 runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id/eventos',
+                             
+                component: GrupodeinteresEventoComponent
+            },
+            {
+                path: ':id/eventos/add',
+                             
+                component: GrupodeinteresAddEventoComponent,
+                runGuardsAndResolvers: 'always'
             }
         ]
     },
@@ -80,7 +116,16 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: CategoriaListComponent
-            }
+            }, 
+            {
+                path: 'add',
+                component: CategoriaCreateComponent,
+                runGuardsAndResolvers: 'always'
+            },
+              {
+                path: ':id',
+                component: CategoriaDetailComponent
+            }    
         ]
     },
     {
@@ -101,7 +146,29 @@ const routes: Routes = [
             }      
         ]
     }
-   ,
+    ,
+     {
+        path: 'locaciones',
+        children: [
+            {
+                path: 'add',
+                component: LocacionCreateComponent  
+             }
+            
+             ,
+              {
+                path: 'list',
+                component: LocacionListComponent
+            }
+             ,
+              {
+                path: ':id',
+                component: LocacionDetailComponent
+            }      
+        ]
+    }
+    ,
+   
     {
         path: 'administradores',
         children: [

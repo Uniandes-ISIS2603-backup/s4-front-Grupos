@@ -7,6 +7,9 @@ import {Grupodeinteres} from '../grupodeinteres';
 import {GrupodeinteresDetail} from '../grupodeinteres-detail';
 import {GrupodeinteresNoticiaComponent} from '../grupodeinteres-noticias/grupodeinteres-noticia.component';
 import {GrupodeinteresAddNoticiaComponent} from '../grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
+import {GrupodeinteresEventoComponent} from '../grupodeinteres-eventos/grupodeinteres-evento.component';
+import {GrupodeinteresAddEventoComponent} from '../grupodeinteres-add-evento/grupodeinteres-add-evento.component';
+
 
 @Component({
   selector: 'app-grupodeinteres-detail',
@@ -68,6 +71,17 @@ export class GrupodeinteresDetailComponent implements OnInit, OnDestroy {
     * needs to be loaded
     */
     navigationSubscription;
+
+    
+    /**
+     * The child GrupodeinteresEventoListComponent
+     */
+    @ViewChild(GrupodeinteresEventoComponent) eventoListComponent: GrupodeinteresEventoComponent;
+
+    /**
+     * The child GrupodeinteresEventoListComponent
+     */
+    @ViewChild(GrupodeinteresAddEventoComponent) eventoAddComponent: GrupodeinteresAddEventoComponent;
 
    
 

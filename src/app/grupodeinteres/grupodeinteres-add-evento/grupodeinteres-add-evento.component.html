@@ -1,0 +1,37 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <h2 class="text-center">Añadir evento</h2>
+                <br>
+                <form name="evento" (ngSubmit)="f.form.valid && createEvento()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="eventoName"><b>Nombre</b></label>
+                        <input type="text" name="eventoName" class="form-control" id="eventoName" [(ngModel)]="evento.nombre"
+                            #eventoName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && eventoName.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>Falta el nombre del evento</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="eventoName"><b>Fecha</b></label>
+                            <input type="text" name="eventoFecha" class="form-control" id="eventoFecha" [(ngModel)]="evento.fecha"
+                                #eventoFecha="ngModel" [ngClass]="{ 'is-invalid': f.submitted && eventoFecha.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div>Falta la fecha del evento</div>
+                            </div>
+                        </div>
+                  
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <div class="divider"></div>
+                        <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>

@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import { CiudadanoService } from './ciudadano.service';
 import { CiudadanoListComponent } from './ciudadano-list/ciudadano-list.component';
 import { CiudadanoDetailComponent } from './ciudadano-detail/ciudadano-detail.component';
+import { CiudadanoCreateComponent } from './ciudadano-create/ciudadano-create.component';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
 //import { GrupoDeInteresModule } from '../grupodeinteres/grupodeinteres.module';
 
@@ -19,9 +20,9 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         FormsModule
 //        GrupoDeInteresModule
     ],
-    declarations: [CiudadanoListComponent, CiudadanoDetailComponent],
+    declarations: [CiudadanoListComponent, CiudadanoDetailComponent, CiudadanoCreateComponent],
     providers: [CiudadanoService],
-    exports: [CiudadanoListComponent]
+    exports: [CiudadanoListComponent, CiudadanoCreateComponent]
 })
 export class CiudadanoModule {}
 
