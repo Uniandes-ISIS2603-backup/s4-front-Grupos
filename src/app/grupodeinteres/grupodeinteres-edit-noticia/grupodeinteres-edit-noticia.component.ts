@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import {DatePipe} from '@angular/common';
@@ -8,11 +8,11 @@ import {GrupodeinteresService} from '../grupodeinteres.service';
 import {Noticia} from '../noticia';
 
 @Component({
-    selector: 'app-grupodeinteres-add-noticia',
-    templateUrl: './grupodeinteres-add-noticia.component.html',
+    selector: 'app-grupodeinteres-edit-noticia',
+    templateUrl: './grupodeinteres-edit-noticia.component.html',
     providers: []
 })
-export class GrupodeinteresAddNoticiaComponent implements OnInit {
+export class GrupodeinteresEditNoticiaComponent implements OnInit {
 
     /**
     * Constructor for the component
@@ -28,9 +28,13 @@ export class GrupodeinteresAddNoticiaComponent implements OnInit {
     ) {}
 
     /**
-    * The new noticia
+    * The  noticia to edit
     */
-    noticia: Noticia;
+   noticia: Noticia;
+    /**
+    * The noticia's id retrieved from the path
+    */
+   noticia_id: number;
     
     /**
     * The group id
@@ -44,17 +48,26 @@ export class GrupodeinteresAddNoticiaComponent implements OnInit {
     * Cancels the creation of the new noticia
     * Redirects to the noticia' list page
     */
-    cancelCreation(): void {
-        this.toastrService.warning('The noticia wasn\'t created', 'Grupodeinteres creation');
-        this.router.navigate(['/gruposdeinteres/'+this.grupo_id+'/list']);
+    cancelUpdate(): void {
+        this.toastrService.warning('The noticia wasn\'t edited', 'Grupodeinteres edition');
+        this.router.navigate(['/gruposdeinteres/'+this.grupo_id+'/noticias']);
     }
-
+/**
+    * The method which retrieves the details of the grupodeinteres that
+    * we want to show
+    */
+   getNoticiaDetail(): void {
+    this.grupodeinteresService.getNoticiaDetail(this.grupo_id,this.noticia_id)
+        .subscribe(noticia => {
+            this.noticia = noticia;
+        });
+}
     /**
     * Creates a new noticia
     */
-    createNoticia(): Noticia {
+    updateNoticia(): Noticia {
        
-        this.grupodeinteresService.createNoticia(this.grupo_id,this.noticia)  .subscribe(noticia => {   this.noticia.id = noticia.id;  
+        this.grupodeinteresService.updateNoticia(this.grupo_id,this.noticia)  .subscribe(noticia => {   this.noticia.id = noticia.id;  
             this.router.navigate(['/gruposdeinteres/'+ this.grupo_id+ '/noticias']);
             }, err => {
                 this.toastrService.error(err, 'Error');
@@ -66,10 +79,14 @@ export class GrupodeinteresAddNoticiaComponent implements OnInit {
     * This function will initialize the component
     */
     ngOnInit() {
-        console.log(123);
         
-        this.grupo_id = +this.route.snapshot.paramMap.get('id');
+        this.grupo_id = +this.route.snapshot.paramMap.get('id1');
+        
+        this.noticia_id = +this.route.snapshot.paramMap.get('id2');
         this.noticia = new Noticia();
+        this.getNoticiaDetail();
+        
+        
         
     }
 

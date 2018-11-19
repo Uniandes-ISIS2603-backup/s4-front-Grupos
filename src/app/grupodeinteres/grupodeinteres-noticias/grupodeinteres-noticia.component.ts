@@ -26,6 +26,8 @@ export class GrupodeinteresNoticiaComponent implements OnInit {
         
         this.noticias = noticias });
 }
+
+ 
     
     ngOnInit(){
         console.log("noticias");

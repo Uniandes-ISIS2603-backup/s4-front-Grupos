@@ -14,7 +14,7 @@ export class Noticia {
     /**
     * The noticia's description
     */
-    description: string;
+    descripcion: string;
     
     /**
     * The noticia's image

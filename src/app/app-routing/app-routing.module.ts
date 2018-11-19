@@ -34,6 +34,8 @@ import {CategoriaCreateComponent} from '../categoria/categoria-create/categoria-
 
 import { GrupodeinteresEventoComponent } from '../grupodeinteres/grupodeinteres-eventos/grupodeinteres-evento.component';
 import { GrupodeinteresAddEventoComponent } from '../grupodeinteres/grupodeinteres-add-evento/grupodeinteres-add-evento.component';
+import { GrupodeinteresEditNoticiaComponent } from '../grupodeinteres/grupodeinteres-edit-noticia/grupodeinteres-edit-noticia.component';
+import { GrupodeinteresNoticiaDetailComponent } from '../grupodeinteres/grupodeinteres-noticia-detail/grupodeinteres-noticia-detail.component';
 
 
 const routes: Routes = [
@@ -96,6 +98,18 @@ const routes: Routes = [
                 path: ':id/noticias/add',
                              
                 component: GrupodeinteresAddNoticiaComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/noticias/edit/:id2',
+                             
+                component: GrupodeinteresEditNoticiaComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/noticias/:id2',
+                             
+                component: GrupodeinteresNoticiaDetailComponent,
                 runGuardsAndResolvers: 'always'
             },
             {
