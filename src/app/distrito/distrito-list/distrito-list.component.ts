@@ -114,6 +114,7 @@ export class DistritoListComponent implements OnInit {
     updateDistrito(): void{
         this.showEdit = false;
         this.showView = true;
+        this.getDistritos();
     }
     
     /**
