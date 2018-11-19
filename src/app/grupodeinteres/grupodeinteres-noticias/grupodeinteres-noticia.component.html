@@ -8,6 +8,11 @@
             
             <tr *ngFor="let noticia of noticias">
                 <td><span id="grupo-noticiatid"><b>{{noticia.id}}</b></span><span>: </span><span id="noticia-titular">{{noticia.titular}}</span><br></td>
+                <td>
+                        <i class="fa fa-pencil" 
+                        routerLink="/gruposdeinteres/{{grupo_id}}/noticias/edit/{{noticia.id}}" ></i>
+                    </td>
             </tr>
         </tbody>
     </table>
+    <div *ngIf="selectedNoticia"></div>

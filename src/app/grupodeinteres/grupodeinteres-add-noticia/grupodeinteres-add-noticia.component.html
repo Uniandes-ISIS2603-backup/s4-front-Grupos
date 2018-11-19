@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                            <label for="noticiaName"><b>Descripcion</b></label>
+                            <label for="noticiaDes"><b>Descripcion</b></label>
                             <input type="text" name="noticiaDes" class="form-control" id="noticiaDes" [(ngModel)]="noticia.descripcion"
                                 #noticiaDes="ngModel" [ngClass]="{ 'is-invalid': f.submitted && noticiaDes.invalid }" required>
                             <div class="invalid-feedback">
@@ -33,5 +33,3 @@
             </div>
         </div>
     </div>
-    <br>
-    <br>
