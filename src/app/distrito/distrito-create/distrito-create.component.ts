@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output,EventEmitter} from '@angular/core';
 import {Router} from '@angular/router';
 import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
@@ -33,16 +33,16 @@ export class DistritoCreateComponent implements OnInit {
     */
     distrito: Distrito;
 
-  
+    @Output() cancel = new EventEmitter();
    
+    @Output() create = new EventEmitter();
 
     /**
     * Cancels the creation of the new distrito
     * Redirects to the distritos' list page
     */
     cancelCreation(): void {
-        this.toastrService.warning('The distrito wasn\'t created', 'Distrito creation');
-        this.router.navigate(['/distritos/list']);
+        this.cancel.emit();
     }
 
     /**
@@ -52,9 +52,11 @@ export class DistritoCreateComponent implements OnInit {
        
         this.distritoService.createDistrito(this.distrito)   .subscribe(distrito => {   this.distrito.id = distrito.id;  
             this.router.navigate(['/distritos/list']);
-            }, err => {
+            this.create.emit();    
+        }, err => {
                 this.toastrService.error(err, 'Error');
-            });
+                
+        });
         return this.distrito;
     }
 
@@ -62,7 +64,6 @@ export class DistritoCreateComponent implements OnInit {
     * This function will initialize the component
     */
     ngOnInit() {
-        console.log(123);
         this.distrito = new Distrito();
         
     }
