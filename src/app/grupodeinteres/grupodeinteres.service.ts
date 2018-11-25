@@ -53,6 +53,14 @@ export class GrupodeinteresService {
    createNoticia(grupoId, noticia): Observable<Noticia> {
     return this.http.post<Noticia>(API_URL + gruposdeinteres + '/' + grupoId + noticias, noticia);
    }
+    /**
+    * Creates a noticia
+    * @param noticia The noticia
+    * @returns True if the noticia was posted, false otherwise
+    */
+   deleteNoticia(grupoId, noticia_id): Observable<Noticia> {
+    return this.http.delete<Noticia>(API_URL + gruposdeinteres + '/' + grupoId + noticias +'/'+ noticia_id);
+   }
    
   
  /**

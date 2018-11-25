@@ -37,6 +37,7 @@ import { GrupodeinteresAddEventoComponent } from '../grupodeinteres/grupodeinter
 import { GrupodeinteresEditNoticiaComponent } from '../grupodeinteres/grupodeinteres-edit-noticia/grupodeinteres-edit-noticia.component';
 import { GrupodeinteresNoticiaDetailComponent } from '../grupodeinteres/grupodeinteres-noticia-detail/grupodeinteres-noticia-detail.component';
 import { DistritoDeleteComponent } from '../distrito/distrito-delete/distrito-delete.component';
+import { GrupodeinteresDeleteNoticiaComponent } from '../grupodeinteres/grupodeinteres-delete-noticia/grupodeinteres-delete-noticia.component';
 
 
 const routes: Routes = [
@@ -105,6 +106,12 @@ const routes: Routes = [
                 path: ':id1/noticias/edit/:id2',
                              
                 component: GrupodeinteresEditNoticiaComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/noticias/delete/:id2',
+                             
+                component: GrupodeinteresDeleteNoticiaComponent,
                 runGuardsAndResolvers: 'always'
             },
             {
