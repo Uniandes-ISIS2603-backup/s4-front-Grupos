@@ -36,6 +36,7 @@ import { GrupodeinteresEventoComponent } from '../grupodeinteres/grupodeinteres-
 import { GrupodeinteresAddEventoComponent } from '../grupodeinteres/grupodeinteres-add-evento/grupodeinteres-add-evento.component';
 import { GrupodeinteresEditNoticiaComponent } from '../grupodeinteres/grupodeinteres-edit-noticia/grupodeinteres-edit-noticia.component';
 import { GrupodeinteresNoticiaDetailComponent } from '../grupodeinteres/grupodeinteres-noticia-detail/grupodeinteres-noticia-detail.component';
+import { DistritoDeleteComponent } from '../distrito/distrito-delete/distrito-delete.component';
 
 
 const routes: Routes = [
@@ -215,6 +216,11 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: DistritoCreateComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: 'delete/:id',
+                component: DistritoDeleteComponent,
                 runGuardsAndResolvers: 'always'
             },
             {
