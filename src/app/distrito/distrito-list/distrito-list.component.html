@@ -21,8 +21,12 @@
                     <tr *ngFor = "let distrito of distritos" >
                         <td style="cursor: pointer;" (click)="onSelected(distrito.id)"> <dd>{{distrito.name}}</dd></td>
                         <td>
-                            <i class="fa fa-pencil" 
+                            <i class="fa fa-pencil" style="cursor: pointer;"
                                 (click)="showHideEdit(distrito.id)"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash" style="cursor: pointer;"
+                            routerLink="/distritos/delete/{{distrito.id}}" ></i>
                         </td>
                     </tr>
                 </tbody>

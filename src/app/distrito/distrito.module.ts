@@ -9,6 +9,7 @@ import { DistritoListComponent } from './distrito-list/distrito-list.component';
 import { DistritoDetailComponent } from './distrito-detail/distrito-detail.component';
 import { DistritoCreateComponent } from './distrito-create/distrito-create.component';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
+import { DistritoDeleteComponent } from './distrito-delete/distrito-delete.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,8 +19,10 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         CommonModule,
         FormsModule
   ],
-  declarations: [DistritoListComponent, DistritoDetailComponent, DistritoCreateComponent, DistritoEditComponent],
-  exports: [DistritoListComponent, DistritoCreateComponent, DistritoEditComponent],
+  declarations: [DistritoListComponent, DistritoDetailComponent,
+     DistritoCreateComponent, DistritoEditComponent, DistritoDeleteComponent],
+  exports: [DistritoListComponent, DistritoCreateComponent, 
+    DistritoEditComponent],
   providers:[DistritoService]
 })
 export class DistritoModule { }
