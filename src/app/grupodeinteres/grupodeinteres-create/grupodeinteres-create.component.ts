@@ -15,9 +15,7 @@ export class GrupodeinteresCreateComponent implements OnInit {
 
  /**
     * Constructor for the component
-    * @param distritoService The distritos' services provider
-    * @param authorService The authors' services provider
-    * @param editorialService The editorials' services provider
+    * @param grupoDeInteresService The distritos' services provider
     * @param toastrService The toastr to show messages to the user
     * @param router The router
     */
