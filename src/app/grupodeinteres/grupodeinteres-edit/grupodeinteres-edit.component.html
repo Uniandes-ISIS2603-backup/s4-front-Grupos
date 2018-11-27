@@ -11,7 +11,15 @@
                        <div class="invalid-feedback">
                     <div>The grupodeinteres's name is missing</div>
                 </div>
+                <br>
+                <label for="grupodeinteresDescripcion"><b>Descripcion</b></label>
+                <input type="text" name="grupodeinteresDescripcion" class="form-control" id="grupodeinteresDescripcion" [(ngModel)]="grupo.descripcion"
+                    #grupodeinteresDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && grupodeinteresDescripcion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>The grupo's description is missing</div>
+                </div>  
             </div>
+           
         </form>
     </div>
 </div>
