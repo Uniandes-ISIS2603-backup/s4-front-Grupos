@@ -22,11 +22,11 @@ export class DistritoDetailComponent implements OnInit {
     */
     constructor(
         private route: ActivatedRoute,
-        private distritoService: DistritoService 
+        private distritoService: DistritoService
     ) { }
 
-    
-    
+
+
 
     /**
     * El id del distrito que viene en el path get .../distritos/distrito_id
@@ -42,16 +42,16 @@ export class DistritoDetailComponent implements OnInit {
             });
     }
 
-   
+
     /**
     * The method which initializes the component.
     * We need to create the distrito so it is never considered as undefined
     */
     ngOnInit() {
         this.distrito_id = +this.route.snapshot.paramMap.get('id');
-        if (this.distrito_id){
-        this.distritoDetail = new DistritoDetail();
-        this.getDistritoDetail();
+        if (this.distrito_id) {
+            this.distritoDetail = new DistritoDetail();
+            this.getDistritoDetail();
         }
     }
 }

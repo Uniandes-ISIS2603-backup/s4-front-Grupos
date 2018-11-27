@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GrupodeinteresService} from '../grupodeinteres.service';
 import { Grupodeinteres } from '../grupodeinteres';
+import { Noticia } from '../noticia';
 
 
 @Component({
@@ -13,6 +14,7 @@ export class GrupodeinteresListComponent implements OnInit {
   constructor(private grupodeinteresService: GrupodeinteresService) { }
   
   gruposdeinteres: Grupodeinteres[];
+  
   
   getGrupos(): void {
       

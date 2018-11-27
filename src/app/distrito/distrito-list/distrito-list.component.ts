@@ -89,7 +89,7 @@ export class DistritoListComponent implements OnInit {
         }
         else { 
             this.showEdit = false;
-            this.showView = true;
+            this.showView = false;
         }
       
     }
@@ -114,6 +114,7 @@ export class DistritoListComponent implements OnInit {
     updateDistrito(): void{
         this.showEdit = false;
         this.showView = true;
+        this.getDistritos();
     }
     
     /**

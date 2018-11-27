@@ -18,6 +18,7 @@ const eventos = '/eventos';
  */
 @Injectable()
 export class GrupodeinteresService {
+   
 
     /**
      * Constructor of the service
@@ -52,6 +53,30 @@ export class GrupodeinteresService {
    createNoticia(grupoId, noticia): Observable<Noticia> {
     return this.http.post<Noticia>(API_URL + gruposdeinteres + '/' + grupoId + noticias, noticia);
    }
+    /**
+    * Creates a noticia
+    * @param noticia The noticia
+    * @returns True if the noticia was posted, false otherwise
+    */
+   deleteNoticia(grupoId, noticia_id): Observable<Noticia> {
+    return this.http.delete<Noticia>(API_URL + gruposdeinteres + '/' + grupoId + noticias +'/'+ noticia_id);
+   }
+   
+  
+ /**
+    * Updates an noticia
+    * @param noticia The noticia's information updated
+    * @returns The confirmation that the noticia was updated
+    */
+   updateNoticia(grupoId,noticia): Observable<Noticia> {
+    return this.http.put<Noticia>(API_URL +gruposdeinteres  + '/' + grupoId+noticias+'/'+noticia.id, noticia);
+}
+getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
+    return this.http.get<Noticia>(API_URL + gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId);
+}
+
+
+
       /**
     * Creates a evento
     * @param evento The evento
@@ -64,5 +89,6 @@ export class GrupodeinteresService {
     createGrupo(grupo): Observable<GrupodeinteresDetail> {
     return this.http.post<GrupodeinteresDetail>(API_URL + gruposdeinteres, grupo);
     }
+
 }
 
