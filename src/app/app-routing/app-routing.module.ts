@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
 import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list.component';
+import {CiudadanoDetailComponent} from '../ciudadano/ciudadano-detail/ciudadano-detail.component';
+import {CiudadanoDeleteComponent} from '../ciudadano/ciudadano-delete/ciudadano-delete.component';
 import {CiudadanoCreateComponent} from '../ciudadano/ciudadano-create/ciudadano-create.component';
 import {CiudadanoEditComponent} from '../ciudadano/ciudadano-edit/ciudadano-edit.component';
 import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
@@ -16,7 +18,7 @@ import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list
 import {DistritoListComponent} from '../distrito/distrito-list/distrito-list.component';
 import {DistritoDetailComponent} from '../distrito/distrito-detail/distrito-detail.component';
 import {DistritoCreateComponent} from '../distrito/distrito-create/distrito-create.component';
-import {CiudadanoDetailComponent} from '../ciudadano/ciudadano-detail/ciudadano-detail.component';
+
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {PatrocinioListComponent} from '../patrocinio/patrocinio-list/patrocinio-list.component';
 import {PatrocinioDetailComponent} from '../patrocinio/patrocinio-detail/patrocinio-detail.component';
@@ -51,6 +53,10 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: CiudadanoDetailComponent
+            },
+            {
+                path: 'delete/:id',
+                component: CiudadanoDeleteComponent
             }
         ]
     }, {

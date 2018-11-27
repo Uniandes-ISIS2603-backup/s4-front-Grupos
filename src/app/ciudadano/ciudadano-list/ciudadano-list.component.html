@@ -11,8 +11,12 @@
                     <tr *ngFor = "let ciudadano of ciudadanos" >
                         <td style="cursor: pointer;" (click)="onSelected(ciudadano.id)"> <dd>{{ciudadano.nombre}}</dd></td>
                         <td>
-                            <i class="fa fa-pencil" 
+                            <i class="fa fa-pencil" style="cursor:pointer;" 
                                 (click)="showHideEdit(ciudadano.id)"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash" style="cursor:pointer;"
+                               routerLink="/ciudadanos/delete/{{ciudadano.id}}"></i>
                         </td>
                     </tr>
                 </tbody>
