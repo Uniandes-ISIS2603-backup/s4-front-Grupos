@@ -18,6 +18,8 @@ import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodein
 import { GrupodeinteresEditNoticiaComponent } from './grupodeinteres-edit-noticia/grupodeinteres-edit-noticia.component';
 import { GrupodeinteresNoticiaDetailComponent } from './grupodeinteres-noticia-detail/grupodeinteres-noticia-detail.component';
 import { GrupodeinteresDeleteNoticiaComponent } from './grupodeinteres-delete-noticia/grupodeinteres-delete-noticia.component';
+import { GrupodeinteresEditComponent } from './grupodeinteres-edit/grupodeinteres-edit.component';
+import { GrupodeinteresDeleteComponent } from './grupodeinteres-delete/grupodeinteres-delete.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { GrupodeinteresDeleteNoticiaComponent } from './grupodeinteres-delete-no
       GrupodeinteresDetailComponent, 
       GrupodeinteresNoticiaComponent, GrupodeinteresAddNoticiaComponent, 
       GrupodeinteresEventoComponent, GrupodeinteresAddEventoComponent, 
-      GrupodeinteresEditNoticiaComponent, GrupodeinteresNoticiaDetailComponent,GrupodeinteresDeleteNoticiaComponent],
+      GrupodeinteresEditNoticiaComponent, GrupodeinteresNoticiaDetailComponent,
+      GrupodeinteresDeleteNoticiaComponent, GrupodeinteresEditComponent, GrupodeinteresDeleteComponent],
     providers: [GrupodeinteresService],
     exports: [GrupodeinteresListComponent, GrupodeinteresDetailComponent,
        GrupodeinteresCreateComponent,GrupodeinteresNoticiaDetailComponent,GrupodeinteresDeleteNoticiaComponent]
