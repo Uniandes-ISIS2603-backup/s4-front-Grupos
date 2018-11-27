@@ -40,6 +40,8 @@ import { DistritoDeleteComponent } from '../distrito/distrito-delete/distrito-de
 import { GrupodeinteresDeleteNoticiaComponent } from '../grupodeinteres/grupodeinteres-delete-noticia/grupodeinteres-delete-noticia.component';
 import { GrupodeinteresEditComponent } from '../grupodeinteres/grupodeinteres-edit/grupodeinteres-edit.component';
 import { GrupodeinteresDeleteComponent } from '../grupodeinteres/grupodeinteres-delete/grupodeinteres-delete.component';
+import { PatrocinioEditComponent } from '../patrocinio/patrocinio-edit/patrocinio-edit.component';
+import { PatrocinioDeleteComponent } from '../patrocinio/patrocinio-delete/patrocinio-delete.component';
 
 
 const routes: Routes = [
@@ -174,6 +176,14 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: PatrocinioCreateComponent  
+            } , 
+            {
+                path: 'edit/:id',
+                component: PatrocinioEditComponent  
+            } ,
+            {
+                path: 'delete/:id',
+                component: PatrocinioDeleteComponent  
             } ,
               {
                 path: ':id',

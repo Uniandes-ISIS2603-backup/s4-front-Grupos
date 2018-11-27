@@ -72,7 +72,6 @@ export class GrupodeinteresEditComponent implements OnInit, OnChanges {
     * This function will initialize the component
     */
     ngOnInit() {
-      this.grupodeinteres= new GrupodeinteresDetail();
       this.grupodeinteres_id= +this.route.snapshot.paramMap.get('id');
       this.getGrupodeinteresDetail();
     }
