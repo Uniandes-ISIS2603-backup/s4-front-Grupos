@@ -1,0 +1,35 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <h2 class="text-center">Add a new locacion</h2>
+                <br>
+                <form name="locacion" (ngSubmit)="f.form.valid && createLocacion()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="locacionName"><b>Nombre</b></label>
+                        <input type="text" name="locacionName" class="form-control" id="locacionName" [(ngModel)]="locacion.locacion"
+                            #locacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && locacionName.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>The locacion's name is missing</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="locaciondireccion"><b>Direccion</b></label>
+                            <input type="text" name="locaciondireccion" class="form-control" id="locaciondireccion" [(ngModel)]="locacion.direcion"
+                                #locaciondireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && locaciondireccion.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div>The locacion's direccion is missing</div>
+                            </div>
+                        </div>
+                  
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <div class="divider"></div>
+                        <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>

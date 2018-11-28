@@ -10,6 +10,11 @@ import { DistritoDetailComponent } from './distrito-detail/distrito-detail.compo
 import { DistritoCreateComponent } from './distrito-create/distrito-create.component';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
 import { DistritoDeleteComponent } from './distrito-delete/distrito-delete.component';
+import { DistritoListLocacionComponent } from './distrito-list-locacion/distrito-list-locacion.component';
+import { DistritoAddLocacionComponent } from './distrito-add-locacion/distrito-add-locacion.component';
+import { DistritoDeleteLocacionComponent } from './distrito-delete-locacion/distrito-delete-locacion.component';
+import { DistritoEditLocacionComponent } from './distrito-edit-locacion/distrito-edit-locacion.component';
+import { DistritoLocacionDetailComponent } from './distrito-locacion-detail/distrito-locacion-detail.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,9 +25,12 @@ import { DistritoDeleteComponent } from './distrito-delete/distrito-delete.compo
         FormsModule
   ],
   declarations: [DistritoListComponent, DistritoDetailComponent,
-     DistritoCreateComponent, DistritoEditComponent, DistritoDeleteComponent],
+     DistritoCreateComponent, DistritoEditComponent, DistritoDeleteComponent, 
+     DistritoListLocacionComponent,
+    DistritoAddLocacionComponent, DistritoDeleteLocacionComponent, 
+    DistritoEditLocacionComponent, DistritoLocacionDetailComponent],
   exports: [DistritoListComponent, DistritoCreateComponent, 
-    DistritoEditComponent],
+    DistritoEditComponent, DistritoListLocacionComponent],
   providers:[DistritoService]
 })
 export class DistritoModule { }

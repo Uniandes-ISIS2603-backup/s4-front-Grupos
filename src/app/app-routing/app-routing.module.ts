@@ -42,6 +42,10 @@ import { GrupodeinteresEditComponent } from '../grupodeinteres/grupodeinteres-ed
 import { GrupodeinteresDeleteComponent } from '../grupodeinteres/grupodeinteres-delete/grupodeinteres-delete.component';
 import { PatrocinioEditComponent } from '../patrocinio/patrocinio-edit/patrocinio-edit.component';
 import { PatrocinioDeleteComponent } from '../patrocinio/patrocinio-delete/patrocinio-delete.component';
+import { DistritoAddLocacionComponent } from '../distrito/distrito-add-locacion/distrito-add-locacion.component';
+import { DistritoDeleteLocacionComponent } from '../distrito/distrito-delete-locacion/distrito-delete-locacion.component';
+import { DistritoEditLocacionComponent } from '../distrito/distrito-edit-locacion/distrito-edit-locacion.component';
+import { DistritoLocacionDetailComponent } from '../distrito/distrito-locacion-detail/distrito-locacion-detail.component';
 
 
 const routes: Routes = [
@@ -250,6 +254,30 @@ const routes: Routes = [
             {
                 path: 'delete/:id',
                 component: DistritoDeleteComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id/locaciones/add',
+                             
+                component: DistritoAddLocacionComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/locaciones/delete/:id2',
+                             
+                component: DistritoDeleteLocacionComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/locaciones/:id2',
+                             
+                component: DistritoLocacionDetailComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/locaciones/edit/:id2',
+                             
+                component: DistritoEditLocacionComponent,
                 runGuardsAndResolvers: 'always'
             },
             {

@@ -40,7 +40,7 @@ export class LocacionCreateComponent implements OnInit {
     * Cancels the creation of the new Locacion
     * Redirects to the Locaciones' list page
     */
-    cancelLocacionCreation(): void {
+    cancelCreation(): void {
         this.toastrService.warning('La creacion de la locacion ha sido cancelada','Crear Locacion');
         this.router.navigate(['/locaciones/list']);
     }
@@ -52,7 +52,7 @@ export class LocacionCreateComponent implements OnInit {
     createLocacion(): Locacion {
        
         this.locacionService.createLocacion(this.locacion , 1)   .subscribe(locacion => {   this.locacion.id = locacion.id;  
-            this.router.navigate(['/Locaciones/' + locacion.id]);
+            this.router.navigate(['/ocaciones/' + locacion.id]);
             }, err => {
                 this.toastrService.error(err, 'Error');
             });
