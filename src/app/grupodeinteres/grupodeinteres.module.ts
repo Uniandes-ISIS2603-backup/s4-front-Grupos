@@ -33,7 +33,7 @@ import { GrupodeinteresDeleteComponent } from './grupodeinteres-delete/grupodein
     FormsModule,
     NgbModule
   ],
-    declarations: [GrupodeinteresListComponent, GrupodeinteresCreateComponent, 
+    declarations: [GrupodeinteresListComponent,GrupodeinteresDeleteComponent, GrupodeinteresEditComponent, GrupodeinteresCreateComponent, 
       GrupodeinteresDetailComponent, 
       GrupodeinteresNoticiaComponent, GrupodeinteresNoticiaComentarioComponent, GrupodeinteresAddNoticiaComponent, 
       GrupodeinteresEventoComponent, GrupodeinteresAddEventoComponent,  GrupodeinteresNoticiaDeleteComentarioComponent,

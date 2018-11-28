@@ -94,14 +94,6 @@ export class GrupodeinteresService {
     * @param noticia The noticia's information updated
     * @returns The confirmation that the noticia was updated
     */
-<<<<<<< HEAD
-    updateNoticia(grupoId,noticia): Observable<Noticia> {
-        return this.http.put<Noticia>(API_URL +gruposdeinteres  + '/' + grupoId+noticias+'/'+noticia.id, noticia);
-    }
-    getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
-        return this.http.get<Noticia>(API_URL + gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId);
-    }
-=======
    updateNoticia(grupoId,noticia): Observable<Noticia> {
     return this.http.put<Noticia>(API_URL +gruposdeinteres  + '/' + grupoId+noticias+'/'+noticia.id, noticia);
 }
@@ -116,10 +108,6 @@ getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
    deleteGrupodeinteres(grupodeinteresId): Observable<GrupodeinteresDetail> {
     return this.http.delete<GrupodeinteresDetail>(API_URL + gruposdeinteres+'/'+ grupodeinteresId);
 }
- /**
->>>>>>> 951a7088760eead12562cb1359dcf2f4daa6de4c
-
-
 
       /**
     * Creates a evento
