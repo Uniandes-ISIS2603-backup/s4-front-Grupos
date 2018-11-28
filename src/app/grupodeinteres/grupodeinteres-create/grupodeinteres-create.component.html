@@ -5,23 +5,25 @@
             <h2 class="text-center">Add a new grupo de interes</h2>
             <br>
             <form name="grupo" (ngSubmit)="f.form.valid && createGrupo()" #f="ngForm" novalidate>
-                  <div class="form-group">
+                <div class="form-group">
                     <label for="grupodeinteresName"><b>Nombre</b></label>
-                    <input type="text" name="grupodeinteresName" class="form-control" id="grupodeinteresName" [(ngModel)]="grupo.nombre"
-                           #grupodeinteresName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && grupodeinteresName.invalid }" required>
-                           <div class="invalid-feedback">
+                    <input type="text" name="grupodeinteresName" class="form-control" id="grupodeinteresName"
+                        [(ngModel)]="grupo.nombre" #grupodeinteresName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && grupodeinteresName.invalid }"
+                        required>
+                    <div class="invalid-feedback">
                         <div>The grupo's name is missing</div>
-                    </div>                        
+                    </div>
                     <br>
                     <label for="grupodeinteresDescripcion"><b>Descripcion</b></label>
-                    <input type="text" name="grupodeinteresDescripcion" class="form-control" id="grupodeinteresDescripcion" [(ngModel)]="grupo.descripcion"
-                        #grupodeinteresDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && grupodeinteresDescripcion.invalid }" required>
+                    <input type="text" name="grupodeinteresDescripcion" class="form-control" id="grupodeinteresDescripcion"
+                        [(ngModel)]="grupo.descripcion" #grupodeinteresDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && grupodeinteresDescripcion.invalid }"
+                        required>
                     <div class="invalid-feedback">
                         <div>The grupo's description is missing</div>
-                    </div>    
-                    
+                    </div>
+
                 </div>
-                    
+
                 <br>
                 <div class="row form-inline justify-content-center align-self-center">
                     <button type="submit" class="btn btn-primary">Crear</button>
