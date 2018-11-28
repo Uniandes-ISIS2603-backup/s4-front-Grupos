@@ -46,8 +46,8 @@ export class CiudadanoService {
         return this.http.put<CiudadanoDetail>(API_URL + ciudadanos + '/' + ciudadano.id, ciudadano);
     }
     
-    deleteCiudadano(ciudadano): Observable<CiudadanoDetail>{
-        return this.http.delete<CiudadanoDetail>(API_URL + ciudadanos + '/' + ciudadano.id);
+    deleteCiudadano(ciudadanoid): Observable<CiudadanoDetail>{
+        return this.http.delete<CiudadanoDetail>(API_URL + ciudadanos + '/' + ciudadanoid);
     }
 }
 
