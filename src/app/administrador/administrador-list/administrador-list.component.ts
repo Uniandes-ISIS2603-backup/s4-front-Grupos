@@ -78,7 +78,6 @@ export class AdministradorListComponent implements OnInit {
     * Shows or hides the create component
     */
     showHideEdit(administrador_id: number): void {
-      console.log("que si entra aca")
         if (!this.showEdit || (this.showEdit && administrador_id != this.selectedAdministrador.id)) {
             this.showView = false;
             this.showCreate = false;

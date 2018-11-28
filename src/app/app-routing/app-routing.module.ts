@@ -46,6 +46,7 @@ import { GrupodeinteresEditComponent } from '../grupodeinteres/grupodeinteres-ed
 import { GrupodeinteresDeleteComponent } from '../grupodeinteres/grupodeinteres-delete/grupodeinteres-delete.component';
 import { PatrocinioEditComponent } from '../patrocinio/patrocinio-edit/patrocinio-edit.component';
 import { PatrocinioDeleteComponent } from '../patrocinio/patrocinio-delete/patrocinio-delete.component';
+import { AdministradorEditComponent } from '../administrador/administrador-edit/administrador-edit.component';
 
 
 const routes: Routes = [
@@ -247,6 +248,11 @@ const routes: Routes = [
                 path: 'add',
                 component: AdministradorCreateComponent,
                 runGuardsAndResolvers: 'always'
+            }
+            , 
+            {
+                path: 'edit/:id',
+                component: AdministradorEditComponent  
             },
             {
                 path: 'delete/:id',

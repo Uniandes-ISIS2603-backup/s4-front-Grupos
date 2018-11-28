@@ -5,8 +5,7 @@
             <div class="row justify-content-center align-self-center">
                 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
                     (click)="showHideCreate()">
-                    Create an administrador
-                   
+                    Registrarse como un administrador                   
                 </button>
             </div>
             <br>
@@ -14,7 +13,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="h4">Administrador´s Nombre</th>    
+                        <th class="h4">Nombre del administrador</th>    
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +33,7 @@
         </div>
         <div class="col-5">
             <div *ngIf="showView">
-                <app-administrador-detail [administradorDetail]="selecteddministrador"></app-administrador-detail>
+                <app-administrador-detail [administradorDetail]="selectedAdministrador"></app-administrador-detail>
             </div>
             <div *ngIf="showCreate">
                 <app-administrador-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-administrador-create>
