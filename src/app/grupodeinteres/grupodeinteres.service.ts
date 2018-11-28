@@ -81,18 +81,43 @@ export class GrupodeinteresService {
         return this.http.put<Comentario>(API_URL +gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId + comentarios + '/' +  comentario.id, comentario);
     }
    
-  
  /**
     * Updates an noticia
     * @param noticia The noticia's information updated
     * @returns The confirmation that the noticia was updated
     */
+   updateGrupodeinteres(grupo): Observable<Grupodeinteres> {
+    return this.http.put<Grupodeinteres>(API_URL +gruposdeinteres  + '/' +grupo.id, grupo);
+} 
+ /**
+    * Updates an noticia
+    * @param noticia The noticia's information updated
+    * @returns The confirmation that the noticia was updated
+    */
+<<<<<<< HEAD
     updateNoticia(grupoId,noticia): Observable<Noticia> {
         return this.http.put<Noticia>(API_URL +gruposdeinteres  + '/' + grupoId+noticias+'/'+noticia.id, noticia);
     }
     getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
         return this.http.get<Noticia>(API_URL + gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId);
     }
+=======
+   updateNoticia(grupoId,noticia): Observable<Noticia> {
+    return this.http.put<Noticia>(API_URL +gruposdeinteres  + '/' + grupoId+noticias+'/'+noticia.id, noticia);
+}
+getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
+    return this.http.get<Noticia>(API_URL + gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId);
+}
+/**
+    * Creates a new grupodeinteres
+    * @param grupodeinteres The new grupodeinteres
+    * @returns The grupodeinteres with its new id if it was created, false if it wasn't
+    */
+   deleteGrupodeinteres(grupodeinteresId): Observable<GrupodeinteresDetail> {
+    return this.http.delete<GrupodeinteresDetail>(API_URL + gruposdeinteres+'/'+ grupodeinteresId);
+}
+ /**
+>>>>>>> 951a7088760eead12562cb1359dcf2f4daa6de4c
 
 
 

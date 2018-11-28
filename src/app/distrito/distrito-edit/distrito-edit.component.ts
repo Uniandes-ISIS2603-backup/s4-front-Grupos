@@ -44,7 +44,7 @@ export class DistritoEditComponent implements OnInit, OnChanges {
     * Updates the information of the distrito
     */
     editDistrito(): void {
-        ;
+        console.log(this.distrito);
         this.distritoService.updateDistrito(this.distrito)
             .subscribe(() => {
                 this.toastrService.success("The distrito's information was updated", "Distrito edition");

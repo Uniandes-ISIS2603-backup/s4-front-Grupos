@@ -9,9 +9,9 @@
                     <label for="patrocinioName"><b>Nombre</b></label>
                     <input type="text" name="patrocinioName" class="form-control" id="patrocinioName" [(ngModel)]="patrocinio.nombre"
                         #patrocinioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && patrocinioName.invalid }" required>
-                    <label for="patrocinioValue"><b>Valor</b></label>
-                     <input type="number" name="patrocinioValue" class="form-control" id="patrocinioValue" [(ngModel)]="patrocinio.valor"
-                        #patrocinioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && patrocinioName.invalid }" required>
+                    <label for="patrocinioValor"><b>Valor</b></label>
+                     <input type="number" name="patrocinioValor" class="form-control" id="patrocinioValor" [(ngModel)]="patrocinio.valor"
+                        #patrocinioValor="ngModel" [ngClass]="{ 'is-invalid': f.submitted && patrocinioValor.invalid }" required>
                     <div class="invalid-feedback">
                         <div>The patrocinios's name is missing</div>
                     </div>

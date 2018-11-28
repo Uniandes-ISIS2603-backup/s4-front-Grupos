@@ -10,7 +10,15 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let patrocinio of patrocinios">
-                    <td routerLink="/patrocinios/{{patrocinio.id}}">{{patrocinio.nombre}}</td>                            
+                    <td style="cursor: pointer;" routerLink="/patrocinios/{{patrocinio.id}}">{{patrocinio.nombre}}</td>   
+                    <td>
+                            <i class="fa fa-pencil" style="cursor: pointer;"
+                            routerLink="/patrocinios/edit/{{patrocinio.id}}" ></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash" style="cursor: pointer;"
+                            routerLink="/patrocinios/delete/{{patrocinio.id}}"   ></i>
+                        </td>                         
                 </tr>
             </tbody>
         </table>

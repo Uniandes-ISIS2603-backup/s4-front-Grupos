@@ -38,8 +38,15 @@ import { GrupodeinteresEditNoticiaComponent } from '../grupodeinteres/grupodeint
 import { GrupodeinteresNoticiaDetailComponent } from '../grupodeinteres/grupodeinteres-noticia-detail/grupodeinteres-noticia-detail.component';
 import { DistritoDeleteComponent } from '../distrito/distrito-delete/distrito-delete.component';
 import { GrupodeinteresDeleteNoticiaComponent } from '../grupodeinteres/grupodeinteres-delete-noticia/grupodeinteres-delete-noticia.component';
+<<<<<<< HEAD
 import { GrupodeinteresNoticiaDeleteComentarioComponent } from '../grupodeinteres/grupodeinteres-noticias-delete-comentario/grupodeinteres-noticias-delete-comentario.component';
 import { GrupodeinteresNoticiasEditComentarioComponent } from '../grupodeinteres/gruposdeinteres-noticias-edit-comentario/gruposdeinteres-noticias-edit-comentario.component';
+=======
+import { GrupodeinteresEditComponent } from '../grupodeinteres/grupodeinteres-edit/grupodeinteres-edit.component';
+import { GrupodeinteresDeleteComponent } from '../grupodeinteres/grupodeinteres-delete/grupodeinteres-delete.component';
+import { PatrocinioEditComponent } from '../patrocinio/patrocinio-edit/patrocinio-edit.component';
+import { PatrocinioDeleteComponent } from '../patrocinio/patrocinio-delete/patrocinio-delete.component';
+>>>>>>> 951a7088760eead12562cb1359dcf2f4daa6de4c
 
 
 const routes: Routes = [
@@ -74,6 +81,16 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: GrupodeinteresCreateComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: 'edit/:id',
+                component: GrupodeinteresEditComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: 'delete/:id',
+                component: GrupodeinteresDeleteComponent,
                 runGuardsAndResolvers: 'always'
             },
             {
@@ -173,6 +190,14 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: PatrocinioCreateComponent  
+            } , 
+            {
+                path: 'edit/:id',
+                component: PatrocinioEditComponent  
+            } ,
+            {
+                path: 'delete/:id',
+                component: PatrocinioDeleteComponent  
             } ,
               {
                 path: ':id',

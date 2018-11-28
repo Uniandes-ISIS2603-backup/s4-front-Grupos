@@ -9,6 +9,8 @@ import { PatrocinioListComponent } from './patrocinio-list/patrocinio-list.compo
 import { PatrocinioDetailComponent } from './patrocinio-detail/patrocinio-detail.component';
 import { PatrocinioCreateComponent } from './patrocinio-create/patrocinio-create.component';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
+import { PatrocinioEditComponent } from './patrocinio-edit/patrocinio-edit.component';
+import { PatrocinioDeleteComponent } from './patrocinio-delete/patrocinio-delete.component';
 
 @NgModule({
     imports: [
@@ -19,7 +21,8 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         CommonModule,
         FormsModule
     ],
-    declarations: [PatrocinioListComponent, PatrocinioDetailComponent  ,PatrocinioCreateComponent],
+    declarations: [PatrocinioListComponent, PatrocinioDetailComponent  ,PatrocinioCreateComponent, 
+        PatrocinioEditComponent, PatrocinioDeleteComponent],
     providers: [PatrocinioService],
     exports: [PatrocinioListComponent, PatrocinioDetailComponent, PatrocinioCreateComponent]
 })

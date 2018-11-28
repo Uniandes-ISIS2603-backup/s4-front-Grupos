@@ -22,6 +22,8 @@ import { GrupodeinteresNoticiaDetailComponent } from './grupodeinteres-noticia-d
 import { GrupodeinteresDeleteNoticiaComponent } from './grupodeinteres-delete-noticia/grupodeinteres-delete-noticia.component';
 import { GrupodeinteresNoticiaDeleteComentarioComponent } from './grupodeinteres-noticias-delete-comentario/grupodeinteres-noticias-delete-comentario.component';
 import { GrupodeinteresNoticiasEditComentarioComponent } from './gruposdeinteres-noticias-edit-comentario/gruposdeinteres-noticias-edit-comentario.component'
+import { GrupodeinteresEditComponent } from './grupodeinteres-edit/grupodeinteres-edit.component';
+import { GrupodeinteresDeleteComponent } from './grupodeinteres-delete/grupodeinteres-delete.component';
 @NgModule({
   imports: [
     BrowserModule,
