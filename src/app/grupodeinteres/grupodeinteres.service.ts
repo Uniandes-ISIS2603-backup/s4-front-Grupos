@@ -7,12 +7,15 @@ import { environment } from '../../environments/environment';
 import {GrupodeinteresDetail} from './grupodeinteres-detail';
 import {Noticia} from './noticia';
 import {Evento} from './evento';
+import {Comentario} from './comentario';
 
 const API_URL = environment.apiURL;
 
 const gruposdeinteres = '/gruposdeinteres';
 const noticias = '/noticias';
 const eventos = '/eventos';
+const comentarios = '/comentarios';
+
 /**
  * The service provider for everything related to ciudadanos
  */
@@ -45,6 +48,14 @@ export class GrupodeinteresService {
     getEventos(grupoId): Observable<Evento[]> {
         return this.http.get<Evento[]>(API_URL + gruposdeinteres + '/' + grupoId + eventos);
     }
+
+    getComentarios(grupoId, noticiaId): Observable<Comentario[]> {
+        return this.http.get<Comentario[]>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios);
+    }
+
+    getComentarioDetail(grupoId, noticiaId, comentarioId): Observable<Comentario>{
+        return this.http.get<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios + '/' + comentarioId);
+    }
       /**
     * Creates a noticia
     * @param noticia The noticia
@@ -61,6 +72,14 @@ export class GrupodeinteresService {
    deleteNoticia(grupoId, noticia_id): Observable<Noticia> {
     return this.http.delete<Noticia>(API_URL + gruposdeinteres + '/' + grupoId + noticias +'/'+ noticia_id);
    }
+
+   deleteComentario(grupoId, noticia_id, comentario_id): Observable<Comentario> {
+    return this.http.delete<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias +'/'+ noticia_id + comentarios + '/' + comentario_id);
+   }
+
+    updateComentario(grupoId,noticiaId, comentario): Observable<Comentario> {
+        return this.http.put<Comentario>(API_URL +gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId + comentarios + '/' +  comentario.id, comentario);
+    }
    
   
  /**
@@ -68,12 +87,12 @@ export class GrupodeinteresService {
     * @param noticia The noticia's information updated
     * @returns The confirmation that the noticia was updated
     */
-   updateNoticia(grupoId,noticia): Observable<Noticia> {
-    return this.http.put<Noticia>(API_URL +gruposdeinteres  + '/' + grupoId+noticias+'/'+noticia.id, noticia);
-}
-getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
-    return this.http.get<Noticia>(API_URL + gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId);
-}
+    updateNoticia(grupoId,noticia): Observable<Noticia> {
+        return this.http.put<Noticia>(API_URL +gruposdeinteres  + '/' + grupoId+noticias+'/'+noticia.id, noticia);
+    }
+    getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
+        return this.http.get<Noticia>(API_URL + gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId);
+    }
 
 
 
@@ -90,5 +109,8 @@ getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
     return this.http.post<GrupodeinteresDetail>(API_URL + gruposdeinteres, grupo);
     }
 
+    createComentario(grupoId, noticiaId, comentario): Observable<Comentario> {
+        return this.http.post<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios, comentario);     
+    }
 }
 

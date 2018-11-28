@@ -8,10 +8,6 @@ import {CiudadanoListComponent} from '../ciudadano/ciudadano-list/ciudadano-list
 import {CiudadanoDetailComponent} from '../ciudadano/ciudadano-detail/ciudadano-detail.component';
 import {CiudadanoDeleteComponent} from '../ciudadano/ciudadano-delete/ciudadano-delete.component';
 import {CiudadanoCreateComponent} from '../ciudadano/ciudadano-create/ciudadano-create.component';
-import {CiudadanoEditComponent} from '../ciudadano/ciudadano-edit/ciudadano-edit.component';
-import {ComentarioListComponent} from '../comentario/comentario-list/comentario-list.component';
-import {ComentarioDetailComponent} from '../comentario/comentario-detail/comentario-detail.component';
-import {ComentarioCreateComponent} from '../comentario/comentario-create/comentario-create.component';
 import {GrupodeinteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
 import {CategoriaListComponent} from '../categoria/categoria-list/categoria-list.component';
 
@@ -28,6 +24,8 @@ import {LocacionDetailComponent} from '../locacion/locacion-detail/locacion-deta
 import  {LocacionCreateComponent} from '../locacion/locacion-create/locacion-create.component';
 import {GrupodeinteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
 import { GrupodeinteresNoticiaComponent } from '../grupodeinteres/grupodeinteres-noticias/grupodeinteres-noticia.component';
+import { GrupodeinteresNoticiaComentarioComponent } from '../grupodeinteres/grupodeinteres-noticias-comentarios/grupodeinteres-noticias-comentarios.component';
+import { GrupodeinteresNoticiaAddComentarioComponent } from '../grupodeinteres/grupodeinteres-noticias-add-comentario/grupodeinteres-noticias-add-comentario.component';
 import { GrupodeinteresAddNoticiaComponent } from '../grupodeinteres/grupodeinteres-add-noticia/grupodeinteres-add-noticia.component';
 import {GrupodeinteresCreateComponent} from '../grupodeinteres/grupodeinteres-create/grupodeinteres-create.component';
 
@@ -40,6 +38,8 @@ import { GrupodeinteresEditNoticiaComponent } from '../grupodeinteres/grupodeint
 import { GrupodeinteresNoticiaDetailComponent } from '../grupodeinteres/grupodeinteres-noticia-detail/grupodeinteres-noticia-detail.component';
 import { DistritoDeleteComponent } from '../distrito/distrito-delete/distrito-delete.component';
 import { GrupodeinteresDeleteNoticiaComponent } from '../grupodeinteres/grupodeinteres-delete-noticia/grupodeinteres-delete-noticia.component';
+import { GrupodeinteresNoticiaDeleteComentarioComponent } from '../grupodeinteres/grupodeinteres-noticias-delete-comentario/grupodeinteres-noticias-delete-comentario.component';
+import { GrupodeinteresNoticiasEditComentarioComponent } from '../grupodeinteres/gruposdeinteres-noticias-edit-comentario/gruposdeinteres-noticias-edit-comentario.component';
 
 
 const routes: Routes = [
@@ -61,22 +61,6 @@ const routes: Routes = [
             {
                 path: 'delete/:id',
                 component: CiudadanoDeleteComponent
-            }
-        ]
-    }, {
-        path: 'comentarios',
-        children: [
-            {
-                path: 'list',
-                component: ComentarioListComponent
-            },
-            {
-                path: 'add',
-                component: ComentarioCreateComponent                
-            },
-            {
-                path: ':id',
-                component: ComentarioDetailComponent
             }
         ]
     },
@@ -136,7 +120,28 @@ const routes: Routes = [
                              
                 component: GrupodeinteresAddEventoComponent,
                 runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/noticias/:id2/comentarios',
+                component: GrupodeinteresNoticiaComentarioComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/noticias/:id2/comentarios/add',
+                component: GrupodeinteresNoticiaAddComentarioComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/noticias/:id2/comentarios/delete/:id3',
+                component: GrupodeinteresNoticiaDeleteComentarioComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/noticias/:id2/comentarios/edit/:id3',
+                component: GrupodeinteresNoticiasEditComentarioComponent,
+                runGuardsAndResolvers: 'always'
             }
+
         ]
     },
     {
