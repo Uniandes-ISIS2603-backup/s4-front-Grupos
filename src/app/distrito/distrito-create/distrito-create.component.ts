@@ -53,7 +53,6 @@ export class DistritoCreateComponent implements OnInit {
         this.distritoService.createDistrito(this.distrito)   .subscribe(distrito => {   this.distrito = distrito;  
             this.router.navigate(['/distritos/list']);
             this.toastrService.success("The distrito's information was created", "Distrito creation");
-            console.log(this.distrito+ " distritoo");
             
             this.create.emit();    
         }, err => {
