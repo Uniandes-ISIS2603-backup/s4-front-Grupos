@@ -1,28 +1,37 @@
 
-<div *ngIf="grupodeinteresDetail" class="panel-body" >
-    <div class="border margin">
-        <p class="h3 p-3">{{grupodeinteresDetail.nombre}}</p> 
-        <div class="row">
-            <div class="col-md-3">
-                <dl>     
-                    <dt>id</dt>
-                    <dd>{{grupodeinteresDetail.id}}</dd>
-                    <div class="col-md-3">
-                            <p >
-                                <button type="button" class="btn-primary" routerLink="/gruposdeinteres/{{grupodeinteres_id}}/noticias">
-                                    Noticias of the grupo
-                                </button>
-                            </p>
-                        </div>
-                    <div class="col-md-3">
-                            <p >
-                                <button type="button" class="btn-primary1" routerLink="/gruposdeinteres/{{grupodeinteres_id}}/eventos">
-                                    Eventos del grupo
-                                </button>
-                            </p>
-                        </div>
-                </dl>
+
+<div class="panel-body">
+        <div class="border margin">
+            <p class="h3 p-3">{{grupodeinteresDetail.nombre}}<p> 
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="thumb">
+                        <img class="img-fluid" src='{{grupodeinteresDetail.image}}' alt="{{grupodeinteresDetail.image}}" />   
+                    </div>
+                </div>
+                <div class="col">
+                    <dl>     
+                        <dt>  Descripcion</dt>
+                        <dd>{{grupodeinteresDetail.descripcion}}</dd>
+                        <div class="col-md-3">
+                                <p >
+                                    <button type="button" class="btn-primary" routerLink="/gruposdeinteres/{{grupodeinteres_id}}/noticias">
+                                        Noticias of the grupo
+                                    </button>
+                                </p>
+                            </div>
+                        <div class="col-md-3">
+                                <p >
+                                    <button type="button" class="btn-primary1" routerLink="/gruposdeinteres/{{grupodeinteres_id}}/eventos">
+                                        Eventos del grupo
+                                    </button>
+                                </p>
+                            </div>
+                    </dl>
+                </div>
+    
             </div>
         </div>
-    </div>    
-</div>
+      
+    </div>
+    

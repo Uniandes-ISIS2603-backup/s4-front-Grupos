@@ -42,6 +42,10 @@ import { GrupodeinteresEditEventoComponent } from '../grupodeinteres/grupodeinte
 import { GrupodeinteresEventoDetailComponent } from '../grupodeinteres/grupodeinteres-evento-detail/grupodeinteres-evento-detail.component';
 import { GrupodeinteresDeleteEventoComponent } from '../grupodeinteres/grupodeinteres-delete-evento/grupodeinteres-delete-evento.component';
 import { AdministradorDeleteComponent } from '../administrador/administrador-delete/administrador-delete.component';
+import { GrupodeinteresEditComponent } from '../grupodeinteres/grupodeinteres-edit/grupodeinteres-edit.component';
+import { GrupodeinteresDeleteComponent } from '../grupodeinteres/grupodeinteres-delete/grupodeinteres-delete.component';
+import { PatrocinioEditComponent } from '../patrocinio/patrocinio-edit/patrocinio-edit.component';
+import { PatrocinioDeleteComponent } from '../patrocinio/patrocinio-delete/patrocinio-delete.component';
 
 
 const routes: Routes = [
@@ -88,6 +92,16 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: GrupodeinteresCreateComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: 'edit/:id',
+                component: GrupodeinteresEditComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: 'delete/:id',
+                component: GrupodeinteresDeleteComponent,
                 runGuardsAndResolvers: 'always'
             },
             {
@@ -184,6 +198,14 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: PatrocinioCreateComponent  
+            } , 
+            {
+                path: 'edit/:id',
+                component: PatrocinioEditComponent  
+            } ,
+            {
+                path: 'delete/:id',
+                component: PatrocinioDeleteComponent  
             } ,
               {
                 path: ':id',

@@ -11,7 +11,15 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let grupodeinteres of gruposdeinteres">
-                    <td routerLink="/gruposdeinteres/{{grupodeinteres.id}}">{{grupodeinteres.nombre}}</td>
+                        <td style="cursor: pointer;" routerLink="/gruposdeinteres/{{grupodeinteres.id}}"> <dd>{{grupodeinteres.nombre}}</dd></td>
+                        <td>
+                            <i class="fa fa-pencil" style="cursor: pointer;"
+                            routerLink="/gruposdeinteres/edit/{{grupodeinteres.id}}" ></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash" style="cursor: pointer;"
+                            routerLink="/gruposdeinteres/delete/{{grupodeinteres.id}}"   ></i>
+                        </td>
                     
                 </tr>
             </tbody>

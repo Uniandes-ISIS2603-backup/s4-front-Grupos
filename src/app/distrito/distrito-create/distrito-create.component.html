@@ -13,6 +13,14 @@
                         <div>The distrito's name is missing</div>
                     </div>
                 </div>
+                <div class="form-group">
+                        <label for="distritoImage"><b>Imagen</b></label>
+                        <input type="text" name="distritoImage" class="form-control" id="distritoImage" [(ngModel)]="distrito.image"
+                               #distritoImage="ngModel" [ngClass]="{ 'is-invalid': f.submitted && distritoImage.invalid }" required>
+                               <div class="invalid-feedback">
+                            <div>The distrito's image is missing</div>
+                        </div>
+                    </div>
               
                 <br>
                 <div class="row form-inline justify-content-center align-self-center">

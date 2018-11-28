@@ -45,6 +45,22 @@ export class PatrocinioService {
    createPatrocinio(patrocinio): Observable<PatrocinioDetail> {
     return this.http.post<PatrocinioDetail>(API_URL +  patrocinios, patrocinio);
     }
+    /**
+    * Creates a new patrocinio
+    * @param patrocinio The new patrocinio
+    * @returns The patrocinio with its new id if it was created, false if it wasn't
+    */
+   deletePatrocinio(patrocinioId): Observable<PatrocinioDetail> {
+    return this.http.delete<PatrocinioDetail>(API_URL + patrocinios+'/'+ patrocinioId);
+}
+ /**
+    * Updates an patrocinio
+    * @param patrocinio The patrocinio's information updated
+    * @returns The confirmation that the patrocinio was updated
+    */
+   updatePatrocinio(patrocinio): Observable<PatrocinioDetail> {
+    return this.http.put<PatrocinioDetail>(API_URL + patrocinios + '/' + patrocinio.id, patrocinio);
+}
 }
 
 

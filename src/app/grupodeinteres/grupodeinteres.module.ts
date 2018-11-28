@@ -18,6 +18,8 @@ import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodein
 import { GrupodeinteresEditNoticiaComponent } from './grupodeinteres-edit-noticia/grupodeinteres-edit-noticia.component';
 import { GrupodeinteresNoticiaDetailComponent } from './grupodeinteres-noticia-detail/grupodeinteres-noticia-detail.component';
 import { GrupodeinteresDeleteNoticiaComponent } from './grupodeinteres-delete-noticia/grupodeinteres-delete-noticia.component';
+import { GrupodeinteresEditComponent } from './grupodeinteres-edit/grupodeinteres-edit.component';
+import { GrupodeinteresDeleteComponent } from './grupodeinteres-delete/grupodeinteres-delete.component';
 import { GrupodeinteresEditEventoComponent } from './grupodeinteres-edit-evento/grupodeinteres-edit-evento.component';
 import { GrupodeinteresEventoDetailComponent } from './grupodeinteres-evento-detail/grupodeinteres-evento-detail.component';
 import { GrupodeinteresDeleteEventoComponent } from './grupodeinteres-delete-evento/grupodeinteres-delete-evento.component';
@@ -34,7 +36,8 @@ import { GrupodeinteresDeleteEventoComponent } from './grupodeinteres-delete-eve
       GrupodeinteresDetailComponent, 
       GrupodeinteresNoticiaComponent, GrupodeinteresAddNoticiaComponent, 
       GrupodeinteresEventoComponent, GrupodeinteresAddEventoComponent, 
-      GrupodeinteresEditNoticiaComponent, GrupodeinteresNoticiaDetailComponent,GrupodeinteresDeleteNoticiaComponent,
+      GrupodeinteresEditNoticiaComponent, GrupodeinteresNoticiaDetailComponent,
+      GrupodeinteresDeleteNoticiaComponent, GrupodeinteresEditComponent, GrupodeinteresDeleteComponent,
       GrupodeinteresEditEventoComponent, GrupodeinteresEventoDetailComponent,GrupodeinteresDeleteEventoComponent],
     providers: [GrupodeinteresService],
     exports: [GrupodeinteresListComponent, GrupodeinteresDetailComponent,
