@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <br>
-            <h2 class="text-center">Add a new administrador</h2>
+            <h2 class="text-center">Crear un nuevo administrador</h2>
             <br>
             <form name="administrador" (ngSubmit)="f.form.valid && createAdministrador()" #f="ngForm" novalidate>
                 <div class="form-group">
@@ -11,6 +11,12 @@
                         #administradorName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && administradorName.invalid }" required>
                     <div class="invalid-feedback">
                         <div>Falta el nombre del administrador</div>
+                    </div>
+                    <label for="administradorContrasena"><b>Contraseña</b></label>
+                    <input type="text" name="administradorContrasena" class="form-control" id="administradorContrasena" [(ngModel)]="administrador.contrasena"
+                        #administradorContrasena="ngModel" [ngClass]="{ 'is-invalid': f.submitted && administradorContrasena.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>Falta la contraseña del administrador</div>
                     </div>
                 </div>
               

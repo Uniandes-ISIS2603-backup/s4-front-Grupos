@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar un administrador</h2>
+        <br>
+        <form name="administrador" (ngSubmit)="f.form.valid && editAdministrador()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="administradorName"><b>Nombre</b></label>
+                <input type="text" name="administradorName" class="form-control" id="administradorName" [(ngModel)]="administrador.nombre"
+                       #administradorName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && administradorName.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>El nombre del administrador hace falta</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="administradorContrasena"><b>Contraseña</b></label>
+                <input type="text" name="administradorContrasena" class="form-control" id="administradorContrasena" [(ngModel)]="administrador.contrasena"
+                       #administradorContrasena="ngModel" [ngClass]="{ 'is-invalid': f.submitted && administradorContrasena.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>La contraseña del administrador hace falta</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-12">
+            <div class="row form-inline justify-content-center align-self-center">
+                <i  style="padding-right: 1em;"class="fa fa-save " (click)="editAdministrador()"></i>
+
+                <i class="fa fa-ban" (click)="cancelEdition()"></i>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
