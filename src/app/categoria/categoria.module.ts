@@ -10,6 +10,8 @@ import {CategoriaService} from './categoria.service';
 import { CategoriaListComponent } from './categoria-list/categoria-list.component';
 import { CategoriaDetailComponent } from './categoria-detail/categoria-detail.component';
 import { CategoriaCreateComponent } from './categoria-create/categoria-create.component';
+import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
+import { CategoriaDeleteComponent } from './categoria-delete/categoria-delete.component';
 
 @NgModule({
   imports: [
@@ -20,7 +22,7 @@ import { CategoriaCreateComponent } from './categoria-create/categoria-create.co
     FormsModule,
     NgbModule
   ],
-  declarations: [CategoriaListComponent, CategoriaDetailComponent, CategoriaCreateComponent],
+  declarations: [CategoriaListComponent, CategoriaDetailComponent, CategoriaCreateComponent, CategoriaEditComponent, CategoriaDeleteComponent],
     providers: [CategoriaService],
     exports: [CategoriaListComponent, CategoriaDetailComponent, CategoriaCreateComponent]
 })

@@ -26,7 +26,6 @@ export class GrupodeinteresDeleteComponent implements OnInit {
 
 
 
-
     /**
     * El id del grupodeinteres que viene en el path get .../grupodeinteress/grupodeinteres_id
     */
