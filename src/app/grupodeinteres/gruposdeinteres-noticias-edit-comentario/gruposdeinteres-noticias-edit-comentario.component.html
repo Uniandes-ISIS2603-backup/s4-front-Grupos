@@ -6,9 +6,9 @@
         <form name="comentario" (ngSubmit)="f.form.valid && editComentario()" #f="ngForm" novalidate>
               <div class="form-group">
                 <label for="comentarioName"><b>Name</b></label>
-                <input type="text" name="comentarioName" class="form-control" id="comentarioName" [(ngModel)]="comentario.titular"
-                       #comentarioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && comentarioName.invalid }" required>
-                       <div class="invalid-feedback">
+                <br>
+                <p> {{comentario.nombre}}</p>
+                <div class="invalid-feedback">
                     <div>The comentario's name is missing</div>
                 </div>
             </div>
