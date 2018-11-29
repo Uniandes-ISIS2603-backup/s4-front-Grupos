@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import { CiudadanoService } from './ciudadano.service';
 import { CiudadanoListComponent } from './ciudadano-list/ciudadano-list.component';
 import { CiudadanoDetailComponent } from './ciudadano-detail/ciudadano-detail.component';
+import { CiudadanoDeleteComponent } from './ciudadano-delete/ciudadano-delete.component';
 import { CiudadanoCreateComponent } from './ciudadano-create/ciudadano-create.component';
 import { CiudadanoEditComponent } from './ciudadano-edit/ciudadano-edit.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
@@ -24,7 +25,7 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
 
 //        GrupoDeInteresModule
     ],
-    declarations: [CiudadanoListComponent, CiudadanoDetailComponent, CiudadanoCreateComponent, CiudadanoEditComponent],
+    declarations: [CiudadanoListComponent, CiudadanoDetailComponent, CiudadanoCreateComponent, CiudadanoEditComponent, CiudadanoDeleteComponent],
     providers: [CiudadanoService],
     exports: [CiudadanoListComponent, CiudadanoCreateComponent]
 })
