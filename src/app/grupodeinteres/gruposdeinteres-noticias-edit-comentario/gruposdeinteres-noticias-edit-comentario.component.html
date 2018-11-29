@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Edición del comentario {{comentario.id}}</h2>
+        <br>
+        <form name="comentario" (ngSubmit)="f.form.valid && editComentario()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="comentarioName"><b>Name</b></label>
+                <br>
+                <p> {{comentario.nombre}}</p>
+                <div class="invalid-feedback">
+                    <div>The comentario's name is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="comentarioTexto"><b>Texto</b></label>
+                    <input type="text" name="comentarioTexto" class="form-control" id="comentarioTexto" [(ngModel)]="comentario.texto"
+                        #comentarioDes="ngModel" [ngClass]="{ 'is-invalid': f.submitted && comentarioDes.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>El texto del comentario hace falta</div>
+                    </div>
+                </div>
+          
+            <br>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="updateComentario()"></i>
+          
+            <i class="fa fa-ban" (click)="cancelUpdate()"></i>
+        </div>
+    </div>
+</div>

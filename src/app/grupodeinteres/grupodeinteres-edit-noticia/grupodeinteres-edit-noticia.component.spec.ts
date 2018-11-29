@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NoticiaEditComponent } from './grupodeinteres-edit-noticia.component';
+import { GrupodeinteresEditNoticiaComponent } from './grupodeinteres-edit-noticia.component';
 
-describe('NoticiaEditComponent', () => {
-  let component: NoticiaEditComponent;
-  let fixture: ComponentFixture<NoticiaEditComponent>;
+describe('GrupodeinteresEditNoticiaComponent', () => {
+  let component: GrupodeinteresEditNoticiaComponent;
+  let fixture: ComponentFixture<GrupodeinteresEditNoticiaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoticiaEditComponent ]
+      declarations: [ GrupodeinteresEditNoticiaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NoticiaEditComponent);
+    fixture = TestBed.createComponent(GrupodeinteresEditNoticiaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

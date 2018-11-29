@@ -8,7 +8,7 @@
             
             <tr *ngFor="let noticia of noticias">
                 <td><span id="grupo-noticiatid"><b>{{noticia.id}}</b></span><span>: </span><span id="noticia-titular" 
-                    style="cursor: pointer;" routerLink="/gruposdeinteres/{{grupo_id}}/noticias/{{noticia.id}}">{{noticia.titular}}</span><br></td>
+                    style="cursor: pointer;" routerLink="/gruposdeinteres/{{grupo_id}}/noticias/{{noticia.id}}">{{noticia.descripcion}}</span><br></td>
                 <td>
                         <i class="fa fa-pencil" style="cursor: pointer;"
                         routerLink="/gruposdeinteres/{{grupo_id}}/noticias/edit/{{noticia.id}}" ></i>

@@ -26,6 +26,8 @@ export class GrupodeinteresEventoComponent implements OnInit {
         
         this.eventos = eventos });
 }
+
+ 
     
     ngOnInit(){
         console.log("eventos");

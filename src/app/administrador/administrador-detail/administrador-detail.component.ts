@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { AdministradorService } from '../administrador.service';
 
 import { AdministradorDetail } from '../administrador-detail';
-import { Administrador } from '../administrador';
 
 
 @Component({
@@ -13,6 +12,8 @@ import { Administrador } from '../administrador';
     styleUrls: ['./administrador-detail.component.css']
 })
 export class AdministradorDetailComponent implements OnInit {
+    
+    @Input() administradorDetail: AdministradorDetail;
 
     /**
     * Constructor for the component
@@ -26,11 +27,6 @@ export class AdministradorDetailComponent implements OnInit {
     ) { }
 
     /**
-    * The administrador
-    */
-    administradorDetail: AdministradorDetail;
-
-    /**
     * El id del administrador que viene en el path get .../administradores/administrador_id
     */
     administrador_id: number;
@@ -38,9 +34,10 @@ export class AdministradorDetailComponent implements OnInit {
     * The method which obtains the administrador whose details we want to show
     */
     getAdministradorDetail(): void {
-        this.administradorService.getAdministradorDetail(this.administrador_id).subscribe(administradorDetail => { 
-            console.log(administradorDetail);
-            this.administradorDetail = administradorDetail });
+        this.administradorService.getAdministradorDetail(this.administrador_id)
+            .subscribe(administradorDetail => {
+                this.administradorDetail = administradorDetail
+            });
     }
 
    
@@ -50,8 +47,11 @@ export class AdministradorDetailComponent implements OnInit {
     */
     ngOnInit() {
         this.administrador_id = +this.route.snapshot.paramMap.get('id');
-        
+        if(this.administrador_id)
+        {
+        this.administradorDetail = new AdministradorDetail();
         this.getAdministradorDetail();
+        }
     }
 }
 
