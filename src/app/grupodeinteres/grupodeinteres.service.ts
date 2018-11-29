@@ -7,12 +7,14 @@ import { environment } from '../../environments/environment';
 import {GrupodeinteresDetail} from './grupodeinteres-detail';
 import {Noticia} from './noticia';
 import {Evento} from './evento';
+import {Comentario} from './comentario';
 
 const API_URL = environment.apiURL;
 
 const gruposdeinteres = '/gruposdeinteres';
 const noticias = '/noticias';
 const eventos = '/eventos';
+const comentarios = '/comentarios';
 /**
  * The service provider for everything related to ciudadanos
  */
@@ -142,6 +144,25 @@ getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
     createGrupo(grupo): Observable<GrupodeinteresDetail> {
     return this.http.post<GrupodeinteresDetail>(API_URL + gruposdeinteres, grupo);
     }
+  
+  createComentario(grupoId, noticiaId, comentario): Observable<Comentario> {
+        return this.http.post<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios, comentario);     
+    }
+  
+  updateComentario(grupoId,noticiaId, comentario): Observable<Comentario> {
+        return this.http.put<Comentario>(API_URL +gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId + comentarios + '/' +  comentario.id, comentario);
+    }
+  
+  getComentarios(grupoId, noticiaId): Observable<Comentario[]> {
+        return this.http.get<Comentario[]>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios);
+    }
+  
+  deleteComentario(grupoId, noticia_id, comentario_id): Observable<Comentario> {
+    return this.http.delete<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias +'/'+ noticia_id + comentarios + '/' + comentario_id);
+   }
+  
+  getComentarioDetail(grupoId, noticiaId, comentarioId): Observable<Comentario>{
+        return this.http.get<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios + '/' + comentarioId);
+    }
 
 }
-
