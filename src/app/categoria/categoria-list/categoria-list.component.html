@@ -19,7 +19,15 @@
             <tbody>  
                 
                 <tr *ngFor = "let categoria of categorias">                    
-                    <td routerLink="/categorias/{{categoria.id}}">{{categoria.nombre}}</td>
+                    <td routerLink="/categorias/{{categoria.id}}"> {{categoria.nombre}}</td>
+                    
+                    <td>
+                        <i class="fa fa-pencil" style="cursor: pointer;" routerLink="/categorias/edit/{{categoria.id}}"></i>
+                    </td>
+                    <td>
+                        <i class="fa fa-trash" style="cursor: pointer;" routerLink="/categorias/delete/{{categoria.id}}"></i>
+                    </td>
+                
                 </tr>
             
         </tbody>
