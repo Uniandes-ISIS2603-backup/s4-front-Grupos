@@ -38,10 +38,15 @@ import { GrupodeinteresEditNoticiaComponent } from '../grupodeinteres/grupodeint
 import { GrupodeinteresNoticiaDetailComponent } from '../grupodeinteres/grupodeinteres-noticia-detail/grupodeinteres-noticia-detail.component';
 import { DistritoDeleteComponent } from '../distrito/distrito-delete/distrito-delete.component';
 import { GrupodeinteresDeleteNoticiaComponent } from '../grupodeinteres/grupodeinteres-delete-noticia/grupodeinteres-delete-noticia.component';
+import { GrupodeinteresEditEventoComponent } from '../grupodeinteres/grupodeinteres-edit-evento/grupodeinteres-edit-evento.component';
+import { GrupodeinteresEventoDetailComponent } from '../grupodeinteres/grupodeinteres-evento-detail/grupodeinteres-evento-detail.component';
+import { GrupodeinteresDeleteEventoComponent } from '../grupodeinteres/grupodeinteres-delete-evento/grupodeinteres-delete-evento.component';
+import { AdministradorDeleteComponent } from '../administrador/administrador-delete/administrador-delete.component';
 import { GrupodeinteresEditComponent } from '../grupodeinteres/grupodeinteres-edit/grupodeinteres-edit.component';
 import { GrupodeinteresDeleteComponent } from '../grupodeinteres/grupodeinteres-delete/grupodeinteres-delete.component';
 import { PatrocinioEditComponent } from '../patrocinio/patrocinio-edit/patrocinio-edit.component';
 import { PatrocinioDeleteComponent } from '../patrocinio/patrocinio-delete/patrocinio-delete.component';
+import { AdministradorEditComponent } from '../administrador/administrador-edit/administrador-edit.component';
 
 
 const routes: Routes = [
@@ -144,6 +149,24 @@ const routes: Routes = [
                              
                 component: GrupodeinteresAddEventoComponent,
                 runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/eventos/edit/:id2',
+                             
+                component: GrupodeinteresEditEventoComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/eventos/delete/:id2',
+                             
+                component: GrupodeinteresDeleteEventoComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/eventos/:id2',
+                             
+                component: GrupodeinteresEventoDetailComponent,
+                runGuardsAndResolvers: 'always'
             }
         ]
     },
@@ -224,6 +247,16 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: AdministradorCreateComponent,
+                runGuardsAndResolvers: 'always'
+            }
+            , 
+            {
+                path: 'edit/:id',
+                component: AdministradorEditComponent  
+            },
+            {
+                path: 'delete/:id',
+                component: AdministradorDeleteComponent,
                 runGuardsAndResolvers: 'always'
             },
             {

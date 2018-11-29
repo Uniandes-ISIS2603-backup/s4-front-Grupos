@@ -31,5 +31,22 @@ export class AdministradorService {
    createAdministrador(administrador): Observable<AdministradorDetail> {
     return this.http.post<AdministradorDetail>(API_URL + administradores, administrador);
 }
+ /**
+    * Creates a new administrador
+    * @param administrador The new administrador
+    * @returns The administrador with its new id if it was created, false if it wasn't
+    */
+   deleteAdministrador(administradorId): Observable<AdministradorDetail> {
+    return this.http.delete<AdministradorDetail>(API_URL + administradores+'/'+ administradorId);
+}
+ /**
+    * Updates an administrador
+    * @param administrador The administrador's information updated
+    * @returns The confirmation that the administrador was updated
+    */
+   updateAdministrador(administrador): Observable<AdministradorDetail> {
+    return this.http.put<AdministradorDetail>(API_URL + administradores + '/' + administrador.id, administrador);
+}
+
 
 }

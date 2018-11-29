@@ -1,17 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output,EventEmitter} from '@angular/core';
 import {Router} from '@angular/router';
 import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 
 import {AdministradorService} from '../administrador.service';
-type DateString = {month: number, day: number, year: number};
 import {Administrador} from '../administrador';
 
 @Component({
     selector: 'app-administrador-create',
     templateUrl: './administrador-create.component.html',
     styleUrls: ['./administrador-create.component.css'],
-    providers: [DatePipe]
+    providers: []
 })
 export class AdministradorCreateComponent implements OnInit {
 
@@ -24,7 +23,6 @@ export class AdministradorCreateComponent implements OnInit {
     * @param router The router
     */
     constructor(
-        private dp: DatePipe,
         private administradorService: AdministradorService,
         private toastrService: ToastrService,
         private router: Router
@@ -34,13 +32,17 @@ export class AdministradorCreateComponent implements OnInit {
     * The new administrador
     */
     administrador: Administrador;
+
+    @Output() cancel = new EventEmitter();
+   
+    @Output() create = new EventEmitter();
+
     /**
     * Cancels the creation of the new administrador
     * Redirects to the administradores' list page
     */
     cancelCreation(): void {
-        this.toastrService.warning('The administrador wasn\'t created', 'Administrador creation');
-        this.router.navigate(['/administradores/list']);
+        this.cancel.emit();
     }
 
     /**
@@ -49,10 +51,13 @@ export class AdministradorCreateComponent implements OnInit {
     createAdministrador(): Administrador {
        
         this.administradorService.createAdministrador(this.administrador)   .subscribe(administrador => {   this.administrador.id = administrador.id;  
-            this.router.navigate(['/administradores/' + administrador.id]);
-            }, err => {
+            this.router.navigate(['/administradores/list']);
+            this.toastrService.success("The administrador's information was created", "Administrador creation");
+            this.create.emit();    
+        }, err => {
                 this.toastrService.error(err, 'Error');
-            });
+                
+        });
         return this.administrador;
     }
 
@@ -60,7 +65,6 @@ export class AdministradorCreateComponent implements OnInit {
     * This function will initialize the component
     */
     ngOnInit() {
-        console.log(123);
         this.administrador = new Administrador();
         
     }

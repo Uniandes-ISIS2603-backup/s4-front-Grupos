@@ -1,20 +1,46 @@
 <div class="container-fluid">
-    <div class="col">
-            <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/administradores/add">Crear un nuevo administrador</button>
-        <table class="table table-striped">
-            <thead >
-                <tr>
-                    <th>Nombre del administrador</th>    
-                    <th>Id del administrador</th>   
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let administrador of administradores">
-                    <td style="cursor: pointer;" routerLink="/administradores/{{administrador.id}}">{{administrador.nombre}}</td>
-                    <td>{{administrador.id}}</td>
-                  
-                </tr>
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-7">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">
+                    Registrarse como un administrador                   
+                </button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Nombre del administrador</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let administrador of administradores" >
+                        <td style="cursor: pointer;" (click)="onSelected(administrador.id)"> <dd>{{administrador.nombre}}</dd></td>
+                        <td>
+                            <i class="fa fa-pencil" style="cursor: pointer;"
+                                (click)="showHideEdit(administrador.id)"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash" style="cursor: pointer;"
+                            routerLink="/administradores/delete/{{administrador.id}}" ></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-5">
+            <div *ngIf="showView">
+                <app-administrador-detail [administradorDetail]="selectedAdministrador"></app-administrador-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-administrador-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-administrador-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-administrador-edit [administrador]="selectedAdministrador" (cancel)="showHideEdit(selectedAdministrador.id)" (update)="updateAdministrador()" ></app-administrador-edit>
+            </div>
+        </div>   
     </div>
 </div>
