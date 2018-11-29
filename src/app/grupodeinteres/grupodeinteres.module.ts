@@ -6,10 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { GrupodeinteresNoticiaComponent } from './grupodeinteres-noticias/grupodeinteres-noticia.component';
+import { GrupodeinteresEventoComponent } from './grupodeinteres-eventos/grupodeinteres-evento.component';
 import { GrupodeinteresNoticiaComentarioComponent } from './grupodeinteres-noticias-comentarios/grupodeinteres-noticias-comentarios.component';
 import { GrupodeinteresNoticiaAddComentarioComponent } from './grupodeinteres-noticias-add-comentario/grupodeinteres-noticias-add-comentario.component';
-import { GrupodeinteresEventoComponent } from './grupodeinteres-eventos/grupodeinteres-evento.component';
-
 import {AppRoutingModule} from '../app-routing/app-routing.module';
 import { GrupodeinteresDetailComponent } from './grupodeinteres-detail/grupodeinteres-detail.component';
 
@@ -20,10 +19,16 @@ import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodein
 import { GrupodeinteresEditNoticiaComponent } from './grupodeinteres-edit-noticia/grupodeinteres-edit-noticia.component';
 import { GrupodeinteresNoticiaDetailComponent } from './grupodeinteres-noticia-detail/grupodeinteres-noticia-detail.component';
 import { GrupodeinteresDeleteNoticiaComponent } from './grupodeinteres-delete-noticia/grupodeinteres-delete-noticia.component';
-import { GrupodeinteresNoticiaDeleteComentarioComponent } from './grupodeinteres-noticias-delete-comentario/grupodeinteres-noticias-delete-comentario.component';
-import { GrupodeinteresNoticiasEditComentarioComponent } from './gruposdeinteres-noticias-edit-comentario/gruposdeinteres-noticias-edit-comentario.component'
 import { GrupodeinteresEditComponent } from './grupodeinteres-edit/grupodeinteres-edit.component';
 import { GrupodeinteresDeleteComponent } from './grupodeinteres-delete/grupodeinteres-delete.component';
+import { GrupodeinteresEditEventoComponent } from './grupodeinteres-edit-evento/grupodeinteres-edit-evento.component';
+import { GrupodeinteresEventoDetailComponent } from './grupodeinteres-evento-detail/grupodeinteres-evento-detail.component';
+import { GrupodeinteresDeleteEventoComponent } from './grupodeinteres-delete-evento/grupodeinteres-delete-evento.component';
+import { GrupodeinteresNoticiaDeleteComentarioComponent } from './grupodeinteres-noticias-delete-comentario/grupodeinteres-noticias-delete-comentario.component';
+import { GrupodeinteresNoticiasEditComentarioComponent } from './gruposdeinteres-noticias-edit-comentario/gruposdeinteres-noticias-edit-comentario.component'
+
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -33,14 +38,17 @@ import { GrupodeinteresDeleteComponent } from './grupodeinteres-delete/grupodein
     FormsModule,
     NgbModule
   ],
-    declarations: [GrupodeinteresListComponent,GrupodeinteresDeleteComponent, GrupodeinteresEditComponent, GrupodeinteresCreateComponent, 
-      GrupodeinteresDetailComponent, 
-      GrupodeinteresNoticiaComponent, GrupodeinteresNoticiaComentarioComponent, GrupodeinteresAddNoticiaComponent, 
-      GrupodeinteresEventoComponent, GrupodeinteresAddEventoComponent,  GrupodeinteresNoticiaDeleteComentarioComponent,
-      GrupodeinteresNoticiaAddComentarioComponent, GrupodeinteresEditNoticiaComponent, GrupodeinteresNoticiaDetailComponent,GrupodeinteresDeleteNoticiaComponent,
-      GrupodeinteresNoticiasEditComentarioComponent],
+    declarations: [GrupodeinteresListComponent, GrupodeinteresDeleteComponent, GrupodeinteresEditComponent, GrupodeinteresCreateComponent, 
+      GrupodeinteresDetailComponent, GrupodeinteresNoticiaComentarioComponent, 
+      GrupodeinteresNoticiaComponent, GrupodeinteresAddNoticiaComponent, 
+      GrupodeinteresEventoComponent, GrupodeinteresAddEventoComponent, 
+      GrupodeinteresEditNoticiaComponent, GrupodeinteresNoticiaDetailComponent,
+      GrupodeinteresDeleteNoticiaComponent, GrupodeinteresEditComponent, GrupodeinteresDeleteComponent,
+      GrupodeinteresEditEventoComponent, GrupodeinteresEventoDetailComponent,GrupodeinteresDeleteEventoComponent, GrupodeinteresNoticiaDeleteComentarioComponent,
+      GrupodeinteresNoticiaAddComentarioComponent,GrupodeinteresNoticiasEditComentarioComponent],
     providers: [GrupodeinteresService],
     exports: [GrupodeinteresListComponent, GrupodeinteresDetailComponent,
-       GrupodeinteresCreateComponent,GrupodeinteresNoticiaDetailComponent,GrupodeinteresDeleteNoticiaComponent]
+       GrupodeinteresCreateComponent,GrupodeinteresNoticiaDetailComponent,GrupodeinteresDeleteNoticiaComponent,
+       GrupodeinteresEventoDetailComponent,GrupodeinteresDeleteEventoComponent]
 })
 export class GrupodeinteresModule { }

@@ -15,7 +15,6 @@ const gruposdeinteres = '/gruposdeinteres';
 const noticias = '/noticias';
 const eventos = '/eventos';
 const comentarios = '/comentarios';
-
 /**
  * The service provider for everything related to ciudadanos
  */
@@ -45,16 +44,14 @@ export class GrupodeinteresService {
         return this.http.get<Noticia[]>(API_URL + gruposdeinteres + '/' + grupoId + noticias);
     }
     
+    /**
+    * Gets a evento
+    * @param evento The evento
+    * @param grupoId id del grupo
+    * @returns True if the evento was get, false otherwise
+    */
     getEventos(grupoId): Observable<Evento[]> {
         return this.http.get<Evento[]>(API_URL + gruposdeinteres + '/' + grupoId + eventos);
-    }
-
-    getComentarios(grupoId, noticiaId): Observable<Comentario[]> {
-        return this.http.get<Comentario[]>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios);
-    }
-
-    getComentarioDetail(grupoId, noticiaId, comentarioId): Observable<Comentario>{
-        return this.http.get<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios + '/' + comentarioId);
     }
       /**
     * Creates a noticia
@@ -72,14 +69,6 @@ export class GrupodeinteresService {
    deleteNoticia(grupoId, noticia_id): Observable<Noticia> {
     return this.http.delete<Noticia>(API_URL + gruposdeinteres + '/' + grupoId + noticias +'/'+ noticia_id);
    }
-
-   deleteComentario(grupoId, noticia_id, comentario_id): Observable<Comentario> {
-    return this.http.delete<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias +'/'+ noticia_id + comentarios + '/' + comentario_id);
-   }
-
-    updateComentario(grupoId,noticiaId, comentario): Observable<Comentario> {
-        return this.http.put<Comentario>(API_URL +gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId + comentarios + '/' +  comentario.id, comentario);
-    }
    
  /**
     * Updates an noticia
@@ -108,22 +97,72 @@ getNoticiaDetail(grupoId,noticiaId): Observable<Noticia> {
    deleteGrupodeinteres(grupodeinteresId): Observable<GrupodeinteresDetail> {
     return this.http.delete<GrupodeinteresDetail>(API_URL + gruposdeinteres+'/'+ grupodeinteresId);
 }
+ /**
+
+
 
       /**
     * Creates a evento
     * @param evento The evento
+    * @param grupoId id del grupo
     * @returns True if the evento was posted, false otherwise
     */
-   createEvento(grupoId, evento): Observable<Evento> {
+    createEvento(grupoId, evento): Observable<Evento> {
     return this.http.post<Evento>(API_URL + gruposdeinteres + '/' + grupoId + eventos, evento);     
+    }
+    
+    /**
+    * Updates an evento
+    * @param evento The evento's information updated
+    * @param grupoId id del grupo
+    * @returns The confirmation that the evento was updated
+    */
+    updateEvento(grupoId,evento): Observable<Evento> {
+    return this.http.put<Evento>(API_URL +gruposdeinteres  + '/' + grupoId+eventos+'/'+evento.id, evento);
+    }
+    
+    /**
+    * Deletes a evento
+    * @param evento The evento
+    * @param grupoId id del grupo
+    * @returns True if the evento was deleted, false otherwise
+    */
+    deleteEvento(grupoId, evento_id): Observable<Evento> {
+    return this.http.delete<Evento>(API_URL + gruposdeinteres + '/' + grupoId + eventos +'/'+ evento_id);
+    }
+
+    /**
+    * Gets a evento
+    * @param evento The evento
+    * @param grupoId id del grupo
+    * @returns True if the evento was get, false otherwise
+    */
+    getEventoDetail(grupoId,eventoId): Observable<Evento> {
+    return this.http.get<Evento>(API_URL + gruposdeinteres  + '/' + grupoId+eventos + '/' + eventoId);
     }
     
     createGrupo(grupo): Observable<GrupodeinteresDetail> {
     return this.http.post<GrupodeinteresDetail>(API_URL + gruposdeinteres, grupo);
     }
-
-    createComentario(grupoId, noticiaId, comentario): Observable<Comentario> {
+  
+  createComentario(grupoId, noticiaId, comentario): Observable<Comentario> {
         return this.http.post<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios, comentario);     
     }
-}
+  
+  updateComentario(grupoId,noticiaId, comentario): Observable<Comentario> {
+        return this.http.put<Comentario>(API_URL +gruposdeinteres  + '/' + grupoId+noticias + '/' + noticiaId + comentarios + '/' +  comentario.id, comentario);
+    }
+  
+  getComentarios(grupoId, noticiaId): Observable<Comentario[]> {
+        return this.http.get<Comentario[]>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios);
+    }
+  
+  deleteComentario(grupoId, noticia_id, comentario_id): Observable<Comentario> {
+    return this.http.delete<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias +'/'+ noticia_id + comentarios + '/' + comentario_id);
+   }
+  
+  getComentarioDetail(grupoId, noticiaId, comentarioId): Observable<Comentario>{
+        return this.http.get<Comentario>(API_URL + gruposdeinteres + '/' + grupoId + noticias + '/' + noticiaId + comentarios + '/' + comentarioId);
+    }
 
+}
