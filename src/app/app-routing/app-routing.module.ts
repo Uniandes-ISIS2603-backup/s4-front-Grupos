@@ -195,27 +195,8 @@ const routes: Routes = [
             }      
         ]
     }
-    ,
-     {
-        path: 'locaciones',
-        children: [
-            {
-                path: 'add',
-                component: LocacionCreateComponent  
-             }
-            
-             ,
-              {
-                path: 'list',
-                component: LocacionListComponent
-            }
-             ,
-              {
-                path: ':id',
-                component: LocacionDetailComponent
-            }      
-        ]
-    }
+    
+     
     ,
    
     {
