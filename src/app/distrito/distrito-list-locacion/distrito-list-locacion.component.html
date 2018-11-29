@@ -1,0 +1,24 @@
+
+
+       <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/distritos/{{distrito_id}}/locaciones/add">Crear un nuevo locacion</button>
+      
+   <table class="table table-striped">
+        
+        <tbody>
+            
+            <tr *ngFor="let locacion of locaciones">
+                <td><span id="distrito-locacionid"><b>{{locacion.id}}</b></span><span>: </span><span id="locacion-nombre" 
+                    style="cursor: pointer;" routerLink="/distritos/{{distrito_id}}/locaciones/{{locacion.id}}">{{locacion.locacion}}</span><br></td>
+                <td>
+                        <i class="fa fa-pencil" style="cursor: pointer;"
+                        routerLink="/distritos/{{distrito_id}}/locaciones/edit/{{locacion.id}}" ></i>
+                    </td>
+                        <td>
+                            <i class="fa fa-trash" style="cursor: pointer;"
+                            routerLink="/distritos/{{distrito_id}}/locaciones/delete/{{locacion.id}}" ></i>
+                        </td>
+                    
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="selectedNoticia"></div>

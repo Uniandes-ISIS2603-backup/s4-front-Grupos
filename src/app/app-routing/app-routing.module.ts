@@ -48,6 +48,10 @@ import { GrupodeinteresEditComponent } from '../grupodeinteres/grupodeinteres-ed
 import { GrupodeinteresDeleteComponent } from '../grupodeinteres/grupodeinteres-delete/grupodeinteres-delete.component';
 import { PatrocinioEditComponent } from '../patrocinio/patrocinio-edit/patrocinio-edit.component';
 import { PatrocinioDeleteComponent } from '../patrocinio/patrocinio-delete/patrocinio-delete.component';
+import { DistritoAddLocacionComponent } from '../distrito/distrito-add-locacion/distrito-add-locacion.component';
+import { DistritoDeleteLocacionComponent } from '../distrito/distrito-delete-locacion/distrito-delete-locacion.component';
+import { DistritoEditLocacionComponent } from '../distrito/distrito-edit-locacion/distrito-edit-locacion.component';
+import { DistritoLocacionDetailComponent } from '../distrito/distrito-locacion-detail/distrito-locacion-detail.component';
 import { AdministradorEditComponent } from '../administrador/administrador-edit/administrador-edit.component';
 import {CategoriaEditComponent} from '../categoria/categoria-edit/categoria-edit.component';
 import {CategoriaDeleteComponent} from '../categoria/categoria-delete/categoria-delete.component';
@@ -236,27 +240,8 @@ const routes: Routes = [
             }
         ]
     }
-    ,
-    {
-        path: 'locaciones',
-        children: [
-            {
-                path: 'add',
-                component: LocacionCreateComponent
-            }
-
-            ,
-            {
-                path: 'list',
-                component: LocacionListComponent
-            }
-            ,
-            {
-                path: ':id',
-                component: LocacionDetailComponent
-            }
-        ]
-    }
+    
+     
     ,
 
     {
@@ -305,6 +290,30 @@ const routes: Routes = [
             {
                 path: 'delete/:id',
                 component: DistritoDeleteComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id/locaciones/add',
+                             
+                component: DistritoAddLocacionComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/locaciones/delete/:id2',
+                             
+                component: DistritoDeleteLocacionComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/locaciones/:id2',
+                             
+                component: DistritoLocacionDetailComponent,
+                runGuardsAndResolvers: 'always'
+            },
+            {
+                path: ':id1/locaciones/edit/:id2',
+                             
+                component: DistritoEditLocacionComponent,
                 runGuardsAndResolvers: 'always'
             },
             {

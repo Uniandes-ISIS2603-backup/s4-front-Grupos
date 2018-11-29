@@ -1,21 +1,27 @@
 <div class="panel-body">
     <div class="border margin">
-        <p class="h3 p-3">{{distritoDetail.name}}<p> 
-        <div class="row">
-            <div class="col-md-3">
-                <div class="thumb">
-                    <img class="img-fluid" src='{{distritoDetail.image}}' alt="{{distritoDetail.image}}" />   
+        <p class="h3 p-3">{{distritoDetail.name}}<p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="thumb">
+                            <img class="img-fluid" src='{{distritoDetail.image}}' alt="{{distritoDetail.image}}" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <dl>
+                                <dd>{{distritoDetail.id}}</dd>
+                            <dt>Nombre</dt>
+                            <dd>{{distritoDetail.name}}</dd>
+                            <button type="button" class="btn-primary"  (click)="showHideLocaciones()">
+                                    Locaciones of the grupo
+                                </button>
+                        </dl>
+                    </div>
+                   
                 </div>
-            </div>
-            <div class="col">
-                <dl>     
-                    <dt>Bio</dt>
-                    <dd>{{distritoDetail.name}}</dd>
-                </dl>
-            </div>
-
-        </div>
     </div>
-  
-</div>
 
+</div>
+<div *ngIf="showLocaciones">
+    <app-distrito-list-locaciones [distrito_id]="distritoDetail.id"  ></app-distrito-list-locaciones>
+</div>

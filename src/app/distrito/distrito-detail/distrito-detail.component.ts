@@ -14,6 +14,11 @@ export class DistritoDetailComponent implements OnInit {
     * The distrito
     */
     @Input() distritoDetail: DistritoDetail;
+
+    /**
+    * Shows or hides the distrito-create-component
+    */
+    showLocaciones: boolean;
     /**
     * Constructor for the component
     * @param route The route which helps to retrieves the id of the book to be shown
@@ -42,6 +47,12 @@ export class DistritoDetailComponent implements OnInit {
             });
     }
 
+    showHideLocaciones(): void {
+        if (this.showLocaciones) {
+            this.showLocaciones = true;
+        }
+        else this.showLocaciones = true;
+    }
 
     /**
     * The method which initializes the component.

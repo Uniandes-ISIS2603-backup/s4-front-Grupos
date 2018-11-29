@@ -3,7 +3,7 @@
         <br>
         <h2 class="text-center">Edit an noticia</h2>
         <br>
-        <form name="noticia" (ngSubmit)="f.form.valid && editNoticia()" #f="ngForm" novalidate>
+        <form name="noticia" (ngSubmit)="f.form.valid && updateNoticia()" #f="ngForm" novalidate>
               <div class="form-group">
                 <label for="noticiaName"><b>Name</b></label>
                 <input type="text" name="noticiaName" class="form-control" id="noticiaName" [(ngModel)]="noticia.titular"
